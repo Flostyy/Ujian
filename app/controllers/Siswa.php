@@ -1,21 +1,21 @@
 <?php
 
-class Home extends Controller
+class Siswa extends Controller
 {
-    public function index()
+    public function indexSiswa()
     {   
         if(session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['nama'])) {
             ob_start();
-            header('Location: ' . 'login');
+            header('Location: ' . 'Login/loginSiswa');
             ob_end_flush();
             die();
         }
 
-        $data['judul'] = 'Home';
+        $data['judul'] = 'Home Siswa';
         
         $this->view('templates/header', $data);
-        $this->view('Home/index', $data);
+        $this->view('siswa/index', $data);
         $this->view('templates/footer');
     }
 
@@ -24,7 +24,7 @@ class Home extends Controller
         $data['judul'] = 'Home';
         
         $this->view('templates/header', $data);
-        $this->view('Home/mapel', $data);
+        $this->view('siswa/mapel', $data);
         $this->view('templates/footer');
     }
 }

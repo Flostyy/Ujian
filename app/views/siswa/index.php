@@ -19,10 +19,10 @@
          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
              <li class="nav-item">
-               <a class="nav-link px-md-4 active" aria-current="page" href="index.html">Home</a>
+               <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>">Home</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link px-md-4" href="mapel.html">Lesson</a>
+               <a class="nav-link px-md-4" href="<?= BASE; ?>/Siswa/mapel">Lesson</a>
              </li>
              <li class="nav-item">
                <a class="nav-link px-md-4" href="#">Contacts</a>
