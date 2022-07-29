@@ -7,6 +7,9 @@
     <title>Ujian Online</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Sweetalert 2 CSS -->
+	<link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
 </head>
 <body>
 
@@ -46,7 +49,16 @@
              </li>
            </ul>
            <div class="d-flex">
-             <a class="btn btn-get-started btn-get-started-blue text-white" href="#">Logout</a>
+            <button type="button" id="logout" name="logout" class="btn btn-get-started btn-get-started-blue text-white">
+                Logout
+            </button>
+            <a href="login" class="btn btn-get-started btn-get-started-blue text-white"
+                    onclick="return confirm('Yakin ta wes arep metu ?');">Logout</a>
+            <!-- php -->
+            <?php
+            
+            ?>
+             <!-- <a class="btn btn-get-started btn-get-started-blue text-white" href="?logout=1">Logout</a> -->
            </div>
          </div>
        </div>
@@ -349,6 +361,18 @@
          </div>
      </section> 
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    
+    <!-- Must put our javascript files here to fast the page loading -->
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Sweetalert2 JS -->
+	<script src="../assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+	<!-- Page Script -->
+	<script src="../js/scripts.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
