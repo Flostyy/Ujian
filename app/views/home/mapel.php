@@ -28,7 +28,7 @@
                <a class="nav-link px-md-4" href="#">Contacts</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link px-md-4" href="#">Review</a>
+               <a class="nav-link px-md-4" href="#">Teams</a>
              </li>
            </ul>
            <div class="d-flex">
@@ -44,114 +44,213 @@
      <div class="container">
        <div class="row content">
          <div class="col-12 px-md-0 my-auto">
-           <div class="headline">
-            Choose the Lesson <br class="d-none d-md-block">
-             You Want
-           </div>
+           <!-- <div class="tagline">
+             OUR FORMULA
+           </div> -->
+           <!-- <div class="headline mt-3">
+             3-Steps to Work at <br class="d-none d-md-block">
+             Your Dream Companies
+           </div> -->
            <div class="row benefits">
-             <div class="col-md-4 mt-md-0">
-              <a href="#"> 
-              <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                  Mathematics
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   Get yourself ready and join <br class="d-none d-md-block">
-                   our great adventures
-                 </div>
-               </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-                <div class="rectangle mx-auto px-1">
-                  <img
-                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+            <div class="col-md-4 mt-md-0">
+             <a href="#"> 
+             <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
                   alt="benefits-1" class="img-fluid">
-                  <div class="headline-benefit">
-                    Indonesian
-                  </div>
-                  <div class="subheadline-benefit mt-2">
-                    Answer the question that we’ve <br class="d-none d-md-block">
-                    prepared for your career
-                  </div>
+                <div class="headline-benefit">
+                 Mathematics
                 </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
+                <div class="subheadline-benefit mt-2">
+                  Get yourself ready and join <br class="d-none d-md-block">
+                  our great adventures
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
                <div class="rectangle mx-auto px-1">
                  <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
-                   alt="benefits-1" class="img-fluid">
+                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                 alt="benefits-1" class="img-fluid">
                  <div class="headline-benefit">
-                   English
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   We will setup the meeting with <br class="d-none d-md-block">
-                   your dream companies
-                 </div>
-               </div>
-             </div>
-            </a>
-           </div>
-           <div class="row benefits">
-             <div class="col-md-4 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                   Biology
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   Get yourself ready and join <br class="d-none d-md-block">
-                   our great adventures
-                 </div>
-               </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                  Physics
+                   Indonesian
                  </div>
                  <div class="subheadline-benefit mt-2">
                    Answer the question that we’ve <br class="d-none d-md-block">
                    prepared for your career
                  </div>
                </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                  Chemical
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   We will setup the meeting with <br class="d-none d-md-block">
-                   your dream companies
-                 </div>
-               </div>
-             </div>
-            </a>
-           </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  English
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  We will setup the meeting with <br class="d-none d-md-block">
+                  your dream companies
+                </div>
+              </div>
+            </div>
+           </a>
+          </div>
+          <div class="row benefits">
+            <div class="col-md-4 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Biology
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Get yourself ready and join <br class="d-none d-md-block">
+                  our great adventures
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Physics
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Answer the question that we’ve <br class="d-none d-md-block">
+                  prepared for your career
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Chemical
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  We will setup the meeting with <br class="d-none d-md-block">
+                  your dream companies
+                </div>
+              </div>
+            </div>
+           </a>
+          </div>
+          <div class="row benefits">
+            <div class="col-md-4 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Social
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Get yourself ready and join <br class="d-none d-md-block">
+                  our great adventures
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Database
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Answer the question that we’ve <br class="d-none d-md-block">
+                  prepared for your career
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Chemical
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  We will setup the meeting with <br class="d-none d-md-block">
+                  your dream companies
+                </div>
+              </div>
+            </div>
+           </a>
+          </div>
+          <div class="row benefits">
+            <div class="col-md-4 mt-md-0">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Sign Up
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Get yourself ready and join <br class="d-none d-md-block">
+                  our great adventures
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-md-4 mt-5 mt-md-0">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Finish The Quiz
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Answer the question that we’ve <br class="d-none d-md-block">
+                  prepared for your career
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Interview
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  We will setup the meeting with <br class="d-none d-md-block">
+                  your dream companies
+                </div>
+              </div>
+            </div>
+          </div>
+            
+
            <div class="button-header">
-            <a href="mapel.php">
-             <button class="btn btn-started" >See More</button>
-            </a>
+             <!-- <button class="btn btn-started">See More</button> -->
              <!-- <button class="btn btn-story ml-3">Read Story</button> -->
            </div>
          </div>
