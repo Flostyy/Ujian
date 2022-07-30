@@ -1,4 +1,5 @@
-    <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
+<title><?= $data['judul'] ?></title>
+<section class="h-100 w-100 bg-white" style="box-sizing: border-box">
      <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body"
        style="font-family: Poppins, sans-serif">
        <div class="container">
@@ -19,31 +20,31 @@
          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
              <li class="nav-item">
-               <a class="nav-link px-md-4 active" aria-current="page" href="index.html">Home</a>
+               <a class="nav-link px-md-4" href="<?= BASE; ?>">Home</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link px-md-4" href="mapel.html">Lesson</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link px-md-4" href="#">Contacts</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link px-md-4" href="#">Teams</a>
+             <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>/Siswa/mapelSiswa">Lesson</a>
              </li>
            </ul>
            <div class="d-flex">
-             <a class="btn btn-get-started btn-get-started-blue text-white" href="#">Logout</a>
+             <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
            </div>
          </div>
        </div>
      </nav>
    </section>
    
+
+   <!-- mapel -->
    <section class="content text-center">
-     
-     <div class="container">
+
+    <div class="container">
        <div class="row content">
          <div class="col-12 px-md-0 my-auto">
+           <div class="headline">
+            Selamat Datang <br class="d-none d-md-block">
+             dan Selamat Mengerjakan
+           </div> 
            <!-- <div class="tagline">
              OUR FORMULA
            </div> -->
@@ -51,7 +52,7 @@
              3-Steps to Work at <br class="d-none d-md-block">
              Your Dream Companies
            </div> -->
-           <div class="row benefits">
+           <div class="row benefits" id="see">
             <div class="col-md-4 mt-md-0">
              <a href="#"> 
              <div class="rectangle mx-auto px-1">
@@ -59,11 +60,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                 Mathematics
+                 Matematika
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Get yourself ready and join <br class="d-none d-md-block">
-                  our great adventures
+                  Matematika ilmu yang menyenangkan <br class="d-none d-md-block">
+        
                 </div>
               </div>
              </a>
@@ -75,11 +76,11 @@
                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
                  alt="benefits-1" class="img-fluid">
                  <div class="headline-benefit">
-                   Indonesian
+                   Bahasa Indonesia
                  </div>
                  <div class="subheadline-benefit mt-2">
-                   Answer the question that we’ve <br class="d-none d-md-block">
-                   prepared for your career
+                   Bahasa Indonesia adalah bahasa pemersatu Indonesia <br class="d-none d-md-block">
+                   
                  </div>
                </div>
              </a>
@@ -91,7 +92,7 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                  English
+                  Bahasa Inggris
                 </div>
                 <div class="subheadline-benefit mt-2">
                   We will setup the meeting with <br class="d-none d-md-block">
@@ -109,11 +110,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                  Biology
+                  Biologi
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Get yourself ready and join <br class="d-none d-md-block">
-                  our great adventures
+                  Cinta alam semesta, <br class="d-none d-md-block">
+                 kajian tentang kehidupan dan organisme kehidupan
                 </div>
               </div>
              </a>
@@ -125,11 +126,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                 Physics
+                 Fisika
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Answer the question that we’ve <br class="d-none d-md-block">
-                  prepared for your career
+                  Unsur-unsur dasar pembentuk alam semesta dan memahami  <br class="d-none d-md-block">
+                  bagaimana alam semesta bekerja
                 </div>
               </div>
              </a>
@@ -141,11 +142,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                 Chemical
+                 Kimia
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  We will setup the meeting with <br class="d-none d-md-block">
-                  your dream companies
+                  Warna warni cairan, <br class="d-none d-md-block">
+                  berbagai bentuk gelas
                 </div>
               </div>
             </div>
@@ -159,11 +160,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                  Social
+                  IPS
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Get yourself ready and join <br class="d-none d-md-block">
-                  our great adventures
+                  Ilmu Pengetahuan Sosial. <br class="d-none d-md-block">
+                  kegiatan dasar manusia
                 </div>
               </div>
              </a>
@@ -175,11 +176,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                 Database
+                 Basis Data
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Answer the question that we’ve <br class="d-none d-md-block">
-                  prepared for your career
+                  Kumpulan data yang <br class="d-none d-md-block">
+                  disimpan secara sistematis
                 </div>
               </div>
              </a>
@@ -191,11 +192,11 @@
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                 Chemical
+                  Pemrograman Berorientasi Objek
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  We will setup the meeting with <br class="d-none d-md-block">
-                  your dream companies
+                  Model data <br class="d-none d-md-block">
+                  berorientasi objek
                 </div>
               </div>
             </div>
@@ -203,49 +204,53 @@
           </div>
           <div class="row benefits">
             <div class="col-md-4 mt-md-0">
-              <div class="rectangle mx-auto px-1">
+             <a href="#"> 
+             <div class="rectangle mx-auto px-1">
                 <img
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                  Sign Up
+                  Pemrograman Web Perangkat Bergerak
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  Get yourself ready and join <br class="d-none d-md-block">
-                  our great adventures
+                  Mmebuat aplikasi <br class="d-none d-md-block">
+                  Web dan Mobile
                 </div>
               </div>
-            </div>
-
-            
-            <div class="col-md-4 mt-5 mt-md-0">
-              <div class="rectangle mx-auto px-1">
-                <img
-                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
-                  alt="benefits-1" class="img-fluid">
-                <div class="headline-benefit">
-                  Finish The Quiz
-                </div>
-                <div class="subheadline-benefit mt-2">
-                  Answer the question that we’ve <br class="d-none d-md-block">
-                  prepared for your career
-                </div>
-              </div>
+             </a>
             </div>
             <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+               <div class="rectangle mx-auto px-1">
+                 <img
+                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                 alt="benefits-1" class="img-fluid">
+                 <div class="headline-benefit">
+                  Pemodelan Perangkat Lunak
+                 </div>
+                 <div class="subheadline-benefit mt-2">
+                   Pemodelan Perangkat Lunak. <br class="d-none d-md-block">
+                   Gambar menggambar
+                 </div>
+               </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
               <div class="rectangle mx-auto px-1">
                 <img
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
                   alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">
-                  Interview
+                  Agama 
                 </div>
                 <div class="subheadline-benefit mt-2">
-                  We will setup the meeting with <br class="d-none d-md-block">
-                  your dream companies
+                  Berbeda agama itu <br class="d-none d-md-block">
+                  menyenangkan
                 </div>
               </div>
             </div>
+           </a>
           </div>
             
 
@@ -255,8 +260,13 @@
            </div>
          </div>
        </div>
-     </div>
-   </section><section class="h-100 w-100 bg-white" style="box-sizing: border-box">
+         </div>
+         </div>
+    </div>
+   </section>
+   
+   <!-- footer -->
+   <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
          
  
          <div class="footer-2-2 container-xxl mx-auto position-relative p-0" style="font-family: 'Poppins', sans-serif">
@@ -426,4 +436,21 @@
                  </div>
              </div>
          </div>
-     </section> 
+   </section>
+   <script>
+      document.getElementById("logout").addEventListener("click", () => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't logout from this?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, sure",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '<?= BASE; ?>/Login/logout';
+          }
+        });
+      });
+      </script>

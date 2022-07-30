@@ -1,3 +1,4 @@
+<title><?= $data['judul'] ?></title>
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
      <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body"
        style="font-family: Poppins, sans-serif">
@@ -22,17 +23,11 @@
                <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>">Home</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link px-md-4" href="<?= BASE; ?>/Siswa/mapel">Lesson</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link px-md-4" href="#">Contacts</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link px-md-4" href="#">Review</a>
+               <a class="nav-link px-md-4" href="<?= BASE; ?>/Siswa/mapelSiswa">Lesson</a>
              </li>
            </ul>
            <div class="d-flex">
-             <a class="btn btn-get-started btn-get-started-blue text-white" href="#">Logout</a>
+             <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
            </div>
          </div>
        </div>
@@ -149,7 +144,7 @@
             </a>
            </div>
            <div class="button-header">
-            <a href="mapel.php">
+            <a href="<?= BASE; ?>/Siswa/mapelSiswa">
              <button class="btn btn-started" >See More</button>
             </a>
              <!-- <button class="btn btn-story ml-3">Read Story</button> -->
@@ -328,3 +323,21 @@
              </div>
          </div>
      </section> 
+    <script>
+      document.getElementById("logout").addEventListener("click", () => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't logout from this?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, sure",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '<?= BASE; ?>/Login/logout';
+          }
+        });
+      });
+      </script>
+    

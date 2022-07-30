@@ -2,61 +2,42 @@
 
 class Login extends Controller
 {
-    public function indexSiswa()
+    public function index()
     {   
         
         $data['judul'] = 'Login';
         
         $this->view('templates/header2');
-        $this->view('login_siswa/index', $data);
+        $this->view('login/index', $data);
         $this->view('templates/footer2');
     }
 
-    public function indexGuru()
-    {   
-        
-        $data['judul'] = 'Login';
-        
-        $this->view('templates/header3');
-        $this->view('login_guru/index', $data);
-        $this->view('templates/footer3');
-    }
-
-    public function loginSiswa()
+    public function login()
     {
-        if(session_status() === PHP_SESSION_NONE) session_start();
+      if(session_status() === PHP_SESSION_NONE) session_start();
         $email = $_POST ['email'];
-        $password = $_POST['password'];
+        $password = $_POST['password']; 
         
-        $data['loginSiswa'] = $this->model('Login_model')->getSiswa($email, $password);
+        $data['login'] = $this->model('Login_model')->getUser($email, $password);
         
-        if($data['loginSiswa'] == NULL)
+        if($data['login'] == NULL)
         {
-          header("Location: " . BASE . "404");
+          header("Location: " . BASE . '/404');
         } else {
-          foreach($data['loginSiswa'] as $row) :
+          foreach($data['login'] as $row) :
           $_SESSION['nama'] = $row['nama'];
           header("Location: " . BASE);
         endforeach;
         }
     }
 
-    public function loginGuru()
+    public function logout()
     {
-        if(session_status() === PHP_SESSION_NONE) session_start();
-        $email = $_POST ['email'];
-        $password = $_POST['password'];
-        
-        $data['loginGuru'] = $this->model('Login_model')->getGuru($email, $password);
-        
-        if($data['loginGuru'] == NULL)
-        {
-          header("Location: " . BASE . "404");
-        } else {
-          foreach($data['loginGuru'] as $row) :
-          $_SESSION['nama'] = $row['nama'];
-          header("Location: " . BASE . "guru");
-        endforeach;
-        }
+      if(session_status() === PHP_SESSION_NONE) session_start();
+      unset($_SESSION['siswa']);
+      session_destroy();
+      header("Location: " . 'http://localhost/Ujian/public/Login/login');
+      die();
     }
   }
+

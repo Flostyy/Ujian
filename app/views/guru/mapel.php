@@ -22,10 +22,10 @@
             <a class="nav-link px-md-4 active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-md-4" href="register.html">Daftar Siswa</a>
+            <a class="nav-link px-md-4" href="<?= BASE; ?>">Daftar Siswa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-md-4" href="mapel.html">Mata Pelajaran</a>
+            <a class="nav-link px-md-4" href="<?= BASE; ?>">Mata Pelajaran</a>
           </li>
           <li class="nav-item">
             <a class="nav-link px-md-4" href="#">Setting</a>

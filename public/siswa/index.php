@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujian Online</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Sweetalert 2 CSS -->
-	<link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">  
-</head>
-<body>
 
-  <!-- navbar -->
-        <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
-     
+    <section class="h-100 w-100 bg-white" style="box-sizing: border-box">     
      <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body"
        style="font-family: Poppins, sans-serif">
        <div class="container">
@@ -360,19 +344,3 @@
              </div>
          </div>
      </section> 
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <!-- Must put our javascript files here to fast the page loading -->
-	
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<!-- Sweetalert2 JS -->
-	<script src="../assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<!-- Page Script -->
-	<script src="../js/scripts.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
-</body>
-</html>

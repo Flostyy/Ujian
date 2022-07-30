@@ -2,12 +2,12 @@
 
 class Guru extends Controller
 {
-    public function index()
+    public function indexGuru()
     {   
         if(session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['nama'])) {
             ob_start();
-            header('Location: ' . 'Login/loginGuru');
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
             ob_end_flush();
             die();
         }
@@ -19,7 +19,7 @@ class Guru extends Controller
         $this->view('templates/footer');
     }
 
-    public function mapel()
+    public function mapelGuru()
     {   
         $data['judul'] = 'Home Guru';
         
