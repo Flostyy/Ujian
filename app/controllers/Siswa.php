@@ -27,4 +27,13 @@ class Siswa extends Controller
         $this->view('siswa/mapel', $data);
         $this->view('templates/footer');
     }
+
+    public function soalFisika()
+    {
+        $data['judul'] = 'Fisika';
+
+        $this->view('templates/header', $data);
+        $this->view('siswa/soal', $data);
+        $this->view('templates/footer');
+    }
 }

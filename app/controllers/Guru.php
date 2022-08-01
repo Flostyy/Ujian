@@ -2,7 +2,7 @@
 
 class Guru extends Controller
 {
-    public function indexGuru()
+    public function index()
     {   
         if(session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['nama'])) {

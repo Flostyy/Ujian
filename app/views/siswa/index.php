@@ -35,117 +35,124 @@
    </section>
    
    <section class="content text-center">
-     
-     <div class="container">
+
+    <div class="container">
        <div class="row content">
          <div class="col-12 px-md-0 my-auto">
            <div class="headline">
-            Choose the Lesson <br class="d-none d-md-block">
-             You Want
-           </div>
-           <div class="row benefits">
-             <div class="col-md-4 mt-md-0">
-              <a href="#"> 
-              <div class="rectangle mx-auto px-1">
+            Selamat Datang <br class="d-none d-md-block">
+             dan Selamat Mengerjakan
+           </div> 
+           <!-- <div class="tagline">
+             OUR FORMULA
+           </div> -->
+           <!-- <div class="headline mt-3">
+             3-Steps to Work at <br class="d-none d-md-block">
+             Your Dream Companies
+           </div> -->
+           <div class="row benefits" id="see">
+            <div class="col-md-4 mt-md-0">
+             <a href="#"> 
+             <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Matematika
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Matematika ilmu yang menyenangkan <br class="d-none d-md-block">
+        
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+               <div class="rectangle mx-auto px-1">
                  <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
-                   alt="benefits-1" class="img-fluid">
+                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
+                 alt="benefits-1" class="img-fluid">
                  <div class="headline-benefit">
-                  Mathematics
+                   Bahasa Indonesia
                  </div>
                  <div class="subheadline-benefit mt-2">
-                   Get yourself ready and join <br class="d-none d-md-block">
-                   our great adventures
+                   Bahasa Indonesia adalah bahasa pemersatu Indonesia <br class="d-none d-md-block">
+                   
                  </div>
                </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-                <div class="rectangle mx-auto px-1">
-                  <img
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Bahasa Inggris
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  We will setup the meeting with <br class="d-none d-md-block">
+                  your dream companies
+                </div>
+              </div>
+            </div>
+           </a>
+          </div>
+          <div class="row benefits">
+            <div class="col-md-4 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                  Biologi
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Cinta alam semesta, <br class="d-none d-md-block">
+                 kajian tentang kehidupan dan organisme kehidupan
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="<?= BASE; ?>/Siswa/soalFisika">
+              <div class="rectangle mx-auto px-1">
+                <img
                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
                   alt="benefits-1" class="img-fluid">
-                  <div class="headline-benefit">
-                    Indonesian
-                  </div>
-                  <div class="subheadline-benefit mt-2">
-                    Answer the question that we’ve <br class="d-none d-md-block">
-                    prepared for your career
-                  </div>
+                <div class="headline-benefit">
+                 Fisika
                 </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                   English
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   We will setup the meeting with <br class="d-none d-md-block">
-                   your dream companies
-                 </div>
-               </div>
-             </div>
-            </a>
-           </div>
-           <div class="row benefits">
-             <div class="col-md-4 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                   Biology
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   Get yourself ready and join <br class="d-none d-md-block">
-                   our great adventures
-                 </div>
-               </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                  Physics
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   Answer the question that we’ve <br class="d-none d-md-block">
-                   prepared for your career
-                 </div>
-               </div>
-              </a>
-             </div>
-             <div class="col-md-4 mt-5 mt-md-0">
-              <a href="#">
-               <div class="rectangle mx-auto px-1">
-                 <img
-                   src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
-                   alt="benefits-1" class="img-fluid">
-                 <div class="headline-benefit">
-                  Chemical
-                 </div>
-                 <div class="subheadline-benefit mt-2">
-                   We will setup the meeting with <br class="d-none d-md-block">
-                   your dream companies
-                 </div>
-               </div>
-             </div>
-            </a>
-           </div>
+                <div class="subheadline-benefit mt-2">
+                  Unsur-unsur dasar pembentuk alam semesta dan memahami  <br class="d-none d-md-block">
+                  bagaimana alam semesta bekerja
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="col-md-4 mt-5 mt-md-0">
+             <a href="#">
+              <div class="rectangle mx-auto px-1">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-3.png"
+                  alt="benefits-1" class="img-fluid">
+                <div class="headline-benefit">
+                 Kimia
+                </div>
+                <div class="subheadline-benefit mt-2">
+                  Warna warni cairan, <br class="d-none d-md-block">
+                  berbagai bentuk gelas
+                </div>
+              </div>
+            </div>
+           </a>
+        </div>
            <div class="button-header">
             <a href="<?= BASE; ?>/Siswa/mapelSiswa">
-             <button class="btn btn-started" >See More</button>
+             <button class="btn btn-started" >Lainnya</button>
             </a>
              <!-- <button class="btn btn-story ml-3">Read Story</button> -->
            </div>
