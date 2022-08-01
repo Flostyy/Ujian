@@ -28,6 +28,15 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+    public function kontak()
+    {
+        $data['judul'] = 'Kontak kami';
+
+        $this->view('templates/header', $data);
+        $this->view('siswa/kontak', $data);
+        $this->view('templates/footer');
+    }
+    
     public function soalFisika()
     {
         $data['judul'] = 'Fisika';
@@ -36,4 +45,6 @@ class Siswa extends Controller
         $this->view('siswa/soal', $data);
         $this->view('templates/footer');
     }
+
+    
 }

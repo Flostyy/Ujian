@@ -18,12 +18,18 @@
            <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
              <li class="nav-item">
-               <a class="nav-link px-md-4" href="<?= BASE; ?>">Home</a>
+               <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>">Home</a>
              </li>
              <li class="nav-item">
-             <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>/Siswa/mapelSiswa">Lesson</a>
+               <a class="nav-link px-md-4" href="<?= BASE; ?>/Siswa/mapelSiswa">Mata Pelajaran</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link px-md-4" href="<?= BASE; ?>/Siswa/kontak">Kontak</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link px-md-4" href="#">Review</a>
              </li>
            </ul>
            <div class="d-flex">
