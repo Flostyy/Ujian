@@ -27,4 +27,13 @@ class Guru extends Controller
         $this->view('guru/mapel', $data);
         $this->view('templates/footer');
     }
+
+    public function tambahSoal()
+    {   
+        $data['judul'] = 'Tambah Guru';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/tambah', $data);
+        $this->view('templates/footer');
+    }
 }
