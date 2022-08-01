@@ -1,7 +1,7 @@
 <?php
 
 class App {
-    protected $controller = 'siswa';
+    protected $controller = 'guru';
     protected $method = 'index';
     protected $params = [];
 
