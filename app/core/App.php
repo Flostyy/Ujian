@@ -2,7 +2,7 @@
 
 class App {
     protected $controller = 'siswa';
-    protected $method = 'indexSiswa';
+    protected $method = 'index';
     protected $params = [];
 
     public function __construct() 

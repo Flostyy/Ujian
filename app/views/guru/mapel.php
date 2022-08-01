@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ujian Online</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  </head>
-  <body>
 <!-- navbar -->
 <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
   <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body" style="font-family: Poppins, sans-serif">
@@ -33,10 +22,10 @@
             <a class="nav-link px-md-4 active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-md-4" href="register.html">Daftar Siswa</a>
+            <a class="nav-link px-md-4" href="<?= BASE; ?>">Daftar Siswa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-md-4" href="mapel.html">Mata Pelajaran</a>
+            <a class="nav-link px-md-4" href="<?= BASE; ?>">Mata Pelajaran</a>
           </li>
           <li class="nav-item">
             <a class="nav-link px-md-4" href="#">Setting</a>
@@ -77,8 +66,9 @@
                 <td>XII RPL 1</td>
 
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="#" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -89,8 +79,9 @@
                 <td>XII RPL 2</td>
 
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="#" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -101,8 +92,9 @@
                 <td>XI RPL 1</td>
 
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="#" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -113,8 +105,9 @@
                 <td>XI RPL 2</td>
 
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="#" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -125,8 +118,9 @@
                 <td>XII RPL 1</td>
 
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="#" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
             </tbody>
@@ -227,7 +221,6 @@
       <div class="">
         <hr class="hr" />
       </div>
-
       <div class="mx-auto d-flex flex-column flex-lg-row align-items-center footer-info-space gap-4">
         <div class="d-flex title-font font-medium align-items-center gap-4">
           <a href="">
@@ -306,50 +299,21 @@
     </div>
   </div>
 </section>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      document.getElementById("logout").addEventListener("click", () => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't logout from this?",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, sure",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = 'login.html';
-          }
-        });
-      });
-
-      document.getElementById("hapus").addEventListener("click", () => {
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'Deleted!',
-              'Your file has been deleted.',
-              'success'
-              );
-            }
-          });
-      });
-
-      
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  </body>
-</html>
-
-      
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById("logout").addEventListener("click", () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't logout from this?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, sure",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      }
+    });
+  });
+</script>

@@ -10,15 +10,7 @@ class Login_model extends Controller
         $this->db = new Database;
     }
 
-    public function getSiswa($email, $password)
-    {
-        $this->db->query("SELECT * FROM users WHERE email = :email && password = :password");
-        $this->db->bind("email", $email);
-        $this->db->bind("password", $password);
-        return $this->db->resultSet();
-    }
-
-    public function getGuru($email, $password)
+    public function getUser($email, $password)
     {
         $this->db->query("SELECT * FROM users WHERE email = :email && password = :password");
         $this->db->bind("email", $email);
