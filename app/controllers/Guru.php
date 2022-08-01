@@ -13,6 +13,7 @@ class Guru extends Controller
         }
 
         $data['judul'] = 'Home Guru';
+        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);

@@ -56,10 +56,11 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php foreach($data['siswa'] as $siswa ) :  ?>
                   <tr>
-                    <td>1</td>
-                    <td>Ires</td>
-                    <td>ires01@gmail.com</td>
+                    <td> <?= $siswa['id']; ?></td>
+                    <td> <?= $siswa['nama']; ?></td>
+                    <td><?= $siswa['email']; ?></td>
                     <td>
                       <!-- Button trigger modal, modalnya dibawah ygy-->
                       <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
@@ -68,71 +69,39 @@
                       <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Noval</td>
-                    <td>noval02@gmail.com</td>
-                    <td>
-                      <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
-                      <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Sukman</td>
-                    <td>sukman03@gmail.com</td>
-                    <td>
-                      <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
-                      <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Manik</td>
-                    <td>manik04@gmail.com</td>
-                    <td>
-                      <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
-                      <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Zainun</td>
-                    <td>zainun05@gmail.com</td>
-                    <td>
-                      <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
-                      <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
         <div class="col-md-4 ml-auto">
-          <form action="">
+          <form action="<?= BASE; ?>/Siswa/tambah" method="POST">
             <div class="card">
               <div class="card-header">Register</div>
               <div class="card-body">
                 <div class="form-grup">
                   <label for="">Nama</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control" name="nama" />
                 </div>
                 <div class="form-grup">
                   <label for="">Email</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control" name="email" />
                 </div>
                 <div class="form-grup">
                   <label for="">Password</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control" name="password" />
+                </div>
+                <div class="form-grup">
+                  <label for="">Level</label>
+                  <select class="form-control" name="level">
+                    <option value="guru">Guru</option>
+                    <option value="murid">murid</option>
+                  </select>
                 </div>
               </div>
               <div class="card-footer">
-                <input type="button" class="btn btn-primary" id="tambah" value="Tambah" />
+                <input type="submit" class="btn btn-primary" id="tambah" value="Tambah" />
               </div>
             </div>
           </form>
