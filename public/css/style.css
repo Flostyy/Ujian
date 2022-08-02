@@ -145,6 +145,51 @@
       color: #627492;
     }
 
+    /* Testimonial */
+.bg-testi {
+  /* background-color:  rgb(187, 255, 181); */
+  min-height: 380px;
+}
+.testimonial {
+  margin-top: 130px;
+}
+
+.testimonial p {
+  font-size: 35px;
+  text-align: center;
+  font-weight: 200;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  filter: grayscale(1);
+}
+
+.testimonial .img-main {
+  width: 100px;
+  height: 100px;
+  margin-top: -5px;
+  filter: grayscale(0);
+}
+
+.testimonial .info-text h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.testimonial .info-text p {
+  font-size: 20px;
+  margin-top: -5px;
+  color: #000000;
+  font-style: normal;
+}
+
+
     /*# sourceMappingURL=main.css.map */
 
     @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");

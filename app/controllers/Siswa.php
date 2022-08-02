@@ -55,3 +55,5 @@ class Siswa extends Controller
             exit;
         }
     }
+
+}
