@@ -12,7 +12,9 @@ class Siswa extends Controller
             die();
         }
 
+        
         $data['judul'] = 'Home Siswa';
+
         
         $this->view('templates/header', $data);
         $this->view('siswa/index', $data);
@@ -46,5 +48,10 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
-    
-}
+    public function tambah()
+    {
+        if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+            header('Location: ' . BASE . '/Siswa');
+            exit;
+        }
+    }

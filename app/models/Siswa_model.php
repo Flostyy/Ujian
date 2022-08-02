@@ -1,8 +1,8 @@
 <?php
 
-class Mahasiswa_model 
+class Siswa_model extends Controller
 {
-    private $table = 'mahasiswa';
+    private $table = 'users';
     private $db;
 
     public function __construct()
@@ -10,15 +10,15 @@ class Mahasiswa_model
         $this->db = new Database;
     }
 
-    public function getAllMahasiswa()
+    public function getAllSiswa()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM users');
         return $this->db->resultSet();
     }
 
-    public function getMahasiswaById($id)
+    public function getSiswaById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT * FROM users' . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     } 
@@ -78,5 +78,22 @@ class Mahasiswa_model
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
+    }
+
+    public function tambahDataSiswa($data)
+    {
+        $query = "INSERT INTO users
+                    VALUES
+                    ('', :nama, :email, :password, :level)";
+
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('password', $data['password']);
+        $this->db->bind('level', $data['level']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
     }
 }

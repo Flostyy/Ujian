@@ -13,6 +13,7 @@ class Guru extends Controller
         }
 
         $data['judul'] = 'Home Guru';
+        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);
@@ -25,6 +26,15 @@ class Guru extends Controller
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
+        $this->view('templates/footer');
+    }
+
+    public function tambahSoal()
+    {   
+        $data['judul'] = 'Tambah Guru';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/tambah', $data);
         $this->view('templates/footer');
     }
 }
