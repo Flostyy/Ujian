@@ -30,6 +30,15 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+    public function kontak()
+    {
+        $data['judul'] = 'Kontak kami';
+
+        $this->view('templates/header', $data);
+        $this->view('siswa/kontak', $data);
+        $this->view('templates/footer');
+    }
+    
     public function soalFisika()
     {
         $data['judul'] = 'Fisika';
@@ -37,5 +46,15 @@ class Siswa extends Controller
         $this->view('templates/header', $data);
         $this->view('siswa/soal', $data);
         $this->view('templates/footer');
+    }
+
+
+
+    public function tambah()
+    {
+        if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+            header('Location: ' . BASE . '/Siswa');
+            exit;
+        }
     }
 }
