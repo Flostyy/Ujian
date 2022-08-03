@@ -1,3 +1,4 @@
+<title><?= $data['judul'] ?></title>
 <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
   <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body" style="font-family: Poppins, sans-serif">
     <div class="container">

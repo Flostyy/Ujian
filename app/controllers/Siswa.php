@@ -21,6 +21,12 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+    // public function siswa()
+    // {
+    //     var_dump('test');
+    //     die;
+    // }
+
     public function mapelSiswa()
     {   
         $data['judul'] = 'Home Siswa';
@@ -48,6 +54,8 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+
+
     public function tambah()
     {
         if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
@@ -55,3 +63,5 @@ class Siswa extends Controller
             exit;
         }
     }
+
+}

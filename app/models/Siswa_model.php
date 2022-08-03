@@ -12,7 +12,7 @@ class Siswa_model extends Controller
 
     public function getAllSiswa()
     {
-        $this->db->query('SELECT * FROM users');
+        $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
@@ -23,24 +23,25 @@ class Siswa_model extends Controller
         return $this->db->single();
     } 
 
-    public function tambahDataMahasiswa($data)
+    public function tambahDataSiswa($data)
     {
-        $query = "INSERT INTO mahasiswa VALUES('', :nama, :nrp, :jurusan, :email)";
+        $query = "INSERT INTO users VALUES
+                    ('', :nama, :email, :password, :level)";
 
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
-        $this->db->bind('nrp', $data['nrp']);
-        $this->db->bind('jurusan', $data['jurusan']);
         $this->db->bind('email', $data['email']);
+        $this->db->bind('password', $data['password']);
+        $this->db->bind('level', $data['level']);
 
         $this->db->execute();
 
         return $this->db->rowCount();
     }
 
-    public function hapusDataMahasiswa($id)
+    public function hapusDataSiswa($id)
     {
-        $query = "DELETE FROM mahasiswa WHERE id = :id";
+        $query = "DELETE FROM users WHERE id = :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
@@ -51,19 +52,19 @@ class Siswa_model extends Controller
 
     public function ubahDataMahasiswa($data)
     {
-        $query = "UPDATE mahasiswa SET
+        $query = "UPDATE users SET
         nama = :nama, 
-        nrp = :nrp, 
-        jurusan = :jurusan,
-        email = :email
+        email = :email, 
+        password = :password,
+        level = :level
         WHERE id = :id";
 
 
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
-        $this->db->bind('nrp', $data['nrp']);
-        $this->db->bind('jurusan', $data['jurusan']);
         $this->db->bind('email', $data['email']);
+        $this->db->bind('password', $data['password']);
+        $this->db->bind('level', $data['level']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
@@ -78,22 +79,5 @@ class Siswa_model extends Controller
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
-    }
-
-    public function tambahDataSiswa($data)
-    {
-        $query = "INSERT INTO users
-                    VALUES
-                    ('', :nama, :email, :password, :level)";
-
-        $this->db->query($query);
-        $this->db->bind('nama', $data['nama']);
-        $this->db->bind('email', $data['email']);
-        $this->db->bind('password', $data['password']);
-        $this->db->bind('level', $data['level']);
-
-        $this->db->execute();
-
-        return $this->db->rowCount();
     }
 }
