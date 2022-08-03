@@ -14,7 +14,7 @@ class Guru extends Controller
 
         $data['judul'] = 'Home Guru';
         $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
-        $data['siswa'] = $this->model('Siswa_model')->getUbah();
+        // $data['siswa'] = $this->model('Siswa_model')->getUbah();
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);
@@ -49,10 +49,10 @@ class Guru extends Controller
         }
     }
 
-    public function ubahData()
-    {
-        $this->model('Siswa_model')->getSiswaById($_POST['id']);
-    }
+        // public function ubahData()
+        // {
+        //     $this->model('Siswa_model')->getSiswaById($_POST['id']);
+        // } 
 
     public function hapusSiswa($id)
     {
