@@ -57,6 +57,7 @@ class Guru extends Controller
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
     }
+    
     public function tambahSiswa()
     {
         $data ['judul'] = 'Tambah Guru';
@@ -67,10 +68,10 @@ class Guru extends Controller
         }
     }
 
-    public function ubahData()
-    {
-        $this->model('Siswa_model')->getSiswaById($_POST['id']);
-    }
+        // public function ubahData()
+        // {
+        //     $this->model('Siswa_model')->getSiswaById($_POST['id']);
+        // } 
 
     public function hapusSiswa($id)
     {

@@ -22,7 +22,7 @@ class Login extends Controller
         
         if($data['login'] == NULL)
         {
-          header("Location: " . BASE . '/404');
+          header("Location: " . BASE . '/Login');
         } else {
           foreach($data['login'] as $row) :
           $_SESSION['nama'] = $row['nama'];
