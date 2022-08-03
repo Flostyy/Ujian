@@ -37,4 +37,13 @@ class Guru extends Controller
         $this->view('guru/tambah', $data);
         $this->view('templates/footer');
     }
+
+    public function pengaturan()
+    {   
+        $data['judul'] = 'pengaturan';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/setting', $data);
+        $this->view('templates/footer');
+    }
 }
