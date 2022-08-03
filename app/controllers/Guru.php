@@ -47,7 +47,7 @@ class Guru extends Controller
         $this->view('templates/header', $data);
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
-
+    }
     public function tambahSiswa()
     {
         $data ['judul'] = 'Tambah Guru';

@@ -12,7 +12,7 @@ class Login extends Controller
         $this->view('templates/footer2');
     }
 
-    public function login()
+    public function loginProses()
     {
       if(session_status() === PHP_SESSION_NONE) session_start();
         $email = $_POST ['email'];
