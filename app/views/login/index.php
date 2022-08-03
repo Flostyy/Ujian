@@ -4,7 +4,7 @@
 			<img src="<?= BASE; ?>/img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="<?= BASE; ?>/Login/login" method="POST" class="login-username">
+			<form action="<?= BASE; ?>/Login/loginProses" method="POST" class="login-username">
 				<img src="<?= BASE; ?>/img/smea.jpg">
 				<h2 class="title"><?= $data['judul']; ?></h2>
            		<div class="input-div one">

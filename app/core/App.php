@@ -1,18 +1,19 @@
 <?php
 
 class App {
-    protected $controller = 'siswa';
+    protected $controller = 'guru';
     protected $method = 'index';
     protected $params = [];
 
     public function __construct() 
     {
         $url = $this->parseURL();
+        // var_dump($url);
 
-            if ($url != null && file_exists('../app/controllers/' . $url[0] . '.php') ) {
-                $this->controller = $url[0];
-                unset($url[0]);
-                // var_dump($url);
+        if ($url != null && file_exists('../app/controllers/' . $url[0] . '.php') ) {
+            $this->controller = $url[0];
+            unset($url[0]);
+            // var_dump($url);
         }
 
         require_once '../app/controllers/' . $this->controller . '.php';
@@ -34,6 +35,8 @@ class App {
         }
 
         // Jalankan controller & method serta kirimkan params jika ada
+        // var_dump($this->controller, $this->method, $this->params);
+        //     die;
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
