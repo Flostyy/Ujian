@@ -36,7 +36,7 @@ class Login extends Controller
       if(session_status() === PHP_SESSION_NONE) session_start();
       unset($_SESSION['siswa']);
       session_destroy();
-      header("Location: " . 'http://localhost/Ujian/public/Login/login');
+      header("Location: " . 'http://localhost/Ujian/public/Login/loginProses');
       die();
     }
   }
