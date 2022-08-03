@@ -52,6 +52,7 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Password</th>
                     <th>Opsi</th>
                   </tr>
                 </thead>
@@ -60,13 +61,32 @@
                   <tr>
                     <td> <?= $siswa['id']; ?></td>
                     <td> <?= $siswa['nama']; ?></td>
-                    <td><?= $siswa['email']; ?></td>
+                    <td> <?= $siswa['email']; ?></td>
+                    <td> <?= $siswa['password']; ?></td>
                     <td>
                       <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
-
-                      
-                      <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
+                      <a href="<?= BASE; ?>/Guru/tambahSiswa/<?= $siswa['id'] ?>" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-id="<?= $siswa['id'] ?>">Edit</a>
+                      <a id="hapus<?= $siswa['id']?>" class="btn btn-danger">Hapus</a>
+                      <script>var id = "<?= $siswa['id']?>";
+                      document.getElementById(`hapus${id}`).addEventListener("click", () => {
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: "You won't be able to revert this!",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Yes, delete it!",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire("Deleted!", "Your file has been deleted.", "success")
+                            setTimeout(() => {
+                              window.location.href = "<?= BASE; ?>/Guru/hapusSiswa/<?= $siswa['id'] ?>"
+                            }, 1000)
+                          }
+                        });
+                      });
+                    </script>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -76,7 +96,7 @@
           </div>
         </div>
         <div class="col-md-4 ml-auto">
-          <form action="<?= BASE; ?>/Siswa/tambah" method="POST">
+          <form action="<?= BASE; ?>/Guru/tambahSiswa" method="POST">
             <div class="card">
               <div class="card-header">Register</div>
               <div class="card-body">
@@ -96,7 +116,7 @@
                   <label for="">Level</label>
                   <select class="form-control" name="level">
                     <option value="guru">Guru</option>
-                    <option value="murid">murid</option>
+                    <option value="murid">Murid</option>
                   </select>
                 </div>
               </div>
@@ -289,22 +309,24 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <?php foreach($data['siswa'] as $siswa ) :  ?>
             <div class="modal-body">
                 <div class="card-body">
                     <div class="form-grup">
                       <label for="">Nama</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="nama <?= $siswa['nama']; ?>" class="form-control" />
                     </div>
                     <div class="form-grup">
                       <label for="">Email</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="email <?= $siswa['email']; ?>" class="form-control" />
                     </div>
                     <div class="form-grup">
                       <label for="">Password</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="password <?= $siswa['password']; ?>" class="form-control" />
                     </div>
                   </div>
             </div>
+            <?php endforeach; ?>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
@@ -333,21 +355,6 @@
         }).then((result) => {
           if (result.isConfirmed) {
             window.location.href = "<?= BASE; ?>/Login/logout";
-          }
-        });
-      });
-      document.getElementById("hapus").addEventListener("click", () => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
           }
         });
       });
