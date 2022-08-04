@@ -59,10 +59,21 @@ class Guru extends Controller
         }
     }
 
-        // public function ubahData()
-        // {
-        //     $this->model('Siswa_model')->getSiswaById($_POST['id']);
-        // } 
+        public function ubahData()
+        {
+           echo json_encode($this->model('Siswa_model')->getSiswaById($_POST['id']));
+        } 
+
+        public function ubah()
+        {
+            if($this->model('Siswa_model')->ubahDataGuru($_POST) > 0 ) {
+                header('Location: ' . BASE . '/Guru');
+                exit;
+            }else{
+                header('Location: ' . BASE . '/Guru');
+                exit;
+            }
+        }
 
     public function hapusSiswa($id)
     {

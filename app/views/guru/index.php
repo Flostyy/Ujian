@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col-md-8">
           <div class="card">
-            <div class="card-header">Data Siswa</div>
+            <div class="card-header">Data User</div>
             <div class="card-body">
               <br />
               <table class="table table-bordered table-hover">
@@ -59,7 +59,7 @@
                     <td> <?= $siswa['password']; ?></td>
                     <td>
                       <!-- Button trigger modal, modalnya dibawah ygy-->
-                      <a href="<?= BASE; ?>/Guru/tambahSiswa/<?= $siswa['id'] ?>" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-id="<?= $siswa['id'] ?>">Edit</a>
+                      <a href="<?= BASE; ?>/Guru/ubahData/<?= $siswa['id'] ?>" class="btn btn-warning tampilModalUbah" data-toggle="modal" data-target="#exampleModal" data-id="<?= $siswa['id'] ?>" onclick="ubahData('<?= $siswa['id']; ?>')">Edit</a>
                       <a id="hapus<?= $siswa['id']?>" class="btn btn-danger">Hapus</a>
                       <script>var id = "<?= $siswa['id']?>";
                       document.getElementById(`hapus${id}`).addEventListener("click", () => {
@@ -79,7 +79,7 @@
                             }, 1000)
                           }
                         });
-                      });
+                      }); 
                     </script>
                     </td>
                   </tr>
@@ -90,21 +90,21 @@
           </div>
         </div>
         <div class="col-md-4 ml-auto">
-          <form action="<?= BASE; ?>/Guru/tambahSiswa" method="POST">
+          <form action="<?= BASE; ?>/Guru/tambahSiswa" id="tambah_user" method="POST">
             <div class="card">
               <div class="card-header">Register</div>
               <div class="card-body">
                 <div class="form-grup">
                   <label for="">Nama</label>
-                  <input type="text" class="form-control" minlength="1"  maxlength="2" name="nama" />
+                  <input type="text" class="form-control" minlength="1" name="nama" required/>
                 </div>
                 <div class="form-grup">
                   <label for="">Email</label>
-                  <input type="text" class="form-control" minlength="1" name="email" />
+                  <input type="email" class="form-control" minlength="1" name="email" required/>
                 </div>
                 <div class="form-grup">
                   <label for="">Password</label>
-                  <input type="text" class="form-control" minlength="1" name="password" />
+                  <input type="password" class="form-control" minlength="1" name="password" required/>
                 </div>
                 <div class="form-grup">
                   <label for="">Level</label>
@@ -115,7 +115,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <input type="submit" class="btn btn-primary" id="tambah" value="Tambah" />
+                <input type="submit" class="btn btn-primary" value="Tambah"  />
               </div>
             </div>
           </form>
@@ -278,6 +278,7 @@
 
     <!-- INI MODALNYA YAA STEVENN -->
     <!-- Modal -->
+    <?php foreach($data['siswa'] as $siswa ) : ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -288,29 +289,41 @@
               </button>
             </div>
             <div class="modal-body">
+              <form action="<?= BASE; ?>/Guru/ubah" method="POST">
                 <div class="card-body">
                     <div class="form-grup">
                       <label for="">Nama</label>
-                      <input type="text" id="nama <?= $siswa['nama']; ?>" class="form-control" />
+                      <input type="text" id="nama" name="nama" class="form-control" />
                     </div>
                     <div class="form-grup">
                       <label for="">Email</label>
-                      <input type="text" id="email <?= $siswa['email']; ?>" class="form-control" />
+                      <input type="text" id="email" name="email" class="form-control" />
                     </div>
                     <div class="form-grup">
                       <label for="">Password</label>
-                      <input type="text" id="password <?= $siswa['password']; ?>" class="form-control" />
+                      <input type="text" id="password" name="password" class="form-control" />
+                    </div>
+                    <div class="form-grup">
+                      <label for="">Level</label>
+                      <select class="form-control" name="level" id="level">
+                        <option value="guru">Guru</option>
+                        <option value="murid">Murid</option>
+                      </select>
                     </div>
                   </div>
-            </div>
+             </div>
+             
             <div class="modal-footer">
+              <input type="hidden" name="id" id="id">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
+            </form>
             </div>
-
           </div>
         </div>
       </div>
+ 
+      <?php endforeach; ?>
       
     </div>
   </div>
@@ -321,8 +334,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  document.getElementById("tambah").addEventListener("click", () => {
+  document.getElementById("tambah_user").addEventListener("submit", e => {
+    e.preventDefault()
     Swal.fire("Good job!", "You clicked the button!", "success");
+    setTimeout(() => {
+      document.getElementById("tambah_user").submit()
+    }, 3000)
   });
   document.getElementById("logout").addEventListener("click", () => {
     Swal.fire({
@@ -339,6 +356,31 @@
       }
     });
   });
+</script>
+
+<script>
+        $(function(){
+          $('.tampilModalUbah').on('click',function(){
+              // $('.modal-footer button[type=submit]').html('Ubah Data');
+
+              const id = $(this).data('id');
+              
+              $.ajax({
+                url: 'http://localhost/Ujian/public/Guru/ubahData',
+                data:{id : id},
+                method: 'post',
+                dataType: 'json',
+                success: function(data)  {
+                  $('#nama').val(data.nama);  
+                  $('#email').val(data.email);
+                  $('#password').val(data.password);
+                  $('#level').val(data.level);
+                  $('#id').val(data.id);
+                }             
+              });
+          })
+
+        })
 </script>
 </body>
 
