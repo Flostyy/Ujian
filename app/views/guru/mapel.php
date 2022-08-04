@@ -1,10 +1,13 @@
 <title><?= $data['judul'] ?></title>
 <div class="container">
+  <div class="headline">
+    Mata Pelajaran <br><br>
+  </div>
   <div class="row">
     <div class="col-md-12 mt-2">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
-          <h5 class="mt-2">Mata Pelajaran</h5>
+          <h5 class="mt-2">Daftar Mata Pelajaran</h5>
           <a href="<?= BASE; ?>/Guru/tambahSoal" class="btn btn-outline-success">Tambah Soal</a>
         </div>
         <div class="card-body">
@@ -13,36 +16,34 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Mata Pelajaran</th>
                 <th>Materi</th>
+                <th>Deskripsi</th>
                 <th>Jumlah Soal</th>
-                <th>Kelas</th>
                 <th>Opsi</th>
               </tr>
             </thead>
             <tbody>
+            <?php foreach ($data['siswa'] as $siswa) :  ?>
               <tr>
                 <td>1</td>
-                <td>Matematika</td>
                 <td>Aljabar</td>
+                <td>Deskripsi</td>
                 <td>20</td>
-                <td>XII RPL 1</td>
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Database</td>
                 <td>MySQL</td>
-                <td>40</td>
-                <td>XII RPL 2</td>
+                <td></td>
+                <td>20</td>
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -50,11 +51,10 @@
                 <td>Pemodelan Perangkat Lunak</td>
                 <td>Usecase</td>
                 <td>5</td>
-                <td>XI RPL 1</td>
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -62,11 +62,10 @@
                 <td>Sistem Komputer</td>
                 <td>Hardware</td>
                 <td>20</td>
-                <td>XI RPL 2</td>
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -74,13 +73,13 @@
                 <td>PJOK</td>
                 <td>Lompat Harimau</td>
                 <td>25</td>
-                <td>XII RPL 1</td>
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
@@ -88,7 +87,6 @@
     </div>
   </div>
 </div>
-
     <!-- footer -->
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
       <div class="footer-2-2 container-xxl mx-auto position-relative p-0" style="font-family: 'Poppins', sans-serif">
@@ -245,58 +243,27 @@
             </div>
             <nav class="mx-auto d-flex flex-wrap align-items-center justify-content-center gap-4">
               <a href="" class="footer-link" style="text-decoration: none">Terms of Service</a>
-              <span>|</span>
-              <a href="" class="footer-link" style="text-decoration: none">Privacy Policy</a>
-              <span>|</span>
-              <a href="" class="footer-link" style="text-decoration: none">Licenses</a>
-            </nav>
-            <nav class="d-flex flex-lg-row flex-column align-items-center justify-content-center">
-              <p style="margin: 0">Copyright © 2021 Analystic Max</p>
-            </nav>
-          </div>
-        </div>
-      </div>
 
-   
-    </section>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      document.getElementById("logout").addEventListener("click", () => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't logout from this?",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, sure",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = 'login.html';
-          }
-        });
-      });
-
-      document.getElementById("hapus").addEventListener("click", () => {
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'Deleted!',
-              'Your file has been deleted.',
-              'success'
-              );
-            }
-          });
-      });
-
-      
-    </script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById("hapus").addEventListener("click", () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        );
+      }
+    });
+  });
+</script>

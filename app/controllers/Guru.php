@@ -18,8 +18,8 @@ class Guru extends Controller
         }
 
         // var_dump($_SESSION['level']);
+
         $data['judul'] = 'Home Guru';
-        
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);
@@ -51,6 +51,22 @@ class Guru extends Controller
         
         $this->view('templates/header', $data);
         $this->view('guru/tambah', $data);
+        $this->view('templates/footer');
+
+        $data ['judul'] = 'Tambah Guru';
+
+        if($this->model('Soal_model')->tambahDataSoal($_POST) > 0) {
+            header('Location: ' . BASE .'/Guru/tambahSoal');
+            exit;
+        }
+    }
+
+    public function detailMapel()
+    {   
+        $data['judul'] = 'Detail Mata Pelajaran';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/detail', $data);
         $this->view('templates/footer');
     }
 

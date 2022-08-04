@@ -7,38 +7,29 @@
         <div class="col-12">
           <div class="card text">
             <div class="card-header d-flex justify-content-between">
-              
+              <form action="<?= BASE; ?>/Guru/mapelGuru" method="POST">
               <h5 class="mt-2">Buat Mapel baru</h5>
-                <a href="tambah.html" class="btn btn-outline-success">Simpan</a>
-            </div>
+              <input type="submit" class="btn btn-success" id="simpan" value="Simpan" />
+          </div>
             <div class="card-body">
             <!-- detail mapel -->
             <div class="col">
-                <form action="">
                 <div class="card">
                     <div class="card-header">Detail</div>
                     <div class="card-body">
                     <div class="form-grup">
-                        <label for="">Mata Pelajaran</label>
-                        <input type="text" class="form-control" />
+                        <label for="">Judul</label>
+                        <input type="text" class="form-control" name="judul"/>
                     </div>
                     <div class="form-grup">
                         <label for="">Materi</label>
-                        <input type="text" class="form-control" />
-                    </div>
-                    <div class="form-grup">
-                        <label for="">Jumlah Soal</label>
-                        <input type="text" class="form-control" />
-                    </div>
-                    <div class="form-grup">
-                        <label for="">Kelas</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" name="materi"/>
                     </div>
                     </div>
                     
                 </div>
-                </form>
-            </div>
+              </div>
+            </form>
 
             <!-- soal -->
             <div class="container mt-5">
@@ -730,6 +721,9 @@
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+  document.getElementById("tambah").addEventListener("click", () => {
+    Swal.fire("Good job!", "You clicked the button!", "success");
+  });
       document.getElementById("logout").addEventListener("click", () => {
         Swal.fire({
           title: "Are you sure?",
@@ -741,7 +735,7 @@
           confirmButtonText: "Yes, sure",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = 'login.html';
+            window.location.href = '<?= BASE; ?>/Login/logout';
           }
         });
       });

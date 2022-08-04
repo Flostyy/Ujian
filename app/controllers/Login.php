@@ -30,7 +30,7 @@ class Login extends Controller
             if ($row['level'] == 'guru') {
               header("Location: " . BASE . "/Guru");
             } else {
-              ($row['level'] == 'murid');
+              ($row['level'] == 'siswa');
               header("Location: " . BASE);
             }
           endforeach;
