@@ -26,9 +26,11 @@ class Login extends Controller
         } else {
           foreach($data['login'] as $row) :
             $_SESSION['nama'] = $row['nama'];
+            $_SESSION['level'] = $row['level'];
             if ($row['level'] == 'guru') {
               header("Location: " . BASE . "/Guru");
             } else {
+              ($row['level'] == 'murid');
               header("Location: " . BASE);
             }
           endforeach;

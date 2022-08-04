@@ -11,11 +11,15 @@ class Siswa extends Controller
             ob_end_flush();
             die();
         }
-
         
+        if ($_SESSION['level'] != "murid" ) {
+            // echo "ancokk";
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data['judul'] = 'Home Siswa';
 
-        
         $this->view('templates/header', $data);
         $this->view('siswa/index', $data);
         $this->view('templates/footer');
