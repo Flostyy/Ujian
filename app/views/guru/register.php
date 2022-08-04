@@ -74,7 +74,14 @@
             </div>
             <div class="form-grup">
               <label for="">Password</label>
-              <input type="text" class="form-control" name="password" />
+              <input type="password" class="form-control" name="password" id="myInput" />
+              
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="passRegis" onclick="myFunction()">
+                <label class="form-check-label" for="passRegis">
+                  <p>Show Password</p>
+                </label>
+              </div>
             </div>
             <div class="form-grup">
               <label for="">Level</label>
@@ -117,7 +124,13 @@
             </div>
             <div class="form-grup">
               <label for="">Password</label>
-              <input type="text" id="password <?= $siswa['password']; ?>" class="form-control" />
+              <input type="password" id="password <?= $siswa['password']; ?>" class="form-control" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="myFunction()">
+                <label class="form-check-label" for="passEdit">
+                  <p>Show Password</p>
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -154,5 +167,15 @@
       }
     });
   });
+
+  // Show Pass
+  function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>
 </body>
