@@ -11,7 +11,7 @@ class Guru extends Controller
             ob_end_flush();
             die();
         }
-        
+
         $data['judul'] = 'Home Guru';
         
         
