@@ -741,7 +741,7 @@
           confirmButtonText: "Yes, sure",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = 'login.html';
+            window.location.href = '<?= BASE; ?>/Login/logout';
           }
         });
       });

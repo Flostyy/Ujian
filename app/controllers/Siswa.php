@@ -19,8 +19,8 @@ class Siswa extends Controller
         }
 
         $data['judul'] = 'Home Siswa';
-
-        $this->view('templates/header', $data);
+        
+        $this->view('templates/headersiswa', $data);
         $this->view('siswa/index', $data);
         $this->view('templates/footer');
     }
@@ -35,7 +35,7 @@ class Siswa extends Controller
     {   
         $data['judul'] = 'Home Siswa';
         
-        $this->view('templates/header', $data);
+        $this->view('templates/headersiswa', $data);
         $this->view('siswa/mapel', $data);
         $this->view('templates/footer');
     }
@@ -44,7 +44,7 @@ class Siswa extends Controller
     {
         $data['judul'] = 'Kontak kami';
 
-        $this->view('templates/header', $data);
+        $this->view('templates/headersiswa', $data);
         $this->view('siswa/kontak', $data);
         $this->view('templates/footer');
     }
@@ -53,7 +53,7 @@ class Siswa extends Controller
     {
         $data['judul'] = 'Fisika';
 
-        $this->view('templates/header', $data);
+        $this->view('templates/headersiswa', $data);
         $this->view('siswa/soal', $data);
         $this->view('templates/footer');
     }
