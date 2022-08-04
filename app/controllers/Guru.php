@@ -5,13 +5,13 @@ class Guru extends Controller
     public function index()
     {   
         if(session_status() === PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['nama'])) {
+        if (!isset($_SESSION['nama']) ) {
             ob_start();
             header('Location: ' . 'http://localhost/Ujian/public/Login');
             ob_end_flush();
             die();
         }
-        // var_dump($_SESSION['level']);
+
         $data['judul'] = 'Home Guru';
         
         
@@ -45,6 +45,15 @@ class Guru extends Controller
         
         $this->view('templates/header', $data);
         $this->view('guru/tambah', $data);
+        $this->view('templates/footer');
+    }
+
+    public function detailMapel()
+    {   
+        $data['judul'] = 'Detail Mata Pelajaran';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/detail', $data);
         $this->view('templates/footer');
     }
 
