@@ -5,12 +5,19 @@ class Guru extends Controller
     public function index()
     {   
         if(session_status() === PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['nama']) ) {
+        if (!isset($_SESSION['nama'])) {
             ob_start();
             header('Location: ' . 'http://localhost/Ujian/public/Login');
             ob_end_flush();
             die();
         }
+
+        if ($_SESSION['level'] != "guru" ) {
+            header('Location: ' . 'http://localhost/Ujian/public/');
+            die();
+        }
+
+        // var_dump($_SESSION['level']);
 
         $data['judul'] = 'Home Guru';
         
