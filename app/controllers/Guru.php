@@ -13,17 +13,26 @@ class Guru extends Controller
         }
 
         $data['judul'] = 'Home Guru';
-        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
-        // $data['siswa'] = $this->model('Siswa_model')->getUbah();
+        
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);
         $this->view('templates/footer');
     }
 
+    public function register()
+    {   
+        $data['judul'] = 'Daftar Siswa';
+        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/register', $data);
+        $this->view('templates/footer');
+    }
+
     public function mapelGuru()
     {   
-        $data['judul'] = 'Home Guru';
+        $data['judul'] = 'Mapel Guru';
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
@@ -48,27 +57,28 @@ class Guru extends Controller
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
     }
+    
     public function tambahSiswa()
     {
         $data ['judul'] = 'Tambah Guru';
 
         if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-            header('Location: ' . BASE);
+            header('Location: ' . BASE .'/Guru/register');
             exit;
         }
     }
 
-    public function ubahData()
-    {
-        $this->model('Siswa_model')->getSiswaById($_POST['id']);
-    }
+        // public function ubahData()
+        // {
+        //     $this->model('Siswa_model')->getSiswaById($_POST['id']);
+        // } 
 
     public function hapusSiswa($id)
     {
         $data ['judul'] = 'Hapus Guru';
 
         if($this->model('Siswa_model')->hapusDataSiswa($id) > 0) {
-            header('Location: ' . BASE);
+            header('Location: ' . BASE .'/Guru/register');
             exit;
         }
 
