@@ -1,4 +1,5 @@
 <title><?= $data['judul'] ?></title>
+
 <!-- soal -->
 <section>
     <div class="container mt-4" style="min-height: 500px;">
@@ -107,9 +108,401 @@
                               <option>5</option>
                             </select>
                           </div>
-                        <!-- soal -->
                         <div class="form-grup">
                             <span class="badge badge-success mb-1" style="font-size: 20px">3</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">2</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">4</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">5</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">6</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">7</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">8</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">9</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">10</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">11</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">12</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <!-- soal -->
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">13</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <!-- soal -->
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">14</span>
+                            <input type="text" class="form-control" placeholder="Soal"/>
+                        </div>
+                        <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 1" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 2" />
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 3"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 4"/>
+                          </div>
+                          <div class="form-grup mt-2">
+                            <input type="text" class="form-control" placeholder="Opsi 5"/>
+                          </div>
+                          <div class="form-group mt-2">
+                            
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Pilih Jawaban yang benar</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <!-- soal -->
+                        <div class="form-grup">
+                            <span class="badge badge-success mb-1" style="font-size: 20px">15</span>
                             <input type="text" class="form-control" placeholder="Soal"/>
                         </div>
                         <div class="form-grup mt-2">

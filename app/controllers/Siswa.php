@@ -54,8 +54,6 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
-
-
     public function tambah()
     {
         if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
