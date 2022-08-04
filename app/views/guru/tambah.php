@@ -19,11 +19,11 @@
                     <div class="card-body">
                     <div class="form-grup">
                         <label for="">Judul</label>
-                        <input type="text" class="form-control" name="judul"/>
+                        <input type="text" class="form-control" name="judul" required/>
                     </div>
                     <div class="form-grup">
                         <label for="">Materi</label>
-                        <input type="text" class="form-control" name="materi"/>
+                        <input type="text" class="form-control" name="materi" required/>
                     </div>
                     </div>
                     

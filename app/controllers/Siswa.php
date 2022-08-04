@@ -12,7 +12,7 @@ class Siswa extends Controller
             die();
         }
         
-        if ($_SESSION['level'] != "siswa" ) {
+        if ($_SESSION['level'] != "murid" ) {
             header('Location: ' . 'http://localhost/Ujian/public/');
             die();
         }

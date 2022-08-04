@@ -80,7 +80,7 @@
               <label for="">Level</label>
               <select class="form-control" name="level">
                 <option value="guru">Guru</option>
-                <option value="siswa">Murid</option>
+                <option value="murid">Murid</option>
               </select>
             </div>
           </div>
