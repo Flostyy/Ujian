@@ -12,7 +12,7 @@ class Login extends Controller
         $this->view('templates/footer2');
     }
 
-    public function loginProses()
+    public function loginProses ()
     {
       if(session_status() === PHP_SESSION_NONE) session_start();
         $email = $_POST ['email'];
@@ -25,16 +25,22 @@ class Login extends Controller
           header("Location: " . BASE . '/Login');
         } else {
           foreach($data['login'] as $row) :
-          $_SESSION['nama'] = $row['nama'];
-          header("Location: " . BASE);
-        endforeach;
+            $_SESSION['nama'] = $row['nama'];
+            $_SESSION['level'] = $row['level'];
+            if ($row['level'] == 'guru') {
+              header("Location: " . BASE . "/Guru");
+            } else {
+              ($row['level'] == 'murid');
+              header("Location: " . BASE);
+            }
+          endforeach;
         }
     }
 
     public function logout()
     {
       if(session_status() === PHP_SESSION_NONE) session_start();
-      unset($_SESSION['siswa']);
+      unset($_SESSION['nama']);
       session_destroy();
       header("Location: " . 'http://localhost/Ujian/public/Login/loginProses');
       die();

@@ -12,18 +12,34 @@ class Guru extends Controller
             die();
         }
 
+        if ($_SESSION['level'] != "guru" ) {
+            header('Location: ' . 'http://localhost/Ujian/public/');
+            die();
+        }
+
+        // var_dump($_SESSION['level']);
+
         $data['judul'] = 'Home Guru';
-        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
-        // $data['siswa'] = $this->model('Siswa_model')->getUbah();
+        
         
         $this->view('templates/header', $data);
         $this->view('guru/index', $data);
         $this->view('templates/footer');
     }
 
+    public function register()
+    {   
+        $data['judul'] = 'Daftar Siswa';
+        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/register', $data);
+        $this->view('templates/footer');
+    }
+
     public function mapelGuru()
     {   
-        $data['judul'] = 'Home Guru';
+        $data['judul'] = 'Mapel Guru';
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
@@ -39,6 +55,15 @@ class Guru extends Controller
         $this->view('templates/footer');
     }
 
+    public function detailMapel()
+    {   
+        $data['judul'] = 'Detail Mata Pelajaran';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/detail', $data);
+        $this->view('templates/footer');
+    }
+
 
     public function pengaturan()
     {   
@@ -48,13 +73,13 @@ class Guru extends Controller
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
     }
-
+    
     public function tambahSiswa()
     {
         $data ['judul'] = 'Tambah Guru';
 
         if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-            header('Location: ' . BASE);
+            header('Location: ' . BASE .'/Guru/register');
             exit;
         }
     }
@@ -80,7 +105,7 @@ class Guru extends Controller
         $data ['judul'] = 'Hapus Guru';
 
         if($this->model('Siswa_model')->hapusDataSiswa($id) > 0) {
-            header('Location: ' . BASE);
+            header('Location: ' . BASE .'/Guru/register');
             exit;
         }
 

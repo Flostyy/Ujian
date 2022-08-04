@@ -1,39 +1,90 @@
 <title><?= $data['judul'] ?></title>
-<section class="h-100 w-100 bg-white" style="box-sizing: border-box">
-    <nav class="navbar-1-1 navbar navbar-expand-lg navbar-light p-4 px-md-4 mb-3 bg-body" style="font-family: Poppins, sans-serif">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 15.75C3.5 8.98451 8.98451 3.5 15.75 3.5H29.75C30.7165 3.5 31.5 4.2835 31.5 5.25C31.5 6.2165 30.7165 7 29.75 7H15.75C10.9175 7 7 10.9175 7 15.75V29.75C7 30.7165 6.2165 31.5 5.25 31.5C4.2835 31.5 3.5 30.7165 3.5 29.75V15.75Z" fill="#38d39f" />
-                    <path d="M10.5 17.5C10.5 13.634 13.634 10.5 17.5 10.5H31.5C35.366 10.5 38.5 13.634 38.5 17.5V31.5C38.5 35.366 35.366 38.5 31.5 38.5H17.5C13.634 38.5 10.5 35.366 10.5 31.5V17.5Z" fill="#38d39f" />
-                </svg>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-md-4 active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-md-4" href="<?= BASE; ?>">Daftar Siswa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-md-4" href="<?= BASE; ?>/Guru/mapelGuru">Mata Pelajaran</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-md-4" href="<?= BASE; ?>/Guru/pengaturan">Pengaturan</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
+
+<div class="container">
+    <div class="headline mb-3">
+        Biodata Diri <br>
+    </div>
+    <div class="card ">
+
+        <div class="card-body">
+            <!-- <h5 class="card-title text-center">Ubah Biodata diri</h5> -->
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-4">
+                    <div class="card" style="width: 20rem;">
+                        <div class="m-4 mx-auto">
+                            <img src="<?= BASE ?>/img/man.png" alt="" width="200px">
+                        </div>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-block btn-outline-success">Success</button>
+                            <p class="mt-3" style="font-size: 14px;">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-7">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h5 class="card-title">Ubah Biodata diri</h5>
+                        </li>
+                        <li class="list-group-item col-sm">
+                            <div class="row">
+                                <div class="col-sm-4">Nama</div>
+                                <div class="col">StevenDesu <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item col-sm">
+                            <div class="row">
+                                <div class="col-sm-4">Mata Pelajaran</div>
+                                <div class="col">Basis Data <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item col-sm">
+                            <div class="row">
+                                <div class="col-sm-4">Email</div>
+                                <div class="col">StevenDesu@Ancok.cok <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item col-sm">
+                            <div class="row">
+                                <div class="col-sm-4">Password</div>
+                                <div class="col">StevenDesu123 <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </nav>
-</section>
+    </div>
+</div>
 
+<!-- Modal ubah-->
+<div class="modal fade" id="ubahSoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h5 class="modal-title " id="exampleModalLabel">Ubah Nama</h5>
+                <!-- <p style="">Kamu hanya dapat mengubah nama 1 kali lagi. Pastikan nama sudah benar.</p> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-grup">
+                        <input type="text" class="form-control" placeholder="Nama" />
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -43,21 +94,7 @@
     document.getElementById("tambah").addEventListener("click", () => {
         Swal.fire("Good job!", "You clicked the button!", "success");
     });
-    document.getElementById("logout").addEventListener("click", () => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't logout from this?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, sure",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "<?= BASE; ?>/Login/logout";
-            }
-        });
-    });
+
     document.getElementById("hapus").addEventListener("click", () => {
         Swal.fire({
             title: "Are you sure?",
