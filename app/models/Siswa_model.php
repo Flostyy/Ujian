@@ -50,7 +50,7 @@ class Siswa_model extends Controller
         return $this->db->rowCount();
     }
 
-    public function ubahDataMahasiswa($data)
+    public function ubahDataGuru($data)
     {
         $query = "UPDATE users SET
         nama = :nama, 
