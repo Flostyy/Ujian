@@ -1,7 +1,9 @@
 <title><?= $data['judul'] ?></title>
 
 <div class="container">
-    
+    <div class="headline mb-3">
+        Biodata Diri <br>
+    </div>
     <div class="card ">
 
         <div class="card-body">
@@ -92,21 +94,7 @@
     document.getElementById("tambah").addEventListener("click", () => {
         Swal.fire("Good job!", "You clicked the button!", "success");
     });
-    document.getElementById("logout").addEventListener("click", () => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't logout from this?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, sure",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "<?= BASE; ?>/Login/logout";
-            }
-        });
-    });
+
     document.getElementById("hapus").addEventListener("click", () => {
         Swal.fire({
             title: "Are you sure?",
