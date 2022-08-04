@@ -48,6 +48,15 @@ class Guru extends Controller
         $this->view('templates/footer');
     }
 
+    public function detailMapel()
+    {   
+        $data['judul'] = 'Detail Mata Pelajaran';
+        
+        $this->view('templates/header', $data);
+        $this->view('guru/detail', $data);
+        $this->view('templates/footer');
+    }
+
 
     public function pengaturan()
     {   

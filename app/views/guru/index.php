@@ -114,7 +114,7 @@
            </a>
           </div> -->
           <div class="button-header">
-           <a href="mapel.html">
+           <a href="<?= BASE; ?>/Guru/mapelGuru">
             <button class="btn btn-started" >Lihat lainnya</button>
            </a>
             <!-- <button class="btn btn-story ml-3">Read Story</button> -->
@@ -315,7 +315,7 @@
           confirmButtonText: "Yes, sure",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = "Login/logout";
+            window.location.href = "<?= BASE; ?>/Login/logout";
           }
         });
       });

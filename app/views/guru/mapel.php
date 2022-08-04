@@ -30,7 +30,7 @@
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -42,7 +42,7 @@
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -54,7 +54,7 @@
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -66,7 +66,7 @@
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
             </tbody>
@@ -273,7 +273,7 @@
           confirmButtonText: "Yes, sure",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = 'login.html';
+            window.location.href = '<?= BASE; ?>/Login/logout';
           }
         });
       });
