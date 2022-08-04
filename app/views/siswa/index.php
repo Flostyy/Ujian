@@ -10,7 +10,7 @@
         </div>
         <div class="row benefits" id="see">
           <div class="col-md-4 mt-md-0">
-            <a href="#">
+            <a href="<?= BASE ?>/Siswa/praSoal">
               <div class="rectangle mx-auto px-1">
                 <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
                 <div class="headline-benefit">

@@ -145,7 +145,7 @@
                   
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <a href="#" class="btn btn-success ">Finish It !</a>
+                    <a href="#" id="finish" class="btn btn-success ">Finish It !</a>
                 </div>
               </div>
           </div>
@@ -168,6 +168,21 @@
         }).then((result) => {
           if (result.isConfirmed) {
             window.location.href = '<?= BASE; ?>/Login/logout';
+          }
+        });
+      });
+      document.getElementById("finish").addEventListener("click", () => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't Submit this task?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, sure",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '<?= BASE; ?>/Siswa/praSoal';
           }
         });
       });
