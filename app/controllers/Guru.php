@@ -11,10 +11,6 @@ class Guru extends Controller
             ob_end_flush();
             die();
         }
-        if ($_SESSION['level']=="siswa") {
-            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
-            die();
-        }
         // var_dump($_SESSION['level']);
         $data['judul'] = 'Home Guru';
         
