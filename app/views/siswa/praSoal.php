@@ -171,7 +171,8 @@
                         Nama : SteUpanDesu <br>
                         Kelas : XI RPL 2 / 35 <br>
                         Jumlah Soal : 10 Soal <br>
-                        Status : Belum mengerjakan
+                        Status : Belum mengerjakan <br>
+                        Nilai : -
                         </p>
                     </div>
                 </div>
