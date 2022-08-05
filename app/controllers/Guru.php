@@ -13,7 +13,7 @@ class Guru extends Controller
         }
 
         if ($_SESSION['level'] != "guru" ) {
-            header('Location: ' . 'http://localhost/Ujian/public/');
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
             die();
         }
 

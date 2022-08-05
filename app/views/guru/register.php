@@ -8,7 +8,9 @@
   <div class="row">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">Daftar Siswa</div>
+        <div class="card-header">
+          <h5 class="mt-2">Daftar Siswa</h5>
+        </div>
         <div class="card-body">
           <br />
           <table class="table table-bordered table-hover">
@@ -66,18 +68,18 @@
           <div class="card-body">
             <div class="form-grup">
               <label for="">Nama</label>
-              <input type="text" class="form-control" name="nama" />
+              <input type="text" class="form-control" name="nama" required />
             </div>
             <div class="form-grup">
               <label for="">Email</label>
-              <input type="text" class="form-control" name="email" />
+              <input type="text" class="form-control" name="email" required />
             </div>
             <div class="form-grup">
               <label for="">Password</label>
-              <input type="password" class="form-control" name="password" id="myInput" />
-              
+              <input type="password" class="form-control" name="password" id="myInput" required />
+
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="passRegis" onclick="myFunction()">
+                <input class="form-check-input" type="checkbox" value="" id="passRegis" onclick="myFunction()" required>
                 <label class="form-check-label" for="passRegis">
                   <p>Show Password</p>
                 </label>
@@ -92,7 +94,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <input type="submit" class="btn btn-primary" id="tambah" value="Tambah" />
+            <input type="submit" class="btn btn-primary" id="tambah_user" value="Tambah" />
           </div>
         </div>
       </form>
@@ -149,8 +151,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  document.getElementById("tambah").addEventListener("click", () => {
+  document.getElementById("tambah_user").addEventListener("submit", e => {
+    e.preventDefault()
     Swal.fire("Good job!", "You clicked the button!", "success");
+    setTimeout(() => {
+      document.getElementById("tambah_user").submit()
+    }, 3000)
   });
   document.getElementById("hapus").addEventListener("click", () => {
     Swal.fire({
@@ -170,12 +176,12 @@
 
   // Show Pass
   function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
   }
-}
 </script>
 </body>
