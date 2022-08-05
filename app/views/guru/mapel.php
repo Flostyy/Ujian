@@ -16,69 +16,27 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Materi</th>
+                <th>Judul</th>
                 <th>Deskripsi</th>
                 <th>Jumlah Soal</th>
                 <th>Opsi</th>
               </tr>
             </thead>
             <tbody>
-            <?php foreach ($data['siswa'] as $siswa) :  ?>
+            <?php foreach ($data['mapel'] as $mapel) :  ?>
               <tr>
-                <td>1</td>
-                <td>Aljabar</td>
-                <td>Deskripsi</td>
-                <td>20</td>
+                <td><?= $mapel['id']; ?></td>
+                <td><?= $mapel['judul']; ?></td>
+                <td><?= $mapel['deskripsi']; ?></td> 
+                <td>20 Soal</td>
+
 
                 <td>
                   <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
                   <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>MySQL</td>
-                <td></td>
-                <td>20</td>
-
-                <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Pemodelan Perangkat Lunak</td>
-                <td>Usecase</td>
-                <td>5</td>
-
-                <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Sistem Komputer</td>
-                <td>Hardware</td>
-                <td>20</td>
-
-                <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>PJOK</td>
-                <td>Lompat Harimau</td>
-                <td>25</td>
-
-                <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
-                </td>
-              </tr>
+              
               <?php endforeach; ?>
             </tbody>
           </table>

@@ -17,7 +17,7 @@ class Guru extends Controller
             die();
         }
 
-        // var_dump($_SESSION['level']);
+        // var_dump($_SESSION['id']);
 
         $data['judul'] = 'Home Guru';
         
@@ -39,6 +39,7 @@ class Guru extends Controller
     public function mapelGuru()
     {   
         $data['judul'] = 'Mapel Guru';
+        $data['mapel'] = $this->model('Soal_model')->getAllMapel();
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
