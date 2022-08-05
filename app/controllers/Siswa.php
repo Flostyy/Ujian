@@ -58,6 +58,15 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+    public function praSoal()
+    {
+        $data['judul'] = 'Pra Ujian';
+
+        $this->view('templates/headersiswa', $data);
+        $this->view('siswa/praSoal', $data);
+        $this->view('templates/footer');
+    }
+
     public function tambah()
     {
         if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
