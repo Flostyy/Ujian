@@ -184,4 +184,31 @@
     }
   }
 </script>
+
+<script>
+  $(function() {
+    $('.tampilModalUbah').on('click', function() {
+      // $('.modal-footer button[type=submit]').html('Ubah Data');
+
+      const id = $(this).data('id');
+
+      $.ajax({
+        url: 'http://localhost/Ujian/public/Guru/ubahData',
+        data: {
+          id: id
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function(data) {
+          $('#nama').val(data.nama);
+          $('#email').val(data.email);
+          $('#password').val(data.password);
+          $('#level').val(data.level);
+          $('#id').val(data.id);
+        }
+      });
+    })
+
+  })
+</script>
 </body>
