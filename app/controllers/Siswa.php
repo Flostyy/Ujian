@@ -13,7 +13,12 @@ class Siswa extends Controller
         }
         
         if ($_SESSION['level'] != "murid" ) {
+<<<<<<< HEAD
             header('Location: ' . 'http://localhost/Ujian/public/');
+=======
+            // echo "ancokk";
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+>>>>>>> f83d8997ae2e0caf1248d7f51772ebfa22031c40
             die();
         }
 
@@ -54,6 +59,15 @@ class Siswa extends Controller
 
         $this->view('templates/headersiswa', $data);
         $this->view('siswa/soal', $data);
+        $this->view('templates/footer');
+    }
+
+    public function praSoal()
+    {
+        $data['judul'] = 'Pra Ujian';
+
+        $this->view('templates/headersiswa', $data);
+        $this->view('siswa/praSoal', $data);
         $this->view('templates/footer');
     }
 

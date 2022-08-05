@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="headline mb-3">
-        Biodata Diri <br>
+        Biodata Diri <br><br>
     </div>
     <div class="card ">
 
