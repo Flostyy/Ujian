@@ -13,38 +13,8 @@
 	<link rel="stylesheet" href="<?= BASE; ?>/assets/plugins/sweetalert2/sweetalert2.min.css">
 	<meta naxme="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS -->
-  <style>
-      section {
-        min-height: 500px;
-        padding-top: 10rem;
-      }
-
-      .btn {
-        border-radius: 0.50rem;
-        font-size: 1rem;
-      }
-
-      .form-control {
-        height: calc(3rem + 2px);
-        border: 2px solid #28a745;
-        border-radius: 0.50rem;
-        font-size: 1.3rem;
-      }
-
-      .header .logo{
-        color: #28a745;
-      }
-
-      body {
-        background: #f5f5f5;
-      }
-
-
-    </style>
 </head>
 <body>
-  <!-- <header class="header"> -->
 
     <!-- navbar -->
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
@@ -65,7 +35,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <!-- <a href="#" class="logo"> <i class=""></i> Ujian </a> -->
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link px-md-4 active" aria-current="page" href="<?= BASE; ?>/Guru/index">Home</a>
@@ -81,28 +50,10 @@
             </li>
           </ul>
           <div class="d-flex">
-            <!-- <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a> -->
+            <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
           </div>
-          <div class="action" onclick="menuToggle();">
-            <div class="profile">
-              <img src="../public/img/man.png" alt="">
-            </div>
-            <div class="menu">
-              <h3><?=$_SESSION['nama']?><br><br><span>Admin</span></h3>
-              <ul>
-                <li><img src="../public/img/logout.png"><a href="#" id="logout">Log Out</a></li>
-              </ul>
-            </div>
-          </div>
-          <script>
-            function menuToggle(){
-              const toggleMenu = document.querySelector('.menu')
-              toggleMenu.classList.toggle('active')
-            }
-            </script>
-          <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
       </div>
     </div>
   </nav>
-<!-- </section> -->
+</section>
 </header>
