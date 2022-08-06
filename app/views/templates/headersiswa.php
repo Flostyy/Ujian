@@ -2,6 +2,7 @@
 <html>
 <head>
 
+
     <link rel="stylesheet" href="<?= BASE; ?>/css/style.css">
     <link rel="stylesheet" href="<?= BASE; ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="jquery.datetimepicker.min.css" class="">
@@ -47,7 +48,6 @@
         <div class="d-flex">
           <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
         </div>
-      </div>
     </div>
   </nav>
 </section>
