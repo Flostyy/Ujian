@@ -2,35 +2,6 @@
 <html>
 <head>
 
-<style>
-      section {
-        min-height: 500px;
-        padding-top: 10rem;
-      }
-
-      .btn {
-        border-radius: 0.50rem;
-        font-size: 1rem;
-      }
-
-      .form-control {
-        height: calc(3rem + 2px);
-        border: 2px solid #28a745;
-        border-radius: 0.50rem;
-        font-size: 1.3rem;
-      }
-
-      .header .logo{
-        color: #28a745;
-      }
-
-      body {
-        background: #f5f5f5;
-      }
-
-
-    </style>
-
     <link rel="stylesheet" href="<?= BASE; ?>/css/style.css">
     <link rel="stylesheet" href="<?= BASE; ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="jquery.datetimepicker.min.css" class="">
@@ -73,26 +44,8 @@
             <a class="nav-link px-md-4" href="#">Review</a>
           </li> -->
         </ul>
-
         <div class="d-flex">
-          <div class="action" onclick="menuToggle();">
-        <div class="profile">
-            <img src="<?=BASE?>/img/man.png" alt="">
-        </div>
-        <div class="menu">
-
-            <h3><?=$_SESSION['nama']?><br><br><span>User</span></h3>
-            <ul>
-                <li><img src="<?=BASE?>/img/logout.png"><a href="#" id="logout">Log Out</a></li>
-            </ul>
-        </div>
-    <script>
-        function menuToggle(){
-            const toggleMenu = document.querySelector('.menu')
-            toggleMenu.classList.toggle('active')
-        }
-    </script>
-        </div>
+          <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
         </div>
       </div>
     </div>
