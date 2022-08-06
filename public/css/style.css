@@ -333,6 +333,13 @@
   font-style: normal;
 }
 
+/* Soal */
+.nomor .no {
+  width: 45px;
+  height: 45px;
+  font-size: 15px;
+}
+
 
     /*# sourceMappingURL=main.css.map */
 

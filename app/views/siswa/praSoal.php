@@ -3,7 +3,7 @@
 <div class="container">
     <div class="headline">
         Detail <br class="d-none d-md-block">
-        Mata pelajaran
+        Mata Pelajaran
         <br><br>
     </div>
     <div class="row">
