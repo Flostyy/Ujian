@@ -97,10 +97,10 @@ class Guru extends Controller
         public function ubah()
         {
             if($this->model('Siswa_model')->ubahDataGuru($_POST) > 0 ) {
-                header('Location: ' . BASE . '/Guru');
+                header('Location: ' . BASE . '/Guru/register');
                 exit;
             }else{
-                header('Location: ' . BASE . '/Guru');
+                header('Location: ' . BASE . '/Guru/register');
                 exit;
             }
         }
