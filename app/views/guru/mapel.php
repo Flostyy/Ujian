@@ -30,10 +30,30 @@
                 <td><?= $mapel['deskripsi']; ?></td> 
                 <td>20 Soal</td>
 
-
                 <td>
-                  <a href="#" id="hapus" class="btn btn-danger">Hapus</a>
                   <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
+                  <a id="hapus<?= $mapel['id'] ?>" class="btn btn-danger">Hapus</a>
+                    <script>
+                      var id = "<?= $mapel['id'] ?>";
+                      document.getElementById(`hapus${id}`).addEventListener("click", () => {
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: "You won't be able to revert this!",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Yes, delete it!",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire("Deleted!", "Your file has been deleted.", "success")
+                            setTimeout(() => {
+                              window.location.href = "<?= BASE; ?>/Guru/hapusSoal/<?= $mapel['id'] ?>"
+                            }, 1000)
+                          }
+                        });
+                      });
+                    </script>
                 </td>
               </tr>
               
