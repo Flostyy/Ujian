@@ -16,6 +16,12 @@ class Soal_model extends Controller
         return $this->db->resultSet();
     }
 
+    public function jmlSoal()
+    {
+        $this->db->query('SELECT count(id) AS jumlahSoal FROM soal WHERE id_ujian = 3');
+        return $this->db->resultSet();
+    }
+
     // public function tambahDataSoal($data)
     // {
     //     $query = "INSERT INTO ujian VALUES

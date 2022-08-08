@@ -23,16 +23,20 @@
               </tr>
             </thead>
             <tbody>
-            <?php foreach ($data['mapel'] as $mapel) :  ?>
-              <tr>
-                <td><?= $mapel['id']; ?></td>
-                <td><?= $mapel['judul']; ?></td>
-                <td><?= $mapel['deskripsi']; ?></td> 
-                <td>20 Soal</td>
 
-                <td>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" id="<?= $mapel['id'] ?>" class="btn btn-primary">Detail</a>
-                  <a id="hapus<?= $mapel['id'] ?>" class="btn btn-danger">Hapus</a>
+              <?php foreach ($data['mapel'] as $mapel) :  ?>
+                <tr>
+                  <td><?= $mapel['id']; ?></td>
+                  <td><?= $mapel['judul']; ?></td>
+                  <td><?= $mapel['deskripsi']; ?></td>
+                  <?php foreach ($data['soal'] as $soal) :  ?>
+                    <td><?= $soal['jumlahSoal'] ?> Soal</td>
+                  <?php endforeach; ?>
+
+
+                  <td>
+                    <a href="<?= BASE; ?>/Guru/detailMapel" id="<?= $mapel['id'] ?>" class="btn btn-primary">Detail</a>
+                    <a id="hapus<?= $mapel['id'] ?>" class="btn btn-danger">Hapus</a>
                     <script>
                       var id = "<?= $mapel['id'] ?>";
                       document.getElementById(`hapus${id}`).addEventListener("click", () => {
@@ -54,9 +58,9 @@
                         });
                       });
                     </script>
-                </td>
-              </tr>
-              
+                  </td>
+                </tr>
+
               <?php endforeach; ?>
             </tbody>
           </table>

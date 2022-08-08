@@ -40,6 +40,7 @@ class Guru extends Controller
     {   
         $data['judul'] = 'Mapel Guru';
         $data['mapel'] = $this->model('Soal_model')->getAllMapel();
+        $data['soal'] = $this->model('Soal_model')->jmlSoal();
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
