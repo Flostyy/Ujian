@@ -79,19 +79,13 @@
               <input type="password" class="form-control" name="password" id="myInput" required />
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="passRegis" onclick="myFunction()" required>
+                <input class="form-check-input" type="checkbox" value="" id="passRegis" onclick="myFunction()">
                 <label class="form-check-label" for="passRegis">
                   <p>Show Password</p>
                 </label>
               </div>
             </div>
-            <div class="form-grup">
-              <label for="">Level</label>
-              <select class="form-control" name="level">
-                <option value="guru">Guru</option>
-                <option value="murid">Murid</option>
-              </select>
-            </div>
+              <input type="text" name="level" id="" value="murid" hidden >
           </div>
           <div class="card-footer">
             <input type="submit" class="btn btn-primary" id="tambah_user" value="Tambah" />

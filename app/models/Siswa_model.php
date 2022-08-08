@@ -12,7 +12,7 @@ class Siswa_model extends Controller
 
     public function getAllSiswa()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "murid" ');
         return $this->db->resultSet();
     }
 
