@@ -33,13 +33,14 @@ class Siswa_model extends Controller
     public function tambahDataSiswa($data)
     {
         $query = "INSERT INTO users VALUES
-                    ('', :nama, :email, :password, :level)";
+                    ('', :nama, :email, :password, :level, :mapel)";
 
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('email', $data['email']);
         $this->db->bind('password', $data['password']);
         $this->db->bind('level', $data['level']);
+        $this->db->bind('mapel', $data['mapel']);
 
         $this->db->execute();
 

@@ -54,10 +54,8 @@ class Guru extends Controller
         $this->view('guru/tambah', $data);
         $this->view('templates/footer');
 
-        $data ['judul'] = 'Tambah Guru';
-
         if($this->model('Soal_model')->tambahDataSoal($_POST) > 0) {
-            header('Location: ' . BASE .'/Guru/tambahSoal');
+            header('Location: ' . BASE .'/Guru/mapelGuru');
             exit;
         }
     }
@@ -103,10 +101,10 @@ class Guru extends Controller
         public function ubah()
         {
             if($this->model('Siswa_model')->ubahDataGuru($_POST) > 0 ) {
-                header('Location: ' . BASE . '/Guru');
+                header('Location: ' . BASE . '/Guru/register');
                 exit;
             }else{
-                header('Location: ' . BASE . '/Guru');
+                header('Location: ' . BASE . '/Guru/register');
                 exit;
             }
         }
@@ -117,6 +115,17 @@ class Guru extends Controller
 
         if($this->model('Siswa_model')->hapusDataSiswa($id) > 0) {
             header('Location: ' . BASE .'/Guru/register');
+            exit;
+        }
+
+    }
+
+    public function hapusSoal($id)
+    {
+        $data ['judul'] = 'Hapus Soal';
+
+        if($this->model('Soal_model')->hapusDataSiswa($id) > 0) {
+            header('Location: ' . BASE .'/Guru/mapelGuru');
             exit;
         }
 
