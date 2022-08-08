@@ -26,31 +26,38 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <h5 class="card-title">Ubah Biodata diri</h5>
+                            <?php 
+                            // $set=$data['id'] ;
+                            foreach ($data['id'] as $set) : ?>
+                                
+                            
+                            
                         </li>
                         <li class="list-group-item col-sm">
                             <div class="row">
                                 <div class="col-sm-4">Nama</div>
-                                <div class="col">StevenDesu <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                                <div class="col"><?= $set['nama'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
                             </div>
                         </li>
                         <li class="list-group-item col-sm">
                             <div class="row">
                                 <div class="col-sm-4">Mata Pelajaran</div>
-                                <div class="col">Basis Data <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                                <div class="col"><?= $set['mapel'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
                             </div>
                         </li>
                         <li class="list-group-item col-sm">
                             <div class="row">
                                 <div class="col-sm-4">Email</div>
-                                <div class="col">StevenDesu@Ancok.cok <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                                <div class="col"><?= $set['email'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
                             </div>
                         </li>
                         <li class="list-group-item col-sm">
                             <div class="row">
                                 <div class="col-sm-4">Password</div>
-                                <div class="col">StevenDesu123 <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
+                                <div class="col"><?= $set['password'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
                             </div>
                         </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
