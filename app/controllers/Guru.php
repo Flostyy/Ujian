@@ -76,8 +76,9 @@ class Guru extends Controller
         // var_dump($_SESSION['id']);
         $id = $_SESSION['id'];
         $data['judul'] = 'pengaturan';
-        $data['id'] = $this->model('Siswa_model')->getGuruById($id);
 
+        $data['id'] = $this->model('Siswa_model')->getGuruById($id);
+        
         $this->view('templates/header', $data);
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
@@ -101,10 +102,10 @@ class Guru extends Controller
         public function ubah()
         {
             if($this->model('Siswa_model')->ubahDataGuru($_POST) > 0 ) {
-                header('Location: ' . BASE . '/Guru/register');
+                header('Location: ' . BASE . '/Guru');
                 exit;
             }else{
-                header('Location: ' . BASE . '/Guru/register');
+                header('Location: ' . BASE . '/Guru');
                 exit;
             }
         }
@@ -124,7 +125,7 @@ class Guru extends Controller
     {
         $data ['judul'] = 'Hapus Soal';
 
-        if($this->model('Soal_model')->hapusDataSiswa($id) > 0) {
+        if($this->model('Soal_model')->hapusDataSoal($id) > 0) {
             header('Location: ' . BASE .'/Guru/mapelGuru');
             exit;
         }

@@ -29,7 +29,7 @@ class Soal_model extends Controller
 
     //     return $this->db->rowCount();
     // }
-    public function hapusDataSiswa($id)
+    public function hapusDataSoal($id)
     {
         $query = "DELETE FROM ujian WHERE id = :id";
         $this->db->query($query);
