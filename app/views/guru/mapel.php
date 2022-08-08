@@ -31,7 +31,7 @@
                 <td>20 Soal</td>
 
                 <td>
-                  <a href="<?= BASE; ?>/Guru/detailMapel" class="btn btn-primary">Detail</a>
+                  <a href="<?= BASE; ?>/Guru/detailMapel" id="<?= $mapel['id'] ?>" class="btn btn-primary">Detail</a>
                   <a id="hapus<?= $mapel['id'] ?>" class="btn btn-danger">Hapus</a>
                     <script>
                       var id = "<?= $mapel['id'] ?>";

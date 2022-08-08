@@ -26,58 +26,6 @@
                       <li>logical</li>
                     </ul>
                   </div>
-                  <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">2</span> Masalah yang melekat pada hubungan banyak-ke-banyak (* \: *) dapat dengan mudah dihindari dengan menciptakan entitas ...
-                    <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></h5>
-                  </h5>
-                  <div class="card-text">
-                    <ul>
-                      <li>Composite</li>
-                      <li>foreign</li>
-                      <li>related</li>
-                      <li>logical</li>
-                      <li>table</li>
-                    </ul>
-                  </div>
-                  <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">3</span> Setiap tabel harus memiliki kunci ...
-                    <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></h5>
-                  </h5>
-                  <div class="card-text">
-                    <ul>
-                      <li>Distributed</li>
-                      <li>Enterprise</li>
-                      <li>Desktop</li>
-                      <li>Workgroup</li>
-                      <li>logical</li>
-                    </ul>
-                  </div>
-                  <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">4</span> Sistem manajemen basis data, sistem operasi, aplikasi dan utilitas adalah contoh dari .....
-                    <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></h5>
-                  </h5>
-                  <div class="card-text">
-                    <ul>
-                      <li>Composite</li>
-                      <li>foreign</li>
-                      <li>related</li>
-                      <li>logical</li>
-                      <li>table</li>
-                    </ul>
-                  </div>
-                  <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">5</span> Kumpulan nilai yang mungkin untuk atribut adalah ...
-                    <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></h5>
-                  </h5>
-                  <div class="card-text">
-                    <ul>
-                      <li>Distributed</li>
-                      <li>Enterprise</li>
-                      <li>Desktop</li>
-                      <li>Workgroup</li>
-                      <li>logical</li>
-                    </ul>
-                  </div>
                 </div>
                 <div class="card-footer text-muted">
                   
