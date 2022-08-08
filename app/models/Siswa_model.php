@@ -22,6 +22,13 @@ class Siswa_model extends Controller
         $this->db->bind('id', $id);
         return $this->db->single();
     } 
+    
+    public function getGuruById($id)
+    {
+        $this->db->query('SELECT * FROM users WHERE `id` = :id');
+        $this->db->bind('id', $id);
+        return $this->db->resultSet();
+    } 
 
     public function tambahDataSiswa($data)
     {
@@ -81,4 +88,5 @@ class Siswa_model extends Controller
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
     }
+    
 }

@@ -3,7 +3,7 @@
     <section>
       <div class="container mt-4" style="min-height: 500px;">
         <div class="row">
-          <div class="col-8">
+          <div class="col-sm-8 p-2">
             <div class="card text">
               <div class="card-header">
                 <h3>Latihan Soal Fisika</h3>
@@ -58,7 +58,7 @@
             </div>
 
           </div>
-          <div class="col-4">
+          <div class="col-lg-4 p-2">
             <div class="card text">
                 <div class="card-header">
                   Jumlah Soal
@@ -68,73 +68,73 @@
                   <p class="card-text ">
                     <table class="">
                         
-                        <tbody>
-                          <tr class="">
+                        <tbody class="nomor">
+                          <tr >
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">1</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">1</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">2</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">2</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">3</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">3</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">4</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">4</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">5</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">6</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">7</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">8</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">9</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">10</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">5</button>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">11</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">6</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">12</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">7</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">13</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">8</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">14</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">9</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">15</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">10</button>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">16</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">11</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">17</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">12</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">18</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">13</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">19</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">14</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-lg btn-outline-success ml-1">20</button>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">15</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">16</button>
+                            </td>
+                            <td>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">17</button>
+                            </td>
+                            <td>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">18</button>
+                            </td>
+                            <td>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">19</button>
+                            </td>
+                            <td>
+                                <button type="button"  class="no btn btn-md btn-outline-success ml-1">20</button>
                             </td>
                           </tr>
                           
