@@ -72,7 +72,7 @@
             </div>
             <div class="form-grup">
               <label for="">Email</label>
-              <input type="text" class="form-control" name="email" required />
+              <input type="text" class="form-control" id="emailreg" name="email" required />
             </div>
             <div class="form-grup">
               <label for="">Password</label>
@@ -221,4 +221,25 @@ function myFunction() {
     }
   }
 </script>
+
+<script>
+  $(function(){
+
+    FetchQueryString("pesan");
+
+  function FetchQueryString(regKey) {
+    regKey = regKey.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
+
+    var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+
+    var result = regexValue.exec(window.location.href);
+    
+    if(result == null);
+
+    else Swal.fire("Email Sudah Terpakai", "Gunakan Email Yang Lain");
+} 
+// window.location.href = "http://localhost/Ujian/public/Guru/register";
+})
+</script>
+
 </body>

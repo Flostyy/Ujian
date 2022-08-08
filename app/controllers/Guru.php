@@ -85,9 +85,13 @@ class Guru extends Controller
     {
         $data ['judul'] = 'Tambah Guru';
 
-        if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-            header('Location: ' . BASE .'/Guru/register');
-            exit;
+        try {
+            if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+                header('Location: ' . BASE .'/Guru/register');
+                exit;
+            }
+        } catch (\Throwable $th) {
+            header('Location: ' . BASE .'/Guru/register?pesan=email sudah terpakai');
         }
     }
 
