@@ -74,8 +74,12 @@ class Guru extends Controller
 
     public function pengaturan()
     {   
+        session_start();
+        // var_dump($_SESSION['id']);
+        $id = $_SESSION['id'];
         $data['judul'] = 'pengaturan';
-        
+        $data['id'] = $this->model('Siswa_model')->getGuruById($id);
+
         $this->view('templates/header', $data);
         $this->view('guru/setting', $data);
         $this->view('templates/footer');
