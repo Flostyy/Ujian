@@ -24,6 +24,7 @@
             </thead>
             <tbody>
 
+
               <?php foreach ($data['mapel'] as $mapel) :  ?>
                 <tr>
                   <td><?= $mapel['id']; ?></td>

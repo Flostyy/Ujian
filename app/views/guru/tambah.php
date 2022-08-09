@@ -17,7 +17,7 @@
                 <div class="card">
                   <div class="card-header">Detail</div>
                   <div class="card-body">
-                  <input type="text" class="form-control" name="id" value="<?= $_SESSION['id']?>" hidden/>
+                  <input type="text" class="form-control" name="id" value="<?= $_SESSION['id'] ?>" hidden/>
                     <div class="form-grup">
                       <label for="">Judul</label>
                       <input type="text" class="form-control" name="judul" required/>

@@ -21,6 +21,7 @@ class Soal_model extends Controller
     {
         $this->db->query('SELECT count(id) AS jumlahSoal FROM soal WHERE id_ujian = :id');
         $this->db->bind('id',$id);
+
         return $this->db->resultSet();
     }
 
@@ -48,6 +49,21 @@ class Soal_model extends Controller
         return $this->db->rowCount();
     }
 
+    public function getMapelById($id)
+    {
+        $this->db->query('SELECT ujian.judul, ujian.deskripsi, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
+        $this->db->bind('id',$id);
+        return $this->db->single();
+    }
+    
+    public function getMahasiswaById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    } 
+
+
     public function tambahDataSoal($data)
     {   
         $query = "INSERT INTO ujian VALUES
@@ -66,7 +82,7 @@ class Soal_model extends Controller
         $ujian = $this->db->resultSet()[0];
 
         for ($i=1; $i < 5; $i++) {
-            var_dump($data['soal' . $i], $i);
+            // var_dump($data['soal' . $i], $i);
             $query = "INSERT INTO soal VALUES
                     ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";
 

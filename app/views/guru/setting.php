@@ -29,9 +29,6 @@
                             <?php 
                             // $set=$data['id'] ;
                             foreach ($data['id'] as $set) : ?>
-                                
-                            
-                            
                         </li>
                         <li class="list-group-item col-sm">
                             <div class="row">

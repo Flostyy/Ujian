@@ -16,10 +16,23 @@ class Siswa_model extends Controller
         return $this->db->resultSet();
     }
 
+    public function getAllMurid()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "guru" ');
+        return $this->db->resultSet();
+    }
+
     public function getSiswaById($id)
     {
         $this->db->query('SELECT * FROM users' . ' WHERE id=:id');
         $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
+    public function getMapelById($id)
+    {
+        $this->db->query('SELECT users.mapel, ujian.judul, ujian.deskripsi FROM users INNER JOIN ujian ON users.id = ujian.id_guru WHERE ujian.id_guru = :id');
+        $this->db->bind('id',$id);
         return $this->db->single();
     } 
     
