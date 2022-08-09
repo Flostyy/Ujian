@@ -30,7 +30,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ml-auto mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link px-md-4 " aria-current="page" href="<?= BASE; ?>">Home</a>
           </li>
@@ -43,10 +43,29 @@
           <!-- <li class="nav-item">
             <a class="nav-link px-md-4" href="#">Review</a>
           </li> -->
-        </ul>
-        <div class="d-flex">
+          </ul>
+            <div class="d-flex dropdown">
+              <!-- <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a> -->
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                  <img src="../public/img/man.png" style="width: 35px;" alt="">
+              </a>
+                <div class="dropdown-menu ">
+                  <h3 class=""><?= $_SESSION['nama']?><br><br><span>Murid</span></h3>
+                  
+                  <div class="dropdown-divider"></div>
+                  <ul>
+                    <li>
+                    <img class="mr-3" src="../public/img/logout.png" alt="">
+                    <a class="" id="logout" href="#">logout</a>
+                    <!-- <a class="dropdown-item" href="#" id="logout">Log Out</a> -->
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          
+        <!-- <div class="d-flex">
           <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
-        </div>
+        </div> -->
     </div>
   </nav>
 </section>
