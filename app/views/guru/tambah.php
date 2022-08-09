@@ -39,11 +39,14 @@
                 <div class="card">
                   <div class="card-header">Soal</div>
                   <div class="card-body">
+                    
+                      
+                    
                     <!-- soal -->
                     <div class="form-grup container">
                       <div class="row">
                       <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">1</span>
-                      <input type="text" name="soal1" class="form-control col" placeholder="Soal" />
+                      <input type="text" name="soal1" class="form-control col" placeholder="Soal" required/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -53,7 +56,7 @@
                             <input type="radio" name="jawaban1" id="" value="option_a">
                           </div>
                         </div>
-                        <input type="text" name="option_a1" class="form-control" placeholder="Opsi 1" />
+                        <input type="text" name="option_a1" class="form-control" placeholder="Opsi 1" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -61,7 +64,7 @@
                             <input type="radio" name="jawaban1" id="" value="option_b">
                           </div>
                         </div>
-                        <input type="text" name="option_b1" class="form-control" placeholder="Opsi 2" />
+                        <input type="text" name="option_b1" class="form-control" placeholder="Opsi 2" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -69,7 +72,7 @@
                             <input type="radio" name="jawaban1" id="" value="option_c">
                           </div>
                         </div>
-                        <input type="text" name="option_c1" class="form-control" placeholder="Opsi 3" />
+                        <input type="text" name="option_c1" class="form-control" placeholder="Opsi 3" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -77,7 +80,7 @@
                             <input type="radio" name="jawaban1" id="" value="option_d">
                           </div>
                         </div>
-                        <input type="text" name="option_d1" class="form-control" placeholder="Opsi 4" />
+                        <input type="text" name="option_d1" class="form-control" placeholder="Opsi 4" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -85,206 +88,61 @@
                             <input type="radio" name="jawaban1" id="" value="option_e">
                           </div>
                         </div>
-                        <input type="text" name="option_e1" class="form-control" placeholder="Opsi 5" />
+                        <input type="text" name="option_e1" class="form-control" placeholder="Opsi 5" required/>
                       </div>
                     </div>
+                    <?php for ($i=2; $i <= 5; $i++) : ?>
                     <!-- soal -->
                     <div class="form-grup container">
                       <div class="row">
-                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">2</span>
-                      <input type="text" name="soal2" class="form-control col" placeholder="Soal" />
+                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;"><?=$i?></span>
+                      <input type="text" name="soal<?=$i?>" class="form-control col" placeholder="Soal"/>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="radio" name="jawaban2" id="" value="option_a">
+                            <input type="radio" name="jawaban<?=$i?>" id="" value="option_a">
                           </div>
                         </div>
-                        <input type="text" name="option_a2" class="form-control" placeholder="Opsi 1" />
+                        <input type="text" name="option_a<?=$i?>" class="form-control" placeholder="Opsi 1"/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="radio" name="jawaban2" id="" value="option_b">
+                            <input type="radio" name="jawaban<?=$i?>" id="" value="option_b">
                           </div>
                         </div>
-                        <input type="text" name="option_b2" class="form-control" placeholder="Opsi 2" />
+                        <input type="text" name="option_b<?=$i?>" class="form-control" placeholder="Opsi 2"/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="radio" name="jawaban2" id="" value="option_c">
+                            <input type="radio" name="jawaban<?=$i?>" id="" value="option_c">
                           </div>
                         </div>
-                        <input type="text" name="option_c2" class="form-control" placeholder="Opsi 3" />
+                        <input type="text" name="option_c<?=$i?>" class="form-control" placeholder="Opsi 3"/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="radio" name="jawaban2" id="" value="option_d">
+                            <input type="radio" name="jawaban<?=$i?>" id="" value="option_d">
                           </div>
                         </div>
-                        <input type="text" name="option_d2" class="form-control" placeholder="Opsi 4" />
+                        <input type="text" name="option_d<?=$i?>" class="form-control" placeholder="Opsi 4"/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="radio" name="jawaban2" id="" value="option_e">
+                            <input type="radio" name="jawaban<?=$i?>" id="" value="option_e">
                           </div>
                         </div>
-                        <input type="text" name="option_e2" class="form-control" placeholder="Opsi 5" />
-                      </div>
-                    </div>
-                    <!-- soal -->
-                    <div class="form-grup container">
-                      <div class="row">
-                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">3</span>
-                      <input type="text" name="soal3" class="form-control col" placeholder="Soal" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban3" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_a3" class="form-control" placeholder="Opsi 1" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban3" id="" value="option_b">
-                          </div>
-                        </div>
-                        <input type="text" name="option_b3" class="form-control" placeholder="Opsi 2" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban3" id="" value="option_c">
-                          </div>
-                        </div>
-                        <input type="text" name="option_c3" class="form-control" placeholder="Opsi 3" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban3" id="" value="option_d">
-                          </div>
-                        </div>
-                        <input type="text" name="option_d3" class="form-control" placeholder="Opsi 4" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban3" id="" value="option_e">
-                          </div>
-                        </div>
-                        <input type="text" name="option_e3" class="form-control" placeholder="Opsi 5" />
-                      </div>
-                    </div>
-                    <!-- soal -->
-                    <div class="form-grup container">
-                      <div class="row">
-                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">4</span>
-                      <input type="text" name="soal4" class="form-control col" placeholder="Soal" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban4" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_a4" class="form-control" placeholder="Opsi 1" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban4" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_b4" class="form-control" placeholder="Opsi 2" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban4" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_c4" class="form-control" placeholder="Opsi 3" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban4" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_d4" class="form-control" placeholder="Opsi 4" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban4" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_e4" class="form-control" placeholder="Opsi 5" />
-                      </div>
-                    </div>
-                    <!-- soal -->
-                    <div class="form-grup container">
-                      <div class="row">
-                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">5</span>
-                      <input type="text" name="soal5" class="form-control col" placeholder="Soal" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban5" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_a5" class="form-control" placeholder="Opsi 1" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban5" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_b5" class="form-control" placeholder="Opsi 2" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban5" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_c5" class="form-control" placeholder="Opsi 3" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban5" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_d5" class="form-control" placeholder="Opsi 4" />
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban5" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_e5" class="form-control" placeholder="Opsi 5" />
+                        <input type="text" name="option_e<?=$i?>" class="form-control" placeholder="Opsi 5"/>
                       </div>
                     </div>
                     
+                    <?php endfor;?>
                   </div>
 
                   <div class="card-footer text-muted">
