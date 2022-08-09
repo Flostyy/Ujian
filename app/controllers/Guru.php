@@ -81,6 +81,8 @@ class Guru extends Controller
     {
         $data['judul'] = 'Detail Mapel';
         $data['id'] = $this->model('Soal_model')->getMapelById($id);
+        // var_dump($data['id']);
+        // die();
 
         $this->view('templates/header', $data);
         $this->view('guru/detail', $data);
