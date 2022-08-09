@@ -10,15 +10,17 @@ class Soal_model extends Controller
         $this->db = new Database;
     }
 
-    public function getAllMapel()
+    public function getAllMapel($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table. ' WHERE id_guru = :id');
+        $this->db->bind('id',$id);
         return $this->db->resultSet();
     }
 
-    public function jmlSoal()
+    public function jmlSoal($id)
     {
-        $this->db->query('SELECT count(id) AS jumlahSoal FROM soal WHERE id_ujian = 3');
+        $this->db->query('SELECT count(id) AS jumlahSoal FROM soal WHERE id_ujian = :id');
+        $this->db->bind('id',$id);
         return $this->db->resultSet();
     }
 

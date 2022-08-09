@@ -29,9 +29,7 @@
                   <td><?= $mapel['id']; ?></td>
                   <td><?= $mapel['judul']; ?></td>
                   <td><?= $mapel['deskripsi']; ?></td>
-                  <?php foreach ($data['soal'] as $soal) :  ?>
-                    <td><?= $soal['jumlahSoal'] ?> Soal</td>
-                  <?php endforeach; ?>
+                  <td><?= $mapel['jumlahSoal'] ?> Soal</td>
 
 
                   <td>
