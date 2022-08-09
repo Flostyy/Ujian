@@ -18,6 +18,16 @@ class Guru extends Controller
         }
 
         // var_dump($_SESSION['id']);
+        $id_guru = $_SESSION['id'];
+        $data['judul'] = 'Mapel Guru';
+        $data['mapel'] = $this->model('Soal_model')->getAllMapel($id_guru);
+        $data['mapel'] = array_map(function ($mapel) {
+            $mapel['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($mapel['id'])[0]['jumlahSoal'];
+            return $mapel;
+        }, $data['mapel']);
+
+        $data['judulMapel'] = $this->model('Siswa_model')->getGuruById($id_guru)[0];
+        // var_dump($data['judulMapel']);
 
         $data['judul'] = 'Home Guru';
 
