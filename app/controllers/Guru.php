@@ -77,7 +77,6 @@ class Guru extends Controller
         }
     }
 
-
     public function detailMapel($id)
     {
         $data['judul'] = 'Detail Mapel';

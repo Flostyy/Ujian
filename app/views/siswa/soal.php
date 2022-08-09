@@ -6,38 +6,38 @@
           <div class="col-sm-8 p-2">
             <div class="card text">
               <div class="card-header">
-                <h3>Latihan Soal Fisika</h3>
-                <h6>Bab 1 "Gaya Gravitasi"</h6>
+                <h3><?= $data['id']['judul']; ?></h3>
+                <h6><?= $data['id']['deskripsi']; ?></h6>
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <h5><span class="badge badge-success mb-1" style="font-size: 20px">1</span> Gaya gravitasi adalah..</h5>
+                  <h5><span class="badge badge-success mb-1" style="font-size: 20px">1</span><?= $data['id']['soal']; ?></h5>
                 </h5>
                 <div class="card-text">
                   <!-- Opsi Jawaban a -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"> Jenis gaya yang berasal dari benda dengan muatan listrik </label>
+                    <label class="form-check-label" for="flexRadioDefault1"><li><?= $data['id']['option_a']; ?></li></label>
                   </div>
                   <!-- Opsi Jawaban b -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"> Sebuah gaya reaksi yang timbul saat sebuah benda diletakkan </label>
+                    <label class="form-check-label" for="flexRadioDefault1"><li><?= $data['id']['option_b']; ?></li></label>
                   </div>
                   <!-- Opsi Jawaban c -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"> Macam-macam gaya yang muncul karena ada sebuah sentuhan </label>
+                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_c']; ?></li></label>
                   </div>
                   <!-- Opsi Jawaban d -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"> Gaya yang timbul akibat dari kerja sebuah mesin </label>
+                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_d']; ?></li></label>
                   </div>
                   <!-- Opsi Jawaban e -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"> Jenis gaya yang dipengaruhi oleh gaya tarik sebuah benda ke pusat benda </label>
+                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_e']; ?></li></label>
                   </div>
                 </div>
               </div>

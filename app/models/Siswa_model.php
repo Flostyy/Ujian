@@ -31,7 +31,7 @@ class Siswa_model extends Controller
 
     public function getMapelById($id)
     {
-        $this->db->query('SELECT users.mapel, ujian.judul, ujian.deskripsi FROM users INNER JOIN ujian ON users.id = ujian.id_guru WHERE ujian.id_guru = :id');
+        $this->db->query('SELECT ujian.id, users.mapel, ujian.judul, ujian.deskripsi FROM users INNER JOIN ujian ON users.id = ujian.id_guru WHERE ujian.id_guru = :id');
         $this->db->bind('id',$id);
         return $this->db->single();
     } 
