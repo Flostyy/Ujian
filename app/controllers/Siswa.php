@@ -16,7 +16,8 @@ class Siswa extends Controller
             header('Location: ' . 'http://localhost/Ujian/public/Guru');
             die();
         }
-
+    
+        $data['id'] = $this->model('Siswa_model')->getAllMurid();    
         $data['judul'] = 'Home Siswa';
         
         $this->view('templates/headersiswa', $data);
@@ -57,14 +58,16 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
-    public function praSoal()
+    public function praSoal($id)
     {
         $data['judul'] = 'Pra Ujian';
+        $data['id'] = $this->model('Siswa_model')->getMapelById($id);
 
         $this->view('templates/headersiswa', $data);
         $this->view('siswa/praSoal', $data);
         $this->view('templates/footer');
     }
+    
 
     public function tambah()
     {

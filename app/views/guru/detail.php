@@ -7,23 +7,23 @@
             <div class="col-8">
               <div class="card text">
                 <div class="card-header">
-                  <h3>Latihan Soal Database</h3>
-                  <h6>Bab 1 "Pengertian Database"</h6>
+                  <h3><?= $data['id']['judul']; ?></h3>
+                  <h6><?= $data['id']['deskripsi']; ?></h6>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">1</span> Database pengguna tunggal yang berjalan di komputer pribadi disebut database ..... 
+                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">1</span><?= $data['id']['soal']; ?> 
                     <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a>
                     </h5>
                   </h5>
                   <div class="card-text">
                     <!-- Opsi Jawaban a -->
                     <ul>
-                      <li>Distributed</li>
-                      <li>Enterprise</li>
-                      <li>Desktop</li>
-                      <li>Workgroup</li>
-                      <li>logical</li>
+                      <li><?= $data['id']['option_a']; ?></li>
+                      <li><?= $data['id']['option_b']; ?></li>
+                      <li><?= $data['id']['option_c']; ?></li>
+                      <li><?= $data['id']['option_d']; ?></li>
+                      <li><?= $data['id']['option_e']; ?></li>
                     </ul>
                   </div>
                 </div>

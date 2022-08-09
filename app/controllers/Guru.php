@@ -38,8 +38,12 @@ class Guru extends Controller
 
     public function mapelGuru()
     {   
+        session_start();
+        // var_dump($_SESSION['id']);
+        $id = $_SESSION['id'];
+
         $data['judul'] = 'Mapel Guru';
-        $data['mapel'] = $this->model('Soal_model')->getAllMapel();
+        $data['mapel'] = $this->model('Soal_model')->getAllMapel($id);
         
         $this->view('templates/header', $data);
         $this->view('guru/mapel', $data);
@@ -48,6 +52,7 @@ class Guru extends Controller
 
     public function tambahSoal()
     {   
+        session_start();
         $data['judul'] = 'Tambah Soal';
         
         $this->view('templates/header', $data);
@@ -60,15 +65,14 @@ class Guru extends Controller
         }
     }
 
-    public function detailMapel()
-    {   
-        $data['judul'] = 'Detail Mata Pelajaran';
-        
+    public function detailMapel($id)
+    {
+        $data['judul'] = 'Detail Mapel';
+        $data['id'] = $this->model('Soal_model')->getMapelById($id);
         $this->view('templates/header', $data);
         $this->view('guru/detail', $data);
         $this->view('templates/footer');
     }
-
 
     public function pengaturan()
     {   

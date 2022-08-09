@@ -10,7 +10,7 @@
         <div class="col-md">
             <div class="card text-center">
                 <div class="card-header">
-                    <h4>Matematika</h4>
+                    <h4><?= $data['id']['mapel']; ?></h4>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-3 mt-md-0">
@@ -18,127 +18,13 @@
                             <div class="rectangle mx-auto px-1">
                                 <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
                                 <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
+                                <?= $data['id']['judul']; ?>
                                 </div>
                                 <div class="subheadline-benefit mt-2">
                                     <!-- Jumlah soal -->
                                     10 Soal<br class="d-none d-md-block">
                                     <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-body row">
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
+                                    <?= $data['id']['deskripsi']; ?>
                                 </div>
                             </div>
                         </a>
