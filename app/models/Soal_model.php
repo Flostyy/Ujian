@@ -53,7 +53,7 @@ class Soal_model extends Controller
     {
         $this->db->query('SELECT ujian.judul, ujian.deskripsi, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
         $this->db->bind('id',$id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
     
     public function getMahasiswaById($id)

@@ -7,25 +7,27 @@
             <div class="col-8">
               <div class="card text">
                 <div class="card-header">
-                  <h3><?= $data['id']['judul']; ?></h3>
-                  <h6><?= $data['id']['deskripsi']; ?></h6>
+                  <h3><?= $data['id'][0]['judul']; ?></h3>
+                  <h6><?= $data['id'][0]['deskripsi']; ?></h6>
                 </div>
                 <div class="card-body">
+                  <?php foreach ($data['id'] as $index => $set) : ?>
                   <h5 class="card-title">
-                    <h5><span class="badge badge-success mb-1" style="font-size: 20px">1</span><?= $data['id']['soal']; ?> 
+                    <h5><span class="badge badge-success mb-1" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?> 
                     <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a>
-                    </h5>
                   </h5>
-                  <div class="card-text">
+                </h5>
+                <div class="card-text">
                     <!-- Opsi Jawaban a -->
                     <ul>
-                      <li><?= $data['id']['option_a']; ?></li>
-                      <li><?= $data['id']['option_b']; ?></li>
-                      <li><?= $data['id']['option_c']; ?></li>
-                      <li><?= $data['id']['option_d']; ?></li>
-                      <li><?= $data['id']['option_e']; ?></li>
+                      <li><?= $set['option_a']; ?></li>
+                      <li><?= $set['option_b']; ?></li>
+                      <li><?= $set['option_c']; ?></li>
+                      <li><?= $set['option_d']; ?></li>
+                      <li><?= $set['option_e']; ?></li>
                     </ul>
                   </div>
+                  <?php endforeach; ?>
                 </div>
                 <div class="card-footer text-muted">
                   
