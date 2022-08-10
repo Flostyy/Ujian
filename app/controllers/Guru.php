@@ -80,7 +80,7 @@ class Guru extends Controller
     public function detailMapel($id)
     {
         $data['judul'] = 'Detail Mapel';
-        $data['id'] = $this->model('Soal_model')->getMapelById($id);
+        $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
         // var_dump($data['id'][0]['id']);
         // die();
         // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'][0]['id'])[0]['jumlahSoal'];
