@@ -12,15 +12,15 @@ class Soal_model extends Controller
 
     public function getAllMapel($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table. ' WHERE id_guru = :id');
-        $this->db->bind('id',$id);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_guru = :id');
+        $this->db->bind('id', $id);
         return $this->db->resultSet();
     }
 
     public function jmlSoal($id)
     {
         $this->db->query('SELECT count(id) AS jumlahSoal FROM soal WHERE id_ujian = :id');
-        $this->db->bind('id',$id);
+        $this->db->bind('id', $id);
 
         return $this->db->resultSet();
     }
@@ -51,21 +51,38 @@ class Soal_model extends Controller
 
     public function getMapelById($id)
     {
-        $this->db->query('SELECT ujian.judul, ujian.deskripsi, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
-        $this->db->bind('id',$id);
-        return $this->db->single();
+        $this->db->query('SELECT ujian.id, ujian.judul, ujian.deskripsi, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
+        $this->db->bind('id', $id);
+        return $this->db->resultSet();
     }
-    
+
     public function getMahasiswaById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
-    } 
+    }
 
+    public function tambahBaris($id)
+    {
+        $query = "INSERT INTO soal VALUES
+                    ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";
+
+        $this->db->query($query);
+        $this->db->bind('soal', $id['soal']);
+        $this->db->bind('option_a', $id['option_a']);
+        $this->db->bind('option_b', $id['option_b']);
+        $this->db->bind('option_c', $id['option_c']);
+        $this->db->bind('option_d', $id['option_d']);
+        $this->db->bind('option_e', $id['option_e']);
+        $this->db->bind('kunci', $id['jawaban']);
+        $this->db->bind('id_ujian', $id['id']);
+
+        $this->db->execute();
+    }
 
     public function tambahDataSoal($data)
-    {   
+    {
         $query = "INSERT INTO ujian VALUES
         ('', :judul, :deskripsi, :id_guru)";
 
@@ -81,7 +98,7 @@ class Soal_model extends Controller
 
         $ujian = $this->db->resultSet()[0];
 
-        for ($i=1; $i < 5; $i++) {
+        for ($i = 1; $i < 5; $i++) {
             // var_dump($data['soal' . $i], $i);
             $query = "INSERT INTO soal VALUES
                     ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";

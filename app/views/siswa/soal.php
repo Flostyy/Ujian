@@ -17,27 +17,27 @@
                   <!-- Opsi Jawaban a -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"><li><?= $data['id']['option_a']; ?></li></label>
+                    <label class="form-check-label" for="flexRadioDefault1"><?= $data['id']['option_a']; ?></label>
                   </div>
                   <!-- Opsi Jawaban b -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"><li><?= $data['id']['option_b']; ?></li></label>
+                    <label class="form-check-label" for="flexRadioDefault1"><?= $data['id']['option_b']; ?></label>
                   </div>
                   <!-- Opsi Jawaban c -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_c']; ?></li></label>
+                    <label class="form-check-label" for="flexRadioDefault2"><?= $data['id']['option_c']; ?></label>
                   </div>
                   <!-- Opsi Jawaban d -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_d']; ?></li></label>
+                    <label class="form-check-label" for="flexRadioDefault2"><?= $data['id']['option_d']; ?></label>
                   </div>
                   <!-- Opsi Jawaban e -->
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><li><?= $data['id']['option_e']; ?></li></label>
+                    <label class="form-check-label" for="flexRadioDefault2"><?= $data['id']['option_e']; ?></label>
                   </div>
                 </div>
               </div>

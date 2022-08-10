@@ -98,7 +98,7 @@
 
  <!-- INI MODALNYA YAA STEVENN -->
     <!-- Modal -->
-    <?php foreach($data['siswa'] as $siswa ) : ?>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -140,9 +140,9 @@
              </div>
              </div>
         </div>
+
       </div>
 
-      <?php endforeach; ?>
 
     </div>
   </div>

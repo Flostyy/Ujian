@@ -63,7 +63,7 @@ class Guru extends Controller
     }
 
     public function tambahSoal()
-    {   
+    {
         session_start();
         $data['judul'] = 'Tambah Soal';
 
@@ -81,10 +81,22 @@ class Guru extends Controller
     {
         $data['judul'] = 'Detail Mapel';
         $data['id'] = $this->model('Soal_model')->getMapelById($id);
+        // var_dump($data['id'][0]['id']);
+        // die();
+        // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'][0]['id'])[0]['jumlahSoal'];
 
         $this->view('templates/header', $data);
         $this->view('guru/detail', $data);
         $this->view('templates/footer');
+    }
+
+    public function tambahTambah($id)
+    {
+        $data = $_POST;
+        $data['id'] = $id;
+        $this->model('Soal_model')->tambahBaris($data);
+
+        header("Location: " . BASE . "/Guru/detailMapel/" . $id);
     }
 
     public function pengaturan()
