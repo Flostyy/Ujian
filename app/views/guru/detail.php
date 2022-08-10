@@ -91,43 +91,59 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form action="">
-          <div class="form-grup">
-            <input type="text" class="form-control" placeholder="Soal" />
+      <div class="form-grup container">
+        <form action="" method="">
+        <div class="row">
+        <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">1</span>
+        <input type="text" name="soal1" class="form-control col" placeholder="Soal" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group mt-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" name="jawaban1" id="" value="option_a">
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 1" />
+          <input type="text" name="option_a1" class="form-control" placeholder="Opsi 1" required/>
+        </div>
+        <div class="input-group mt-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" name="jawaban1" id="" value="option_b">
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 2" />
+          <input type="text" name="option_b1" class="form-control" placeholder="Opsi 2" required/>
+        </div>
+        <div class="input-group mt-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" name="jawaban1" id="" value="option_c">
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 3" />
+          <input type="text" name="option_c1" class="form-control" placeholder="Opsi 3" required/>
+        </div>
+        <div class="input-group mt-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" name="jawaban1" id="" value="option_d">
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 4" />
+          <input type="text" name="option_d1" class="form-control" placeholder="Opsi 4" required/>
+        </div>
+        <div class="input-group mt-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" name="jawaban1" id="" value="option_e">
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 5" />
-          </div>
-          <div class="form-group mt-2">
-
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Pilih Jawaban yang benar</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-
-        </form>
+          <input type="text" name="option_e1" class="form-control" placeholder="Opsi 5" required/>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
+        </form>
       </div>
     </div>
   </div>
