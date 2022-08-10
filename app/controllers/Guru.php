@@ -80,7 +80,7 @@ class Guru extends Controller
     public function detailMapel($id)
     {
         $data['judul'] = 'Detail Mapel';
-        $data['id'] = $this->model('Soal_model')->getMapelById($id);
+        $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
         // var_dump($data['id'][0]['id']);
         // die();
         // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'][0]['id'])[0]['jumlahSoal'];
@@ -107,6 +107,8 @@ class Guru extends Controller
         $data['judul'] = 'pengaturan';
 
         $data['id'] = $this->model('Siswa_model')->getGuruById($id);
+        // var_dump($data['id']);
+        // die;
 
         $this->view('templates/header', $data);
         $this->view('guru/setting', $data);
@@ -130,6 +132,8 @@ class Guru extends Controller
 
     public function ubah()
     {
+        // var_dump($_POST);
+        // die;
         if ($this->model('Siswa_model')->ubahDataGuru($_POST) > 0) {
             header('Location: ' . BASE . '/Guru');
             exit;
