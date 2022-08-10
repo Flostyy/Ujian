@@ -5,29 +5,30 @@
     <div class="row content">
       <div class="col-12 px-md-0 my-auto">
         <div class="headline">
-          Selamat Datang <br class="d-none d-md-block">
-          dan Selamat Mengerjakan
+          Selamat Mengerjakan <br class="d-none d-md-block">
+          <h2>"<?= $_SESSION['nama'] ?>"</h2>
         </div>
         <div class="row benefits" id="see">
-          <?php foreach($data['id'] as $guru) : ?>
-          <div class="col-md-4 mt-md-0">
-            <a href="<?= BASE ?>/Siswa/praSoal/<?= $guru['id'] ?>">
-              <div class="rectangle mx-auto px-1">
-                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png" alt="benefits-1" class="img-fluid">
-                <div class="headline-benefit">
-                  <?= $guru['nama'] ?>
-                </div>
-                <div class="subheadline-benefit mt-2">
-                  <?= $guru['mapel'] ?> <br class="d-none d-md-block">
+          <?php foreach ($data['id'] as $guru) : ?>
+            <div class="col-md-4 mt-md-0">
+              <a href="<?= BASE ?>/Siswa/praSoal/<?= $guru['id'] ?>">
+                <div class="rectangle mx-auto px-1">
+                  <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png" alt="benefits-1" class="img-fluid">
+                  <div class="headline-benefit">
+                    <?= $guru['nama'] ?>
+                  </div>
+                  <div class="subheadline-benefit mt-2">
+                    <?= $guru['mapel'] ?> <br class="d-none d-md-block">
 
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <?php endforeach ; ?>
+              </a>
+            </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
+    <a href="<?= BASE ?>/siswa/mapelSiswa" class="btn btn-outline-success">Lihat lainnya</a>
   </div>
 </section>
 <section class="h-100 w-100 bg-white" style="box-sizing: border-box">

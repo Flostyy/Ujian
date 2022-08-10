@@ -33,7 +33,7 @@ class Siswa extends Controller
 
     public function mapelSiswa()
     {   
-        $data['judul'] = 'Home Siswa';
+        $data['judul'] = 'Mapel Siswa';
         
         $this->view('templates/headersiswa', $data);
         $this->view('siswa/mapel', $data);
