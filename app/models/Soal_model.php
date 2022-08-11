@@ -90,6 +90,10 @@ class Soal_model extends Controller
 
     public function tambahDataSoal($data)
     {
+
+        // var_dump($data['judul'],$data['deskripsi'],$data['id']);
+        // var_dump($data);
+        // die;
         $query = "INSERT INTO ujian VALUES
         ('', :judul, :deskripsi, :id_guru)";
 
@@ -105,7 +109,7 @@ class Soal_model extends Controller
 
         $ujian = $this->db->resultSet()[0];
 
-        for ($i = 1; $i < 5; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             // var_dump($data['soal' . $i], $i);
             $query = "INSERT INTO soal VALUES
                     ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";

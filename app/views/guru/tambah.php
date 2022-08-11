@@ -13,7 +13,7 @@
           <div class="card-body">
             <!-- detail mapel -->
             <div class="col">
-              <form action="<?= BASE ?>/Guru/tambahSoal" method="POST">
+              <form action="<?= BASE ?>/Guru/tambahSoalNew" method="POST">
                 <div class="card">
                   <div class="card-header">Detail</div>
                   <div class="card-body">
@@ -42,61 +42,13 @@
                     
                       
                     
-                    <!-- soal -->
-                    <div class="form-grup container">
-                      <div class="row">
-                      <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">1</span>
-                      <input type="text" name="soal1" class="form-control col" placeholder="Soal" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban1" id="" value="option_a">
-                          </div>
-                        </div>
-                        <input type="text" name="option_a1" class="form-control" placeholder="Opsi 1" required/>
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban1" id="" value="option_b">
-                          </div>
-                        </div>
-                        <input type="text" name="option_b1" class="form-control" placeholder="Opsi 2" required/>
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban1" id="" value="option_c">
-                          </div>
-                        </div>
-                        <input type="text" name="option_c1" class="form-control" placeholder="Opsi 3" required/>
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban1" id="" value="option_d">
-                          </div>
-                        </div>
-                        <input type="text" name="option_d1" class="form-control" placeholder="Opsi 4" required/>
-                      </div>
-                      <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="radio" name="jawaban1" id="" value="option_e">
-                          </div>
-                        </div>
-                        <input type="text" name="option_e1" class="form-control" placeholder="Opsi 5" required/>
-                      </div>
-                    </div>
-                    <?php for ($i=2; $i <= 5; $i++) : ?>
+                    
+                    <?php for ($i=1; $i <= 5; $i++) : ?>
                     <!-- soal -->
                     <div class="form-grup container">
                       <div class="row">
                       <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;"><?=$i?></span>
-                      <input type="text" name="soal<?=$i?>" class="form-control col" placeholder="Soal"/>
+                      <input type="text" name="soal<?=$i?>" class="form-control col" placeholder="Soal" required/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -106,7 +58,7 @@
                             <input type="radio" name="jawaban<?=$i?>" id="" value="option_a">
                           </div>
                         </div>
-                        <input type="text" name="option_a<?=$i?>" class="form-control" placeholder="Opsi 1"/>
+                        <input type="text" name="option_a<?=$i?>" class="form-control" placeholder="Opsi 1" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -114,7 +66,7 @@
                             <input type="radio" name="jawaban<?=$i?>" id="" value="option_b">
                           </div>
                         </div>
-                        <input type="text" name="option_b<?=$i?>" class="form-control" placeholder="Opsi 2"/>
+                        <input type="text" name="option_b<?=$i?>" class="form-control" placeholder="Opsi 2" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -122,7 +74,7 @@
                             <input type="radio" name="jawaban<?=$i?>" id="" value="option_c">
                           </div>
                         </div>
-                        <input type="text" name="option_c<?=$i?>" class="form-control" placeholder="Opsi 3"/>
+                        <input type="text" name="option_c<?=$i?>" class="form-control" placeholder="Opsi 3" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -130,7 +82,7 @@
                             <input type="radio" name="jawaban<?=$i?>" id="" value="option_d">
                           </div>
                         </div>
-                        <input type="text" name="option_d<?=$i?>" class="form-control" placeholder="Opsi 4"/>
+                        <input type="text" name="option_d<?=$i?>" class="form-control" placeholder="Opsi 4" required/>
                       </div>
                       <div class="input-group mt-2">
                         <div class="input-group-prepend">
@@ -138,7 +90,7 @@
                             <input type="radio" name="jawaban<?=$i?>" id="" value="option_e">
                           </div>
                         </div>
-                        <input type="text" name="option_e<?=$i?>" class="form-control" placeholder="Opsi 5"/>
+                        <input type="text" name="option_e<?=$i?>" class="form-control" placeholder="Opsi 5" required/>
                       </div>
                     </div>
                     
@@ -170,7 +122,6 @@
       </div>
     </div>
 </section>
-<!-- footer -->
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

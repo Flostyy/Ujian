@@ -16,46 +16,55 @@
                             <img src="<?= BASE ?>/img/man.png" alt="" width="200px">
                         </div>
                         <div class="card-body">
-                            <button type="button" class="btn btn-block btn-outline-success">Success</button>
+                            <button type="button" class="btn btn-block btn-outline-success">Ubah Foto Profil</button>
                             <p class="mt-3" style="font-size: 14px;">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
                         </div>
                     </div>
 
                 </div>
                 <div class="col-7">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h5 class="card-title">Ubah Biodata diri</h5>
-                            <?php 
-                            // $set=$data['id'] ;
-                            foreach ($data['id'] as $set) : ?>
-                        </li>
-                        <li class="list-group-item col-sm">
-                            <div class="row">
-                                <div class="col-sm-4">Nama</div>
-                                <div class="col"><?= $set['nama'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
-                            </div>
-                        </li>
-                        <li class="list-group-item col-sm">
-                            <div class="row">
-                                <div class="col-sm-4">Mata Pelajaran</div>
-                                <div class="col"><?= $set['mapel'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
-                            </div>
-                        </li>
-                        <li class="list-group-item col-sm">
-                            <div class="row">
-                                <div class="col-sm-4">Email</div>
-                                <div class="col"><?= $set['email'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
-                            </div>
-                        </li>
-                        <li class="list-group-item col-sm">
-                            <div class="row">
-                                <div class="col-sm-4">Password</div>
-                                <div class="col"><?= $set['password'] ?> <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a></div>
-                            </div>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5 class="card-title mt-2">Ubah Biodata Diri</h5>
+                            <a href="<?= BASE; ?>/Guru/ubahData/<?= $data['id'][0]['id'] ?>" class="btn btn-outline-success tampilModalUbah" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $data['id'][0]['id'] ?>" onclick="ubahData('<?= $data['id'][0]['id']; ?>')">Ubah Data</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+
+                                <?php
+                                // $set=$data['id'] ;
+                                foreach ($data['id'] as $set) : ?>
+                                    <li class="list-group-item col-sm">
+                                        <div class="row">
+                                            <div class="col-sm-4">Nama</div>
+                                            <div class="col"><?= $set['nama'] ?>
+
+                                            </div>
+                                    </li>
+                                    <li class="list-group-item col-sm">
+                                        <div class="row">
+                                            <div class="col-sm-4">Mata Pelajaran</div>
+                                            <div class="col"><?= $set['mapel'] ?>
+                                            </div>
+                                    </li>
+                                    <li class="list-group-item col-sm">
+                                        <div class="row">
+                                            <div class="col-sm-4">Email</div>
+                                            <div class="col"><?= $set['email'] ?>
+                                            </div>
+                                    </li>
+                                    <li class="list-group-item col-sm">
+                                        <div class="row">
+                                            <div class="col-sm-4">Password</div>
+                                            <div class="col"><?= $set['password'] ?>
+                                            </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -67,25 +76,47 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header ">
-                <h5 class="modal-title " id="exampleModalLabel">Ubah Nama</h5>
+                <h5 class="modal-title " id="exampleModalLabel">Ubah Biodata Diri</h5>
                 <!-- <p style="">Kamu hanya dapat mengubah nama 1 kali lagi. Pastikan nama sudah benar.</p> -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
-                    <div class="form-grup">
-                        <input type="text" class="form-control" placeholder="Nama" />
+                <form action="<?= BASE; ?>/Guru/ubah" method="POST">
+                    <div class="card-body">
+                        <input type="hidden" name="id" id="id">
+                        <input type="text" name="level" id="level" value="murid" hidden>
+                        <!-- <input type="text" name="mapel" id="mapel" value="murid" hidden> -->
+                        <div class="form-grup mt-2">
+                            <label for="">Nama</label>
+                            <input type="text" id="nama" name="nama" class="form-control" />
+                        </div>
+                        <div class="form-grup mt-2">
+                            <label for="">Mata Pelajaran</label>
+                            <input type="text" id="mapel" name="mapel" class="form-control" />
+                        </div>
+                        <div class="form-grup mt-2">
+                            <label for="">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" />
+                        </div>
+                        <div class="form-grup mt-2">
+                            <label for="">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" />
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="passUbah()">
+                                <label class="form-check-label" for="passEdit">
+                                    <p>Show Password</p>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-
-
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -114,6 +145,44 @@
             }
         });
     });
+</script>
+
+<script>
+    $(function() {
+        $('.tampilModalUbah').on('click', function() {
+            // $('.modal-footer button[type=submit]').html('Ubah Data');
+
+            const id = $(this).data('id');
+
+            $.ajax({
+                url: 'http://localhost/Ujian/public/Guru/ubahData',
+                data: {
+                    id: id
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    $('#nama').val(data.nama);
+                    $('#email').val(data.email);
+                    $('#password').val(data.password);
+                    $('#level').val(data.level);
+                    $('#mapel').val(data.mapel);
+                    $('#id').val(data.id);
+                }
+            });
+        })
+
+    })
+
+    // Show Pass
+    function passUbah() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
 </script>
 </body>
 
