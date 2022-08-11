@@ -52,6 +52,8 @@ class Guru extends Controller
         $id_guru = $_SESSION['id'];
         $data['judul'] = 'Mapel Guru';
         $data['mapel'] = $this->model('Soal_model')->getAllMapel($id_guru);
+        // var_dump($data['mapel']);
+        // die;
         $data['mapel'] = array_map(function ($mapel) {
             $mapel['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($mapel['id'])[0]['jumlahSoal'];
             return $mapel;
@@ -81,8 +83,7 @@ class Guru extends Controller
         session_start();
         // $id = $_SESSION['id'];
         $data = $_POST;
-        // var_dump($data);
-        // die;
+        
 
         // $data['id'] = $id;
         $this->model('Soal_model')->tambahDataSoal($data);
@@ -92,12 +93,17 @@ class Guru extends Controller
 
     public function detailMapel($id)
     {
-        $data['judul'] = 'Detail Mapel';
-        $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
-        // var_dump($data['id']);
-        // die();
-        // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'][0]['id'])[0]['jumlahSoal'];
+        $data['detail'] = $this->model('Soal_model')->getMapelForGuru($id);
+        // var_dump($data['detail'][0]);
+        // die;
+        $data['detail'] = array_map(function ($detail) {
+            $detail['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($detail['id'])[0]['jumlahSoal'];
+            return $detail;
+        }, $data['detail']);
 
+        
+        $data['judul'] = 'Detail Mapel';
+        
         $this->view('templates/header', $data);
         $this->view('guru/detail', $data);
         $this->view('templates/footer');
@@ -169,20 +175,18 @@ class Guru extends Controller
 
     public function soalUbah($id)
     {
-        // var_dump($_POST);
-        // die;
         $data = $_POST;
-        // $data['id'] = $id;
         $this->model('Soal_model')->ubahSoalGuru($data);
         header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
+    }
 
-        // if ($this->model('Soal_model')->ubahSoalGuru($_POST) > 0) {
-        //     header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
-        //     exit;
-        // } else {
-        //     header('Location: ' . BASE . '/Guru');
-        //     exit;
-        // }
+    public function ubahUjian()
+    {
+        $data = $_POST;
+        // var_dump($data);
+        // die;
+        $this->model('Soal_model')->ubahUjianGuru($data);
+        header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id']);
     }
 
     public function hapusSiswa($id)

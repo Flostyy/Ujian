@@ -155,7 +155,25 @@ class Soal_model extends Controller
         $this->db->bind('option_d', $id['option_d']);
         $this->db->bind('option_e', $id['option_e']);
         $this->db->bind('kunci', $id['jawaban']);
-        $this->db->bind('id', 4);
+        $this->db->bind('id', $id.['id']);
+
+        $this->db->execute();
+    }
+
+    public function ubahUjianGuru($data)
+    {
+
+        // var_dump($data);
+        // die;
+        $query = "UPDATE ujian SET 
+                judul = :judul,
+                deskripsi = :deskripsi
+                WHERE id = :id";
+
+        $this->db->query($query);
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('deskripsi', $data['deskripsi']);
+        $this->db->bind('id', $data['id']);
 
         $this->db->execute();
     }

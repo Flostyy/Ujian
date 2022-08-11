@@ -7,14 +7,14 @@
       <div class="col-8">
         <div class="card text">
           <div class="card-header">
-            <h3><?= $data['id'][0]['judul']; ?></h3>
-            <h6><?= $data['id'][0]['deskripsi']; ?></h6>
+            <h3><?= $data['detail'][0]['judul']; ?></h3>
+            <h6><?= $data['detail'][0]['deskripsi']; ?></h6>
           </div>
           <div class="card-body">
-            <?php foreach ($data['id'] as $index => $set) : ?>
+            <?php foreach ($data['detail'] as $index => $set) : ?>
               <h5 class="card-title">
 
-                <h5><span class="badge badge-success mb-1" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
+                <h5><span class="badge badge-success mb-1 mr-2" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
                   <a href="<?= BASE; ?>/Guru/ubahSoal/<?= $set['id_soal']; ?>" class="tampilModalUbah" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $set['id_soal']; ?>" onclick="ubahSoal('<?= $set['id_soal']; ?>')">ubah</a>
 
                 </h5>
@@ -32,17 +32,8 @@
             <?php endforeach; ?>
           </div>
           <div class="card-footer text-muted">
-
             <div class="row d-flex justify-content-between">
-              <div class="">
                 <a href="#" data-toggle="modal" data-target="#tambahSoal" class="btn btn-outline-success"> <i class="fa-solid fa-angles-left"></i> </i>Tambahkan Soal</a>
-              </div>
-              <!-- <div class="">
-                          <a href="#" class="btn btn-warning text-light">Ragu-Ragu</a>
-                        </div> -->
-              <div class="">
-                <a href="#" id="simpan" class="btn btn-outline-success">Simpan <i class="fa-solid fa-angles-right"></i></a>
-              </div>
             </div>
           </div>
         </div>
@@ -51,29 +42,30 @@
 
       <!-- detail mapel -->
       <div class="col-md-4 ml-auto">
-        <form action="">
+        <form action="<?= BASE; ?>/Guru/ubahUjian" method="POST">
           <div class="card">
             <div class="card-header">Detail</div>
             <div class="card-body">
               <div class="form-grup">
-                <label for="">Mata Pelajaran</label>
-                <input type="text" class="form-control" />
+                <label for="">Judul Ujian</label>
+                <input type="text" name="judul" value="<?=$data['detail'][0]['judul']?>" class="form-control" />
               </div>
               <div class="form-grup">
-                <label for="">Materi</label>
-                <input type="text" class="form-control" />
+                <label for="">Deskripsi Ujian</label>
+                <input type="text" name="deskripsi" value="<?=$data['detail'][0]['deskripsi']?>" class="form-control" />
               </div>
               <div class="form-grup">
                 <label for="">Jumlah Soal</label>
-                <input type="text" class="form-control" />
+                <input type="text"  value="<?=$data['detail'][0]['jumlahSoal']?> Soal" readonly class="form-control" />
               </div>
-              <div class="form-grup">
+              <!-- <div class="form-grup">
                 <label for="">Kelas</label>
                 <input type="text" class="form-control" />
-              </div>
+              </div> -->
             </div>
             <div class="card-footer">
-              <input type="button" class="btn btn-primary" id="ubah" value="Ubah" />
+              <input type="hidden" name="id" id="id" value="<?=$data['detail'][0]['id']?>">
+              <input type="submit" class="btn btn-primary" id="" value="Ubah" />
             </div>
           </div>
         </form>
@@ -94,7 +86,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASE; ?>/Guru/soalUbah/<?= $data['id'][0]['id'] ?>" method="POST">
+        <form action="<?= BASE; ?>/Guru/soalUbah/<?= $data['detail'][0]['id'] ?>" method="POST">
           <!-- soal -->
           <div class="form-grup container">
             <div class="row">
@@ -169,7 +161,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASE ?>/Guru/tambahTambah/<?= $data['id'][0]['id'] ?>" method="POST">
+        <form action="<?= BASE ?>/Guru/tambahTambah/<?= $data['detail'][0]['id'] ?>" method="POST">
           <!-- soal -->
           <div class="form-grup container">
             <div class="row">
@@ -289,6 +281,7 @@
         });
     })
 
+    
   })
 </script>
 </body>
