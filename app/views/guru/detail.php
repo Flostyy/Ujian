@@ -13,7 +13,7 @@
           <div class="card-body">
             <?php foreach ($data['id'] as $index => $set) : ?>
               <h5 class="card-title">
-                <h5><span class="badge badge-success mb-1" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
+                <h5><span class="badge badge-success mb-1 mr-2" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
                   <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a>
                 </h5>
               </h5>

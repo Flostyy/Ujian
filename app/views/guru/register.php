@@ -84,8 +84,8 @@
                 </label>
               </div>
             </div>
-              <input type="text" name="level" id="" value="murid" hidden >
-              <input type="text" name="mapel" id="" hidden >
+            <input type="text" name="level" id="" value="murid" hidden>
+            <input type="text" name="mapel" id="" hidden>
           </div>
           <div class="card-footer">
             <input type="submit" class="btn btn-primary" id="tambah_user" value="Tambah" />
@@ -96,56 +96,57 @@
   </div>
 </div>
 
- <!-- INI MODALNYA YAA STEVENN -->
-    <!-- Modal -->
+<!-- INI MODALNYA YAA STEVENN -->
+<!-- Modal -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="<?= BASE; ?>/Guru/ubah" method="POST">
-                <div class="card-body">
-                    <div class="form-grup">
-                      <label for="">Nama</label>
-                      <input type="text" id="nama" name="nama" class="form-control" />
-                    </div>
-                    <div class="form-grup">
-                      <label for="">Email</label>
-                      <input type="email" id="email" name="email" class="form-control" />
-                    </div>
-                    <div class="form-grup">
-                      <label for="">Password</label>
-                      <input type="password" id="password" name="password" class="form-control" />
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="myFunction()">
-                        <label class="form-check-label" for="passEdit">
-                          <p>Show Password</p>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="modal-footer">
-                    <input type="hidden" name="id" id="id">
-                    <input type="text" name="level" id="" value="murid" hidden >
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
-              </form>
-             </div>
-             </div>
-        </div>
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <form action="<?= BASE; ?>/Guru/ubah" method="POST">
+          <div class="card-body">
+            <div class="form-grup">
+              <label for="">Nama</label>
+              <input type="text" id="nama" name="nama" class="form-control" />
+            </div>
+            <div class="form-grup">
+              <label for="">Email</label>
+              <input type="email" id="email" name="email" class="form-control" />
+            </div>
+            <div class="form-grup">
+              <label for="">Password</label>
+              <input type="password" id="password" name="password" class="form-control" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="passUbah()">
+                <label class="form-check-label" for="passEdit">
+                  <p>Show Password</p>
+                </label>
+              </div>
+            </div>
+          </div>
 
-
+          <div class="modal-footer">
+            <input type="hidden" name="id" id="id">
+            <input type="text" name="level" id="level" value="murid" hidden>
+            <input type="text" name="mapel" id="mapel" value="murid" hidden>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
+        </form>
+      </div>
     </div>
   </div>
+
+</div>
+
+
+</div>
+</div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -187,32 +188,34 @@
 </script>
 
 <script>
-        $(function(){
-          $('.tampilModalUbah').on('click',function(){
-              // $('.modal-footer button[type=submit]').html('Ubah Data');
+  $(function() {
+    $('.tampilModalUbah').on('click', function() {
+      // $('.modal-footer button[type=submit]').html('Ubah Data');
 
-              const id = $(this).data('id');
+      const id = $(this).data('id');
 
-              $.ajax({
-                url: 'http://localhost/Ujian/public/Guru/ubahData',
-                data:{id : id},
-                method: 'post',
-                dataType: 'json',
-                success: function(data)  {
-                  $('#nama').val(data.nama);  
-                  $('#email').val(data.email);
-                  $('#password').val(data.password);
-                  $('#level').val(data.level);
-                  $('#mapel').val(data.mapel);
-                  $('#id').val(data.id);
-                }             
-              });
-          })
+      $.ajax({
+        url: 'http://localhost/Ujian/public/Guru/ubahData',
+        data: {
+          id: id
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function(data) {
+          $('#nama').val(data.nama);
+          $('#email').val(data.email);
+          $('#password').val(data.password);
+          $('#level').val(data.level);
+          $('#mapel').val(data.mapel);
+          $('#id').val(data.id);
+        }
+      });
+    })
 
-        })
+  })
 
-// Show Pass
-function myFunction() {
+  // Show Pass
+  function passUbah() {
     var x = document.getElementById("password");
     if (x.type === "password") {
       x.type = "text";
