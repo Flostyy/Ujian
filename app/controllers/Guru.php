@@ -64,17 +64,30 @@ class Guru extends Controller
 
     public function tambahSoal()
     {
-        session_start();
         $data['judul'] = 'Tambah Soal';
 
         $this->view('templates/header', $data);
         $this->view('guru/tambah', $data);
         $this->view('templates/footer');
 
-        if ($this->model('Soal_model')->tambahDataSoal($_POST) > 0) {
-            header('Location: ' . BASE . '/Guru/mapelGuru');
-            exit;
-        }
+        // if ($this->model('Soal_model')->tambahDataSoal($_POST) > 0) {
+        //     header('Location: ' . BASE . '/Guru/mapelGuru');
+        //     exit;
+        // }
+    }
+
+    public function tambahSoalNew()
+    {
+        session_start();
+        // $id = $_SESSION['id'];
+        $data = $_POST;
+        // var_dump($data);
+        // die;
+
+        // $data['id'] = $id;
+        $this->model('Soal_model')->tambahDataSoal($data);
+        // die;
+        header("Location: " . BASE . "/Guru/mapelGuru");
     }
 
     public function detailMapel($id)
@@ -107,6 +120,8 @@ class Guru extends Controller
         $data['judul'] = 'pengaturan';
 
         $data['id'] = $this->model('Siswa_model')->getGuruById($id);
+        // var_dump($data['id']);
+        // die;
 
         $this->view('templates/header', $data);
         $this->view('guru/setting', $data);
@@ -117,9 +132,15 @@ class Guru extends Controller
     {
         $data['judul'] = 'Tambah Guru';
 
-        if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-            header('Location: ' . BASE . '/Guru/register');
-            exit;
+
+        try {
+            if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+                header('Location: ' . BASE .'/Guru/register');
+                exit;
+            }
+        } catch (\Throwable $th) {
+            header('Location: ' . BASE .'/Guru/register?pesan=email sudah terpakai');
+
         }
     }
 
@@ -135,6 +156,8 @@ class Guru extends Controller
 
     public function ubah()
     {
+        // var_dump($_POST);
+        // die;
         if ($this->model('Siswa_model')->ubahDataGuru($_POST) > 0) {
             header('Location: ' . BASE . '/Guru');
             exit;

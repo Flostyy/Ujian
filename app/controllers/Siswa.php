@@ -50,9 +50,15 @@ class Siswa extends Controller
     }
     
     public function soal($id)
-    {
+    {   
+        session_start();
         $data['judul'] = 'Soal';
         $data['id'] = $this->model('Soal_model')->getMapelById($id);
+        $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id']['id'])[0]['jumlahSoal'];
+        $data['id']['id_soal'];
+        
+        // var_dump($data['id']);
+        // die;
         // var_dump($data['id']);
 
         $this->view('templates/headersiswa', $data);
@@ -65,8 +71,11 @@ class Siswa extends Controller
         session_start();
         $data['judul'] = 'Pra Ujian';
         $data['ujian'] = $this->model('Siswa_model')->getMapelById($id);
-        // var_dump($data['id']);
+        $soal = $this->model('Soal_model')->getMapelById($data['ujian']['id']);
         $data['ujian']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['ujian']['id'])[0]['jumlahSoal'];
+        $data['ujian']['id_soal'] = $soal['id_soal'];
+        // var_dump($data['ujian']);
+        // die;
 
         // $data['mapel'] = $this->model('Soal_model')->getAllMapel($id_guru);
         // $data['mapel'] = array_map(function ($mapel) {

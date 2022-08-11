@@ -51,7 +51,7 @@ class Soal_model extends Controller
 
     public function getMapelById($id)
     {
-        $this->db->query('SELECT ujian.id, ujian.judul, ujian.deskripsi, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
+        $this->db->query('SELECT ujian.id, ujian.judul, ujian.deskripsi, soal.id as id_soal, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
@@ -90,6 +90,10 @@ class Soal_model extends Controller
 
     public function tambahDataSoal($data)
     {
+
+        // var_dump($data['judul'],$data['deskripsi'],$data['id']);
+        // var_dump($data);
+        // die;
         $query = "INSERT INTO ujian VALUES
         ('', :judul, :deskripsi, :id_guru)";
 
@@ -99,13 +103,13 @@ class Soal_model extends Controller
         $this->db->bind('id_guru', $data['id']);
 
         $this->db->execute();
-
+        
         $this->db->query('SELECT * FROM ujian ORDER BY ID DESC LIMIT 1');
         $this->db->execute();
 
         $ujian = $this->db->resultSet()[0];
 
-        for ($i = 1; $i < 5; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             // var_dump($data['soal' . $i], $i);
             $query = "INSERT INTO soal VALUES
                     ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";
