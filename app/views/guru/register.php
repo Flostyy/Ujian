@@ -72,7 +72,9 @@
             </div>
             <div class="form-grup">
               <label for="">Email</label>
-              <input type="text" class="form-control" id="emailreg" name="email" required />
+
+              <input type="email" class="form-control" id="emailreg" name="email" required />
+
             </div>
             <div class="form-grup">
               <label for="">Password</label>
@@ -98,6 +100,7 @@
 
 <!-- INI MODALNYA YAA STEVENN -->
 <!-- Modal -->
+
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -185,6 +188,7 @@
         x.type = "password";
       }
     }
+
   </script>
 
   <script>

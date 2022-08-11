@@ -3,14 +3,14 @@
 <div class="container">
     <div class="headline">
         Detail <br class="d-none d-md-block">
-        Mata pelajaran
+        Mata Pelajaran
         <br><br>
     </div>
     <div class="row">
         <div class="col-md">
             <div class="card text-center">
                 <div class="card-header">
-                    <h4>Matematika</h4>
+                    <h4><?= $data['ujian']['mapel']; ?></h4>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-3 mt-md-0">
@@ -18,127 +18,13 @@
                             <div class="rectangle mx-auto px-1">
                                 <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
                                 <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
+                                <?= $data['ujian']['judul']; ?>
                                 </div>
                                 <div class="subheadline-benefit mt-2">
                                     <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
+                                    <?= $data['ujian']['jumlahSoal'] ?> Soal<br class="d-none d-md-block">
                                     <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-body row">
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mt-md-0">
-                        <a href="" data-toggle="modal" data-target="#praSoal">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Bab 1 "Phtyagoras"
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                    <!-- Jumlah soal -->
-                                    10 Soal<br class="d-none d-md-block">
-                                    <!-- Deskripsi -->
-                                    Nilai Minimal 70/100
+                                    <?= $data['ujian']['deskripsi']; ?>
                                 </div>
                             </div>
                         </a>
@@ -165,21 +51,22 @@
                 <div class="card">
                     
                     <div class="card-body">
-                        <h5 class="card-title">Bab 1 "Aljabar"</h5>
+                        <h5 class="card-title"><?= $data['ujian']['judul']; ?></h5>
                         <p class="card-text">
                         
-                        Nama : SteUpanDesu <br>
-                        Kelas : XI RPL 2 / 35 <br>
-                        Jumlah Soal : 10 Soal <br>
-                        Status : Belum mengerjakan <br>
-                        Nilai : -
+                        <?= $data['ujian']['deskripsi']; ?><br>
+                        <?= $_SESSION['nama']; ?><br>
+                        <!-- Kelas : XI RPL 2 / 35 <br> -->
+                        Jumlah Soal : <?= $data['ujian']['jumlahSoal']; ?> Soal <br>
+                        <!-- Status : Belum mengerjakan <br>
+                        Nilai : - -->
                         </p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                <a href="<?=BASE?>/Siswa/soalFisika" class="btn btn-success">Kerjakan</a>
+                <a href="<?=BASE?>/Siswa/soal/<?= $data['ujian']['id'] ?>" class="btn btn-success">Kerjakan</a>
                 
             </div>
         </div>
