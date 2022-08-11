@@ -81,7 +81,7 @@ class Guru extends Controller
     {
         $data['judul'] = 'Detail Mapel';
         $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
-        // var_dump($data['id'][0]['id']);
+        // var_dump($data['id']);
         // die();
         // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'][0]['id'])[0]['jumlahSoal'];
 
@@ -128,6 +128,11 @@ class Guru extends Controller
         echo json_encode($this->model('Siswa_model')->getSiswaById($_POST['id']));
     }
 
+    public function ubahSoal()
+    {
+        echo json_encode($this->model('Soal_model')->getSoalById($_POST['id']));
+    }
+
     public function ubah()
     {
         if ($this->model('Siswa_model')->ubahDataGuru($_POST) > 0) {
@@ -137,6 +142,24 @@ class Guru extends Controller
             header('Location: ' . BASE . '/Guru');
             exit;
         }
+    }
+
+    public function soalUbah($id)
+    {
+        // var_dump($_POST);
+        // die;
+        $data = $_POST;
+        // $data['id'] = $id;
+        $this->model('Soal_model')->ubahSoalGuru($data);
+        header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
+
+        // if ($this->model('Soal_model')->ubahSoalGuru($_POST) > 0) {
+        //     header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
+        //     exit;
+        // } else {
+        //     header('Location: ' . BASE . '/Guru');
+        //     exit;
+        // }
     }
 
     public function hapusSiswa($id)

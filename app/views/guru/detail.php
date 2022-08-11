@@ -14,7 +14,7 @@
             <?php foreach ($data['id'] as $index => $set) : ?>
               <h5 class="card-title">
                 <h5><span class="badge badge-success mb-1" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
-                  <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a>
+                  <a href="<?= BASE; ?>/Guru/ubahSoal/<?= $set['id_soal']; ?>" class="tampilModalUbah" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $set['id_soal']; ?>" onclick="ubahSoal('<?= $set['id_soal']; ?>')">ubah</a>
                 </h5>
               </h5>
               <div class="card-text">
@@ -81,7 +81,7 @@
 </section>
 
 
-<!-- Modal ubah-->
+<!-- Modal ubah Soal-->
 <div class="modal fade" id="ubahSoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -91,58 +91,65 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="form-grup container">
-        <form action="" method="">
-        <div class="row">
-        <span class="badge badge-success mr-2" style="font-size: 20px; line-height: 30px; width:30px;">1</span>
-        <input type="text" name="soal1" class="form-control col" placeholder="Soal" required/>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group mt-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <input type="radio" name="jawaban1" id="" value="option_a">
+      <div class="modal-body">
+        <form action="<?= BASE; ?>/Guru/soalUbah/<?= $data['id'][0]['id'] ?>" method="POST">
+          <!-- soal -->
+          <div class="form-grup container">
+            <div class="row">
+              <input type="text" name="soal" id="soal" class="form-control col" placeholder="Soal" required />
             </div>
           </div>
-          <input type="text" name="option_a1" class="form-control" placeholder="Opsi 1" required/>
-        </div>
-        <div class="input-group mt-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <input type="radio" name="jawaban1" id="" value="option_b">
+          <div class="form-group">
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_a" value="option_a">
+                </div>
+              </div>
+              <input type="text" name="option_a" id="option_a" class="form-control" placeholder="Opsi 1" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_b" value="option_b">
+                </div>
+              </div>
+              <input type="text" name="option_b" id="option_b" class="form-control" placeholder="Opsi 2" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_c" value="option_c">
+                </div>
+              </div>
+              <input type="text" name="option_c" id="option_c" class="form-control" placeholder="Opsi 3" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_d" value="option_d">
+                </div>
+              </div>
+              <input type="text" name="option_d" id="option_d" class="form-control" placeholder="Opsi 4" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_e" value="option_e">
+                </div>
+              </div>
+              <input type="text" name="option_e" id="option_e" class="form-control" placeholder="Opsi 5" required />
             </div>
           </div>
-          <input type="text" name="option_b1" class="form-control" placeholder="Opsi 2" required/>
-        </div>
-        <div class="input-group mt-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <input type="radio" name="jawaban1" id="" value="option_c">
-            </div>
-          </div>
-          <input type="text" name="option_c1" class="form-control" placeholder="Opsi 3" required/>
-        </div>
-        <div class="input-group mt-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <input type="radio" name="jawaban1" id="" value="option_d">
-            </div>
-          </div>
-          <input type="text" name="option_d1" class="form-control" placeholder="Opsi 4" required/>
-        </div>
-        <div class="input-group mt-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <input type="radio" name="jawaban1" id="" value="option_e">
-            </div>
-          </div>
-          <input type="text" name="option_e1" class="form-control" placeholder="Opsi 5" required/>
-        </div>
+
       </div>
       <div class="modal-footer">
+        <input type="hidden" name="id" id="id">
+        <!-- <input type="hidden" name="id_ujian" id="id_ujian"> -->
+        <!-- <input type="hidden" name="jawaban" id="jawaban"> -->
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" /> -->
+        <button type="submit" class="btn btn-primary">Save changes</button>
         </form>
       </div>
     </div>
@@ -249,6 +256,38 @@
       }
     });
   });
+</script>
+
+<script>
+  $(function(){
+    $('.tampilModalUbah').on('click', function(){
+        // $('.modal-footer button[type=submit]').html('Ubah');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+          url: 'http://localhost/Ujian/public/Guru/ubahSoal',
+          data: {id : id},
+          method: 'post',
+          dataType: 'json',
+          success: function(id)  {
+            $('#soal').val(id.soal);  
+            $('#option_a').val(id.option_a);
+            $('#option_b').val(id.option_b);
+            $('#option_c').val(id.option_c);
+            $('#option_d').val(id.option_d);
+            $('#option_e').val(id.option_e);
+            // $('#jawaban').val(id.kunci);
+            // $('#id_ujian').val(id.id_ujian);
+            $('#id').val(id.id);
+            document.getElementsByName("jawaban").forEach(e => {
+              if (e.value == id.kunci) e.checked = true
+            })
+          }             
+        });
+    })
+
+  })
 </script>
 </body>
 
