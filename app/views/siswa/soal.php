@@ -45,13 +45,13 @@
                 
                     <div class="row d-flex justify-content-between">
                       <div class="">
-                        <a href="#" class="btn btn-outline-success" id="previous"> <i class="fa-solid fa-angles-left"></i> </i>Previous</a>
+                        <a href="<?= BASE ?>/Siswa/soal/<?= $data['id']['id'] ?>/<?= $data['id']['id_soal'] ?>" class="btn btn-outline-success" id="previous"> <i class="fa-solid fa-angles-left"></i> </i>Previous</a>
                       </div>
                       <div class="">
                         <a href="#" class="btn btn-warning text-light">Ragu-Ragu</a>
                       </div>
                       <div class="">
-                        <a href="#" class="btn btn-outline-success" id="next">Next <i class="fa-solid fa-angles-right"></i></a>
+                        <a href="<?= BASE ?>/Siswa/soal/<?= $data['id']['id'] ?>/<?= $data['id']['id_soal'] ?>" class="btn btn-outline-success" id="next">Next <i class="fa-solid fa-angles-right"></i></a>
                       </div>
                     </div>
               </div>
@@ -69,7 +69,7 @@
                     <table class="">
                         
                         <tbody class="nomor">
-                          <tr >
+                          <tr>
                             <td>
                                 <button type="button"  class="no btn btn-md btn-outline-success ml-1" class="active" data-cont="r1">1</button>
                             </td>
@@ -171,6 +171,7 @@
           }
         });
       });
+
       document.getElementById("finish").addEventListener("click", () => {
         Swal.fire({
           title: "Are you sure?",
@@ -187,3 +188,48 @@
         });
       });
     </script>
+
+    <script>
+let currentSection = 0;
+let sectionButtons = document.querySelectorAll(".nomor > tr");
+let nextButton = document.querySelector(".next");
+let previousButton = document.querySelector(".previous");
+for (let i = 0; i < sectionButtons.length; i++) {
+    sectionButtons[i].addEventListener("click", function() {
+        sections[currentSection].classList.remove("active");
+        sectionButtons[currentSection].classList.remove("active");
+        sections[currentSection = i].classList.add("active");
+        sectionButtons[currentSection].classList.add("active");
+        if (i === 0) {
+            if (previousButton.className.split(" ").indexOf("disable") < 0) {
+                previousButton.classList.add("disable");
+            }
+        } else {
+            if (previousButton.className.split(" ").indexOf("disable") >= 0) {
+                previousButton.classList.remove("disable");
+            }
+        }
+        if (i === sectionButtons.length - 1) {
+            if (nextButton.className.split(" ").indexOf("disable") < 0) {
+                nextButton.classList.add("disable");
+            }
+        } else {
+            if (nextButton.className.split(" ").indexOf("disable") >= 0) {
+                nextButton.classList.remove("disable");
+            }
+        }
+    });
+}
+
+nextButton.addEventListener("click", function() {
+    if (currentSection < sectionButtons.length - 1) {
+        sectionButtons[currentSection + 1].click();
+    }
+});
+
+previousButton.addEventListener("click", function() {
+    if (currentSection > 0) {
+        sectionButtons[currentSection - 1].click();
+    }
+});
+</script>

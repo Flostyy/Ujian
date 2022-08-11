@@ -64,7 +64,6 @@ class Guru extends Controller
 
     public function tambahSoal()
     {
-        session_start();
         $data['judul'] = 'Tambah Soal';
 
         $this->view('templates/header', $data);

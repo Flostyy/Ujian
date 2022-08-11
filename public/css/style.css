@@ -336,6 +336,40 @@ body .content .content .button-header .btn-story {
   font-size: 15px;
 }
 
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
+ul li.active {
+  opacity: 1 !important;
+}
+
+.next,
+.previous {
+  padding: 15px 10px;
+  border-radius: 6px;
+  background: deepskyblue;
+  color: white;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.next.disable,
+.previous.disable {
+  cursor: none;
+  opacity: 0.5;
+}
+
 /*# sourceMappingURL=main.css.map */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");

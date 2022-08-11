@@ -66,7 +66,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                <a href="<?=BASE?>/Siswa/soal/<?= $data['ujian']['id'] ?>" class="btn btn-success">Kerjakan</a>
+                <a href="<?=BASE?>/Siswa/soal/<?= $data['ujian']['id']?>/<?= $data['ujian']['id_soal']?>" class="btn btn-success">Kerjakan</a>
                 
             </div>
         </div>
