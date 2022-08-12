@@ -66,6 +66,7 @@ class Guru extends Controller
 
     public function tambahSoal()
     {
+        session_start();
         $data['judul'] = 'Tambah Soal';
 
         $this->view('templates/header', $data);
@@ -157,6 +158,9 @@ class Guru extends Controller
 
     public function ubahSoal()
     {
+        // var_dump($id);
+        // var_dump($_POST['id']);
+        // die;
         echo json_encode($this->model('Soal_model')->getSoalById($_POST['id']));
     }
 
@@ -176,6 +180,8 @@ class Guru extends Controller
     public function soalUbah($id)
     {
         $data = $_POST;
+        // var_dump($data);
+        // die;
         $this->model('Soal_model')->ubahSoalGuru($data);
         header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
     }

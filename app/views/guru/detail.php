@@ -33,7 +33,7 @@
           </div>
           <div class="card-footer text-muted">
             <div class="row d-flex justify-content-between">
-                <a href="#" data-toggle="modal" data-target="#tambahSoal" class="btn btn-outline-success"> <i class="fa-solid fa-angles-left"></i> </i>Tambahkan Soal</a>
+              <a href="#" data-toggle="modal" data-target="#tambahSoal" class="btn btn-outline-success"> <i class="fa-solid fa-angles-left"></i> </i>Tambahkan Soal</a>
             </div>
           </div>
         </div>
@@ -48,15 +48,15 @@
             <div class="card-body">
               <div class="form-grup">
                 <label for="">Judul Ujian</label>
-                <input type="text" name="judul" value="<?=$data['detail'][0]['judul']?>" class="form-control" />
+                <input type="text" name="judul" value="<?= $data['detail'][0]['judul'] ?>" class="form-control" />
               </div>
               <div class="form-grup">
                 <label for="">Deskripsi Ujian</label>
-                <input type="text" name="deskripsi" value="<?=$data['detail'][0]['deskripsi']?>" class="form-control" />
+                <input type="text" name="deskripsi" value="<?= $data['detail'][0]['deskripsi'] ?>" class="form-control" />
               </div>
               <div class="form-grup">
                 <label for="">Jumlah Soal</label>
-                <input type="text"  value="<?=$data['detail'][0]['jumlahSoal']?> Soal" readonly class="form-control" />
+                <input type="text" value="<?= $data['detail'][0]['jumlahSoal'] ?> Soal" readonly class="form-control" />
               </div>
               <!-- <div class="form-grup">
                 <label for="">Kelas</label>
@@ -64,7 +64,7 @@
               </div> -->
             </div>
             <div class="card-footer">
-              <input type="hidden" name="id" id="id" value="<?=$data['detail'][0]['id']?>">
+              <input type="hidden" name="id" id="id" value="<?= $data['detail'][0]['id'] ?>">
               <input type="submit" class="btn btn-primary" id="" value="Ubah" />
             </div>
           </div>
@@ -138,7 +138,7 @@
 
       </div>
       <div class="modal-footer">
-        <input type="hidden" name="id" id="id">
+        <input type="hidden" name="id_soal" id="id_soal">
         <!-- <input type="hidden" name="id_ujian" id="id_ujian"> -->
         <!-- <input type="hidden" name="jawaban" id="jawaban"> -->
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -172,7 +172,7 @@
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <input type="radio" name="jawaban" id="" value="option_a">
+                  <input type="radio" name="jawaban" id="" required value="option_a">
                 </div>
               </div>
               <input type="text" name="option_a" class="form-control" placeholder="Opsi 1" required />
@@ -180,7 +180,7 @@
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <input type="radio" name="jawaban" id="" value="option_b">
+                  <input type="radio" name="jawaban" id="" required value="option_b">
                 </div>
               </div>
               <input type="text" name="option_b" class="form-control" placeholder="Opsi 2" required />
@@ -188,7 +188,7 @@
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <input type="radio" name="jawaban" id="" value="option_c">
+                  <input type="radio" name="jawaban" id="" required value="option_c">
                 </div>
               </div>
               <input type="text" name="option_c" class="form-control" placeholder="Opsi 3" required />
@@ -196,7 +196,7 @@
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <input type="radio" name="jawaban" id="" value="option_d">
+                  <input type="radio" name="jawaban" id="" required value="option_d">
                 </div>
               </div>
               <input type="text" name="option_d" class="form-control" placeholder="Opsi 4" required />
@@ -204,7 +204,7 @@
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <input type="radio" name="jawaban" id="" value="option_e">
+                  <input type="radio" name="jawaban" id="" required value="option_e">
                 </div>
               </div>
               <input type="text" name="option_e" class="form-control" placeholder="Opsi 5" required />
@@ -253,35 +253,37 @@
 </script>
 
 <script>
-  $(function(){
-    $('.tampilModalUbah').on('click', function(){
-        // $('.modal-footer button[type=submit]').html('Ubah');
+  $(function() {
+    $('.tampilModalUbah').on('click', function() {
+      // $('.modal-footer button[type=submit]').html('Ubah');
 
-        const id = $(this).data('id');
+      const id = $(this).data('id');
 
-        $.ajax({
-          url: 'http://localhost/Ujian/public/Guru/ubahSoal',
-          data: {id : id},
-          method: 'post',
-          dataType: 'json',
-          success: function(id)  {
-            $('#soal').val(id.soal);  
-            $('#option_a').val(id.option_a);
-            $('#option_b').val(id.option_b);
-            $('#option_c').val(id.option_c);
-            $('#option_d').val(id.option_d);
-            $('#option_e').val(id.option_e);
-            // $('#jawaban').val(id.kunci);
-            // $('#id_ujian').val(id.id_ujian);
-            $('#id').val(id.id);
-            document.getElementsByName("jawaban").forEach(e => {
-              if (e.value == id.kunci) e.checked = true
-            })
-          }             
-        });
+      $.ajax({
+        url: 'http://localhost/Ujian/public/Guru/ubahSoal',
+        data: {
+          id: id
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function(id) {
+          $('#soal').val(id.soal);
+          $('#option_a').val(id.option_a);
+          $('#option_b').val(id.option_b);
+          $('#option_c').val(id.option_c);
+          $('#option_d').val(id.option_d);
+          $('#option_e').val(id.option_e);
+          // $('#jawaban').val(id.kunci);
+          // $('#id_ujian').val(id.id_ujian);
+          $('#id_soal').val(id.id);
+          document.getElementsByName("jawaban").forEach(e => {
+            if (e.value == id.kunci) e.checked = true
+          })
+        }
+      });
     })
 
-    
+
   })
 </script>
 </body>
