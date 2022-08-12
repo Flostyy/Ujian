@@ -7,14 +7,16 @@
       <div class="col-8">
         <div class="card text">
           <div class="card-header">
-            <h3><?= $data['id'][0]['judul']; ?></h3>
-            <h6><?= $data['id'][0]['deskripsi']; ?></h6>
+            <h3><?= $data['detail'][0]['judul']; ?></h3>
+            <h6><?= $data['detail'][0]['deskripsi']; ?></h6>
           </div>
           <div class="card-body">
-            <?php foreach ($data['id'] as $index => $set) : ?>
+            <?php foreach ($data['detail'] as $index => $set) : ?>
               <h5 class="card-title">
+
                 <h5><span class="badge badge-success mb-1 mr-2" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
-                  <a href="" data-toggle="modal" data-target="#ubahSoal">ubah</a>
+                  <a href="<?= BASE; ?>/Guru/ubahSoal/<?= $set['id_soal']; ?>" class="tampilModalUbah" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $set['id_soal']; ?>" onclick="ubahSoal('<?= $set['id_soal']; ?>')">ubah</a>
+
                 </h5>
               </h5>
               <div class="card-text">
@@ -30,17 +32,8 @@
             <?php endforeach; ?>
           </div>
           <div class="card-footer text-muted">
-
             <div class="row d-flex justify-content-between">
-              <div class="">
                 <a href="#" data-toggle="modal" data-target="#tambahSoal" class="btn btn-outline-success"> <i class="fa-solid fa-angles-left"></i> </i>Tambahkan Soal</a>
-              </div>
-              <!-- <div class="">
-                          <a href="#" class="btn btn-warning text-light">Ragu-Ragu</a>
-                        </div> -->
-              <div class="">
-                <a href="#" id="simpan" class="btn btn-outline-success">Simpan <i class="fa-solid fa-angles-right"></i></a>
-              </div>
             </div>
           </div>
         </div>
@@ -49,29 +42,30 @@
 
       <!-- detail mapel -->
       <div class="col-md-4 ml-auto">
-        <form action="">
+        <form action="<?= BASE; ?>/Guru/ubahUjian" method="POST">
           <div class="card">
             <div class="card-header">Detail</div>
             <div class="card-body">
               <div class="form-grup">
-                <label for="">Mata Pelajaran</label>
-                <input type="text" class="form-control" />
+                <label for="">Judul Ujian</label>
+                <input type="text" name="judul" value="<?=$data['detail'][0]['judul']?>" class="form-control" />
               </div>
               <div class="form-grup">
-                <label for="">Materi</label>
-                <input type="text" class="form-control" />
+                <label for="">Deskripsi Ujian</label>
+                <input type="text" name="deskripsi" value="<?=$data['detail'][0]['deskripsi']?>" class="form-control" />
               </div>
               <div class="form-grup">
                 <label for="">Jumlah Soal</label>
-                <input type="text" class="form-control" />
+                <input type="text"  value="<?=$data['detail'][0]['jumlahSoal']?> Soal" readonly class="form-control" />
               </div>
-              <div class="form-grup">
+              <!-- <div class="form-grup">
                 <label for="">Kelas</label>
                 <input type="text" class="form-control" />
-              </div>
+              </div> -->
             </div>
             <div class="card-footer">
-              <input type="button" class="btn btn-primary" id="ubah" value="Ubah" />
+              <input type="hidden" name="id" id="id" value="<?=$data['detail'][0]['id']?>">
+              <input type="submit" class="btn btn-primary" id="" value="Ubah" />
             </div>
           </div>
         </form>
@@ -81,7 +75,7 @@
 </section>
 
 
-<!-- Modal ubah-->
+<!-- Modal ubah Soal-->
 <div class="modal fade" id="ubahSoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -92,42 +86,65 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
-          <div class="form-grup">
-            <input type="text" class="form-control" placeholder="Soal" />
+        <form action="<?= BASE; ?>/Guru/soalUbah/<?= $data['detail'][0]['id'] ?>" method="POST">
+          <!-- soal -->
+          <div class="form-grup container">
+            <div class="row">
+              <input type="text" name="soal" id="soal" class="form-control col" placeholder="Soal" required />
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 1" />
+          <div class="form-group">
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_a" value="option_a">
+                </div>
+              </div>
+              <input type="text" name="option_a" id="option_a" class="form-control" placeholder="Opsi 1" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_b" value="option_b">
+                </div>
+              </div>
+              <input type="text" name="option_b" id="option_b" class="form-control" placeholder="Opsi 2" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_c" value="option_c">
+                </div>
+              </div>
+              <input type="text" name="option_c" id="option_c" class="form-control" placeholder="Opsi 3" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_d" value="option_d">
+                </div>
+              </div>
+              <input type="text" name="option_d" id="option_d" class="form-control" placeholder="Opsi 4" required />
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="jawaban" id="jawaban_e" value="option_e">
+                </div>
+              </div>
+              <input type="text" name="option_e" id="option_e" class="form-control" placeholder="Opsi 5" required />
+            </div>
           </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 2" />
-          </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 3" />
-          </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 4" />
-          </div>
-          <div class="form-grup mt-2">
-            <input type="text" class="form-control" placeholder="Opsi 5" />
-          </div>
-          <div class="form-group mt-2">
 
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Pilih Jawaban yang benar</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-
-        </form>
       </div>
       <div class="modal-footer">
+        <input type="hidden" name="id" id="id">
+        <!-- <input type="hidden" name="id_ujian" id="id_ujian"> -->
+        <!-- <input type="hidden" name="jawaban" id="jawaban"> -->
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" /> -->
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
       </div>
     </div>
   </div>
@@ -144,7 +161,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASE ?>/Guru/tambahTambah/<?= $data['id'][0]['id'] ?>" method="POST">
+        <form action="<?= BASE ?>/Guru/tambahTambah/<?= $data['detail'][0]['id'] ?>" method="POST">
           <!-- soal -->
           <div class="form-grup container">
             <div class="row">
@@ -233,6 +250,39 @@
       }
     });
   });
+</script>
+
+<script>
+  $(function(){
+    $('.tampilModalUbah').on('click', function(){
+        // $('.modal-footer button[type=submit]').html('Ubah');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+          url: 'http://localhost/Ujian/public/Guru/ubahSoal',
+          data: {id : id},
+          method: 'post',
+          dataType: 'json',
+          success: function(id)  {
+            $('#soal').val(id.soal);  
+            $('#option_a').val(id.option_a);
+            $('#option_b').val(id.option_b);
+            $('#option_c').val(id.option_c);
+            $('#option_d').val(id.option_d);
+            $('#option_e').val(id.option_e);
+            // $('#jawaban').val(id.kunci);
+            // $('#id_ujian').val(id.id_ujian);
+            $('#id').val(id.id);
+            document.getElementsByName("jawaban").forEach(e => {
+              if (e.value == id.kunci) e.checked = true
+            })
+          }             
+        });
+    })
+
+    
+  })
 </script>
 </body>
 
