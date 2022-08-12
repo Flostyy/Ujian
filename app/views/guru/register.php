@@ -30,8 +30,8 @@
                   <td> <?= $siswa['email']; ?></td>
                   <td>
                     <!-- Button trigger modal, modalnya dibawah ygy-->
-                    <a href="<?= BASE; ?>/Guru/ubahData/<?= $siswa['id'] ?>" class="btn btn-warning tampilModalUbah" data-toggle="modal" data-target="#exampleModal" data-id="<?= $siswa['id'] ?>" onclick="ubahData('<?= $siswa['id']; ?>')">Edit</a>
-                    <a id="hapus<?= $siswa['id'] ?>" class="btn btn-danger">Hapus</a>
+                    <a href="<?= BASE; ?>/Guru/ubahData/<?= $siswa['id'] ?>" class="btn btn-warning  tampilModalUbah" data-toggle="modal" data-target="#exampleModal" data-id="<?= $siswa['id'] ?>" onclick="ubahData('<?= $siswa['id']; ?>')">Edit</a>
+                    <a id="hapus<?= $siswa['id'] ?>" class="btn text-light btn-danger">Hapus</a>
                     <script>
                       var id = "<?= $siswa['id'] ?>";
                       document.getElementById(`hapus${id}`).addEventListener("click", () => {
@@ -89,8 +89,8 @@
             <input type="text" name="level" id="" value="murid" hidden>
             <input type="text" name="mapel" id="" hidden>
           </div>
-          <div class="card-footer">
-            <input type="submit" class="btn btn-primary" id="tambah_user" value="Tambah" />
+          <div class="card-footer d-flex justify-content-end">
+            <input type="submit" class="btn btn-outline-primary d-flex justify-content-center" id="tambah_user" value="Tambah" />
           </div>
         </div>
       </form>
@@ -102,154 +102,205 @@
 <!-- Modal -->
 
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="<?= BASE; ?>/Guru/ubah" method="POST">
-            <div class="card-body">
-              <div class="form-grup mt-2">
-                <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" class="form-control" />
-              </div>
-              <div class="form-grup mt-2">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" />
-              </div>
-              <div class="form-grup mt-2">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" />
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="showPassEdit()">
-                  <label class="form-check-label" for="passEdit">
-                    <p>Show Password</p>
-                  </label>
-                </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit biodata siswa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?= BASE; ?>/Guru/ubah" method="POST">
+          <div class="card-body">
+            <div class="form-grup ">
+              <label for="nama">Nama</label>
+              <input type="text" id="nama" name="nama" class="form-control" />
+            </div>
+            <div class="form-grup mt-2">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" />
+            </div>
+            <div class="form-grup mt-2">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" class="form-control" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="showPassEdit()">
+                <label class="form-check-label" for="passEdit">
+                  <p>Show Password</p>
+                </label>
               </div>
             </div>
+          </div>
 
-            <div class="modal-footer">
-              <input type="hidden" name="id" id="id">
-              <input type="text" name="level" id="" value="murid" hidden>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
-            </div>
-          </form>
-        </div>
+          <div class="modal-footer">
+            <input type="hidden" name="id" id="id">
+            <input type="text" name="level" id="" value="murid" hidden>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" id="ubah" value="Ubah" />
+          </div>
+        </form>
       </div>
     </div>
-
-  
-
   </div>
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script>
-    document.getElementById("tambah_user").addEventListener("submit", e => {
-      e.preventDefault()
-      Swal.fire("Good job!", "You clicked the button!", "success");
-      setTimeout(() => {
-        document.getElementById("tambah_user").submit()
-      }, 3000)
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  document.getElementById("tambah_user").addEventListener("submit", e => {
+    e.preventDefault()
+    Swal.fire("Good job!", "You clicked the button!", "success");
+    setTimeout(() => {
+      document.getElementById("tambah_user").submit()
+    }, 3000)
+  });
+  document.getElementById("hapus").addEventListener("click", () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
     });
-    document.getElementById("hapus").addEventListener("click", () => {
-      Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+  });
+
+  // Show Pass Tambah
+  function ShowPassAdd() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+<script>
+  $(function() {
+    $('.tampilModalUbah').on('click', function() {
+      // $('.modal-footer button[type=submit]').html('Ubah Data');
+
+      const id = $(this).data('id');
+
+      $.ajax({
+        url: 'http://localhost/Ujian/public/Guru/ubahData',
+        data: {
+          id: id
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function(data) {
+          $('#nama').val(data.nama);
+          $('#email').val(data.email);
+          $('#password').val(data.password);
+          $('#level').val(data.level);
+          $('#mapel').val(data.mapel);
+          $('#id').val(data.id);
         }
       });
-    });
-
-    // Show Pass Tambah
-    function ShowPassAdd() {
-      var x = document.getElementById("myInput");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
-    }
-
-  </script>
-
-  <script>
-    $(function() {
-      $('.tampilModalUbah').on('click', function() {
-        // $('.modal-footer button[type=submit]').html('Ubah Data');
-
-        const id = $(this).data('id');
-
-        $.ajax({
-          url: 'http://localhost/Ujian/public/Guru/ubahData',
-          data: {
-            id: id
-          },
-          method: 'post',
-          dataType: 'json',
-          success: function(data) {
-            $('#nama').val(data.nama);
-            $('#email').val(data.email);
-            $('#password').val(data.password);
-            $('#level').val(data.level);
-            $('#mapel').val(data.mapel);
-            $('#id').val(data.id);
-          }
-        });
-      })
-
     })
 
-    // Show Pass Edit
-    function showPassEdit() {
-      var x = document.getElementById("password");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
+  })
+
+  // Show Pass Edit
+  function showPassEdit() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
-  </script>
+  }
+</script>
 
-  <script>
-    $(function() {
+<script>
+  $(function() {
 
-      FetchQueryString("pesan");
+    FetchQueryString("pesan");
 
-      function FetchQueryString(regKey) {
-        regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    function FetchQueryString(regKey) {
+      regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 
-        var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+      var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
 
-        var result = regexValue.exec(window.location.href);
+      var result = regexValue.exec(window.location.href);
 
-        if (result == null);
+      if (result == null);
 
-        else Swal.fire(
-          "Email Sudah Terpakai", "Gunakan Email Yang Lain"
-        ).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "http://localhost/Ujian/public/Guru/register";
-          }
-        });
-      }
-    })
-  </script>
+      else Swal.fire(
+        "Email Sudah Terpakai", "Gunakan Email Yang Lain"
+      ).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "http://localhost/Ujian/public/Guru/register";
+        }
+      });
+    }
+  })
+
+  $(function() {
+
+    FetchQueryString("pesanUbah");
+
+    function FetchQueryString(regKey) {
+      regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+      var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+
+      var result = regexValue.exec(window.location.href);
+
+      if (result == null);
+
+      else Swal.fire(
+        "Data berhasil diubah",
+        '',
+        'success'
+        
+      ).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "http://localhost/Ujian/public/Guru/register";
+        }
+      });
+    }
+  })
+
+  $(function() {
+
+    FetchQueryString("pesan!Ubah");
+
+    function FetchQueryString(regKey) {
+      regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+      var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+
+      var result = regexValue.exec(window.location.href);
+
+      if (result == null);
+
+      else Swal.fire(
+        'Anda tidak merubah apapun',
+        'Data tidak ada perubahan',
+        'info'
+        
+      ).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "http://localhost/Ujian/public/Guru/register";
+        }
+      });
+    }
+  })
+</script>

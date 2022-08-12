@@ -79,8 +79,8 @@ class Siswa_model extends Controller
         `nama`=:nama,
         `email`=:email,
         `password`=:password,
-        `level`=:level,
-        `mapel`=:mapel 
+        `level`=:level
+        -- `mapel`=:mapel 
         WHERE `id`=:id";
         // UPDATE users SET
         // nama = :nama, 
@@ -96,7 +96,7 @@ class Siswa_model extends Controller
         $this->db->bind('email', $data['email']);
         $this->db->bind('password', $data['password']);
         $this->db->bind('level', $data['level']);
-        $this->db->bind('mapel', $data['mapel']);
+        // $this->db->bind('mapel', $data['mapel']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();

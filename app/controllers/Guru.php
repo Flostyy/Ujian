@@ -84,7 +84,7 @@ class Guru extends Controller
         session_start();
         // $id = $_SESSION['id'];
         $data = $_POST;
-        
+
 
         // $data['id'] = $id;
         $this->model('Soal_model')->tambahDataSoal($data);
@@ -94,6 +94,15 @@ class Guru extends Controller
 
     public function detailMapel($id)
     {
+        // try {
+        //     if ($this->model('Soal_model')->getMapelForGuru($id) > 0) {
+        //         header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
+        //         exit;
+        //     }
+        // } catch (\Throwable) {
+        //     header('Location: ' . BASE . '/Guru/detailMapel');
+        // }
+
         $data['detail'] = $this->model('Soal_model')->getMapelForGuru($id);
         // var_dump($data['detail'][0]);
         // die;
@@ -102,9 +111,9 @@ class Guru extends Controller
             return $detail;
         }, $data['detail']);
 
-        
+
         $data['judul'] = 'Detail Mapel';
-        
+
         $this->view('templates/header', $data);
         $this->view('guru/detail', $data);
         $this->view('templates/footer');
@@ -137,17 +146,13 @@ class Guru extends Controller
 
     public function tambahSiswa()
     {
-        $data['judul'] = 'Tambah Guru';
-
-
         try {
-            if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-                header('Location: ' . BASE .'/Guru/register');
+            if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+                header('Location: ' . BASE . '/Guru/register');
                 exit;
             }
-        } catch (\Throwable $th) {
-            header('Location: ' . BASE .'/Guru/register?pesan=email sudah terpakai');
-
+        } catch (\Throwable) {
+            header('Location: ' . BASE . '/Guru/register?pesan=email sudah terpakai');
         }
     }
 
@@ -168,11 +173,14 @@ class Guru extends Controller
     {
         // var_dump($_POST);
         // die;
+        // $this->model('Siswa_model')->ubahDataGuru($_POST);
+        // header('Location: ' . BASE . '/Guru/register');
+
         if ($this->model('Siswa_model')->ubahDataGuru($_POST) > 0) {
-            header('Location: ' . BASE . '/Guru');
+            header('Location: ' . BASE . '/Guru/register?pesanUbah= Data berhasil diubah');
             exit;
         } else {
-            header('Location: ' . BASE . '/Guru');
+            header('Location: ' . BASE . '/Guru/register?pesan!Ubah=Data tidak ada perubahan');
             exit;
         }
     }
@@ -193,6 +201,15 @@ class Guru extends Controller
         // die;
         $this->model('Soal_model')->ubahUjianGuru($data);
         header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id']);
+
+        if ($this->model('Soal_model')->ubahUjianGuru($data) > 0) {
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] .'?pesan1= Data berhasil diubah');
+            exit;
+        } else {
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] .'?pesan2= Data tidak ada Perubahan');
+            exit;
+        }
+    
     }
 
     public function hapusSiswa($id)
