@@ -36,6 +36,17 @@ class Guru extends Controller
         $this->view('templates/footer');
     }
 
+
+
+    public function test()
+    {
+        $data['judul'] = 'Daftar Siswa';
+
+        $this->view('templates/header', $data);
+        $this->view('guru/test', $data);
+        $this->view('templates/footer');
+    }
+
     public function register()
     {
         $data['judul'] = 'Daftar Siswa';
@@ -203,13 +214,12 @@ class Guru extends Controller
         header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id']);
 
         if ($this->model('Soal_model')->ubahUjianGuru($data) > 0) {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] .'?pesan1= Data berhasil diubah');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan1= Data berhasil diubah');
             exit;
         } else {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] .'?pesan2= Data tidak ada Perubahan');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan2= Data tidak ada Perubahan');
             exit;
         }
-    
     }
 
     public function hapusSiswa($id)

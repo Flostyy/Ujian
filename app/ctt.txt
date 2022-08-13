@@ -100,3 +100,5 @@ width: 100px;
 
 <button class="previous disable" id="previous">Previous</button>
 <button class="next" id="next">Next</button>
+
+<?= BASE ?>/Siswa/soal/<?= $data['id']['id'] ?>/<?= $data['id']['id_soal'] ?>

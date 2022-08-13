@@ -3,23 +3,23 @@
 class Siswa extends Controller
 {
     public function index()
-    {   
-        if(session_status() === PHP_SESSION_NONE) session_start();
+    {
+        if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['nama'])) {
             ob_start();
             header('Location: ' . 'http://localhost/Ujian/public/Login');
             ob_end_flush();
             die();
         }
-        
-        if ($_SESSION['level'] != "murid" ) {
+
+        if ($_SESSION['level'] != "murid") {
             header('Location: ' . 'http://localhost/Ujian/public/Guru');
             die();
         }
-    
-        $data['id'] = $this->model('Siswa_model')->getAllMurid();    
+
+        $data['id'] = $this->model('Siswa_model')->getAllMurid();
         $data['judul'] = 'Home Siswa';
-        
+
         $this->view('templates/headersiswa', $data);
         $this->view('siswa/index', $data);
         $this->view('templates/footer');
@@ -32,9 +32,9 @@ class Siswa extends Controller
     // }
 
     public function mapelSiswa()
-    {   
+    {
         $data['judul'] = 'Mapel Siswa';
-        
+
         $this->view('templates/headersiswa', $data);
         $this->view('siswa/mapel', $data);
         $this->view('templates/footer');
@@ -48,15 +48,14 @@ class Siswa extends Controller
         $this->view('siswa/kontak', $data);
         $this->view('templates/footer');
     }
-    
+
     public function soal($id)
-    {   
+    {
         session_start();
         $data['judul'] = 'Soal';
-        $data['id'] = $this->model('Soal_model')->getMapelById($id);
-        $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id']['id'])[0]['jumlahSoal'];
-        $data['id']['id_soal'];
-        
+        $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
+        // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'])[0]['jumlahSoal'];
+
         // var_dump($data['id']);
         // die;
         // var_dump($data['id']);
@@ -87,14 +86,13 @@ class Siswa extends Controller
         $this->view('siswa/praSoal', $data);
         $this->view('templates/footer');
     }
-    
+
 
     public function tambah()
     {
-        if($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+        if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
             header('Location: ' . BASE . '/Siswa');
             exit;
         }
     }
-
 }

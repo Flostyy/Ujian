@@ -49,6 +49,9 @@
             <li class="nav-item">
               <a class="nav-link px-md-4" href="<?= BASE; ?>/Guru/pengaturan">Pengaturan</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link px-md-4" href="<?= BASE; ?>/Guru/test">Test</a>
+            </li>
           </ul>
           <div class="d-flex">
             <a class="btn btn-get-started btn-get-started-blue text-white" id="logout" href="#">Logout</a>
