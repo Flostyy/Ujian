@@ -6,6 +6,7 @@
       <div class="col-sm-8 p-2">
         <div class="card text">
           <div class="card-header">
+
             <h3><?= $data['id'][0]['judul']; ?></h3>
             <h6><?= $data['id'][0]['deskripsi']; ?></h6>
           </div>
@@ -42,41 +43,71 @@
                     <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_e']; ?></label>
                   </div>
                 </div>
-            </div>
 
-            <div class="section">
-              <div class="card-title">
-                <h5><span class="badge badge-success mb-1" id="r2" style="font-size: 20px">2</span><?= $tada['soal']; ?></h5>
-              </div>
-              <div class="card-text">
-                <!-- Opsi Jawaban a -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                  <label class="form-check-label" for="flexRadioDefault1"><?= $tada['option_a']; ?></label>
-                </div>
-                <!-- Opsi Jawaban b -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                  <label class="form-check-label" for="flexRadioDefault1"><?= $tada['option_b']; ?></label>
-                </div>
-                <!-- Opsi Jawaban c -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                  <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_c']; ?></label>
-                </div>
-                <!-- Opsi Jawaban d -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                  <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_d']; ?></label>
-                </div>
-                <!-- Opsi Jawaban e -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                  <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_e']; ?></label>
-                </div>
-              <?php endforeach; ?>
-              </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 p-2">
+        <div class="card text">
+          <div class="card-header">
+            Jumlah Soal
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+              <div class="nomor" style="margin-left: -10px;">
+                <ul style="list-style-type: none;">
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" class="active" data-cont="r1">1</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">2</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">3</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">4</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">5</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">6</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">7</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">8</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">9</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">10</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">11</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">12</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">13</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">14</button>
+                  </li>
+                  <li class="d-inline">
+                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">15</button>
+                  </li>
+                </ul>
+              </div>
+
+          </div>
+          <div class="card-footer d-flex justify-content-end">
+            <a href="#" id="finish" class="btn btn-success ">Finish It !</a>
           </div>
           <div class="card-footer text-muted">
             <div class="row d-flex justify-content-between">
@@ -170,9 +201,11 @@
       </div>
     </div>
   </div>
+
   </div>
 </section>
 <!-- End Content -->
+
 
 <script>
   document.getElementById("logout").addEventListener("click", () => {
@@ -210,6 +243,7 @@
 
 <script>
   let currentSection = 0;
+
   let sections = document.querySelectorAll(".section");
   let sectionButtons = document.querySelectorAll(".nomor > li > button");
   let nextButton = document.querySelector(".next");
@@ -221,8 +255,6 @@
       sectionButtons[currentSection].classList.remove("active");
       sections[currentSection = i].classList.add("active");
       sectionButtons[currentSection].classList.add("active");
-
-
       if (i === 0) {
         if (previousButton.className.split(" ").indexOf("disable") < 0) {
           previousButton.classList.add("disable");

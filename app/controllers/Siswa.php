@@ -32,7 +32,10 @@ class Siswa extends Controller
     // }
 
     public function mapelSiswa()
-    {
+
+    {   
+        session_start();
+
         $data['judul'] = 'Mapel Siswa';
 
         $this->view('templates/headersiswa', $data);
@@ -42,6 +45,7 @@ class Siswa extends Controller
 
     public function kontak()
     {
+        session_start();
         $data['judul'] = 'Kontak kami';
 
         $this->view('templates/headersiswa', $data);
