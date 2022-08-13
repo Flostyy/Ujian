@@ -38,6 +38,7 @@ class Guru extends Controller
 
     public function register()
     {
+        session_start();
         $data['judul'] = 'Daftar Siswa';
         $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
 
@@ -151,10 +152,11 @@ class Guru extends Controller
                 header('Location: ' . BASE . '/Guru/register');
                 exit;
             }
-        } catch (\Throwable) {
+        } catch (\Throwable $th) {
             header('Location: ' . BASE . '/Guru/register?pesan=email sudah terpakai');
         }
     }
+    
 
     public function ubahData()
     {
