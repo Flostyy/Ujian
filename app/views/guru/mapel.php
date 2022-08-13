@@ -35,7 +35,7 @@
 
                   <td>
                     <a href="<?= BASE; ?>/Guru/detailMapel/<?= $mapel['id'] ?>" id="" class="btn btn-primary">Detail</a>
-                    <a id="hapus<?= $mapel['id'] ?>" class="btn btn-danger">Hapus</a>
+                    <a id="hapus<?= $mapel['id'] ?>" class="btn text-light btn-danger">Hapus</a>
                     <script>
                       var id = "<?= $mapel['id'] ?>";
                       document.getElementById(`hapus${id}`).addEventListener("click", () => {

@@ -43,7 +43,7 @@
                       
                     
                     
-                    <?php for ($i=1; $i <= 5; $i++) : ?>
+                    <?php for ($i=1; $i <= 2; $i++) : ?>
                     <!-- soal -->
                     <div class="form-grup container">
                       <div class="row">
