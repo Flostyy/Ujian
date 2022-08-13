@@ -72,8 +72,6 @@ class Soal_model extends Controller
 
     public function tambahBaris($id)
     {
-        var_dump($id);
-        die;
         $query = "INSERT INTO soal VALUES
                     ('', :soal, :option_a, :option_b, :option_c, :option_d, :option_e, :kunci, :id_ujian)";
 
@@ -105,7 +103,7 @@ class Soal_model extends Controller
         $this->db->bind('id_guru', $data['id']);
 
         $this->db->execute();
-        
+
         $this->db->query('SELECT * FROM ujian ORDER BY ID DESC LIMIT 1');
         $this->db->execute();
 

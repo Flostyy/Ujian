@@ -346,9 +346,9 @@ body .content .content .button-header .btn-story {
   font-size: 15px;
 }
 
-.section {
+/* .section {
   display: none;
-}
+} */
 
 .section.active {
   display: block;

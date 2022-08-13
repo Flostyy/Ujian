@@ -46,6 +46,9 @@
             <li class="nav-item ml-3">
               <a class="nav-link" href="<?= BASE; ?>/Guru/pengaturan">Pengaturan</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link px-md-4" href="<?= BASE; ?>/Guru/test">Test</a>
+            </li>
           </ul>
           <div class="form-inline my-2 mr-5 my-lg-0">
             <div class="nav-item dropdown">
