@@ -18,6 +18,12 @@ class Siswa_model extends Controller
 
     public function getAllMurid()
     {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "guru" LIMIT 3 ');
+        return $this->db->resultSet();
+    }
+
+    public function getAllMapel()
+    {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "guru" ');
         return $this->db->resultSet();
     }

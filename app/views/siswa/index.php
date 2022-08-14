@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <a href="<?= BASE ?>/siswa/mapelSiswa" class="btn btn-outline-success">Lihat lainnya</a>
+    <a href="<?= BASE ?>/Siswa/mapelSiswa" class="btn btn-outline-success">Lihat lainnya</a>
   </div>
 </section>
 <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
@@ -51,7 +51,7 @@
         </div>
         <div class="row justify-content-center info-text">
           <div class="col-sm text-center" data-aos-duration="1500" data-aos="fade-up">
-            <h4 class="text-dark">SteUpanDesu</h4>
+            <h4 class="text-dark"><?= $_SESSION['nama'] ?></h4>
             <p style="font-size: 15px;">Sungkan sombong</p>
           </div>
         </div>

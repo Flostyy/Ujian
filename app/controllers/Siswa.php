@@ -36,6 +36,7 @@ class Siswa extends Controller
     {   
         session_start();
 
+        $data['id'] = $this->model('Siswa_model')->getAllMapel();
         $data['judul'] = 'Mapel Siswa';
 
         $this->view('templates/headersiswa', $data);
