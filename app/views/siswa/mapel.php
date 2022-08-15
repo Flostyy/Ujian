@@ -13,7 +13,7 @@
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        
+
         <!-- <div class="tagline">
              OUR FORMULA
            </div> -->
@@ -22,7 +22,22 @@
              Your Dream Companies
            </div> -->
         <div class="row benefits" id="see">
-          <div class="col-md-4 mt-md-0">
+          <?php foreach ($data['id'] as $guru) : ?>
+            <div class="col-md-4 mb-5 mt-md-0">
+              <a href="<?= BASE ?>/Siswa/praSoal/<?= $guru['id'] ?>">
+                <div class="rectangle mx-auto px-1">
+                  <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png" alt="benefits-1" class="img-fluid">
+                  <div class="headline-benefit">
+                    <?= $guru['nama'] ?>
+                  </div>
+                  <div class="subheadline-benefit mt-2">
+                    <?= $guru['mapel'] ?> <br class="d-none d-md-block">
+                  </div>
+                </div>
+              </a>
+            </div>
+          <?php endforeach; ?>
+          <!-- <div class="col-md-4 mt-md-0">
             <a href="#">
               <div class="rectangle mx-auto px-1">
                 <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-1.png" alt="benefits-1" class="img-fluid">
@@ -195,7 +210,7 @@
                 </div>
               </div>
           </div>
-          </a>
+          </a> -->
         </div>
 
 

@@ -68,19 +68,19 @@
             <div style="margin-left: -10px;">
               <ul class="nomor" style="list-style-type: none;">
                 <li class="d-inline">
-                  <button type="button" class="no btn btn-md btn-outline-success ml-1 active" data-cont="r1">1</button>
+                  <button type="button" class="no btn col btn-md btn-outline-success ml-1 active" data-cont="r1">1</button>
                 </li>
                 <li class="d-inline">
-                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">2</button>
+                  <button type="button" class="no btn col btn-md btn-outline-success ml-1" data-cont="r2">2</button>
                 </li>
                 <li class="d-inline">
-                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r3">3</button>
+                  <button type="button" class="no btn col btn-md btn-outline-success ml-1" data-cont="r3">3</button>
                 </li>
                 <li class="d-inline">
-                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r4">4</button>
+                  <button type="button" class="no btn col btn-md btn-outline-success ml-1" data-cont="r4">4</button>
                 </li>
                 <li class="d-inline">
-                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r5">5</button>
+                  <button type="button" class="no btn col btn-md btn-outline-success ml-1" data-cont="r5">5</button>
                 </li>
                 <li class="d-inline">
                   <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r6">6</button>
@@ -161,7 +161,7 @@
       confirmButtonText: "Yes, sure",
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = '<?= BASE; ?>/Siswa/praSoal';
+        window.location.href = '<?= BASE; ?>/Siswa';
       }
     });
   });

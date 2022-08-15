@@ -37,16 +37,6 @@ class Guru extends Controller
     }
 
 
-
-    public function test()
-    {
-        $data['judul'] = 'Daftar Siswa';
-
-        $this->view('templates/header', $data);
-        $this->view('guru/test', $data);
-        $this->view('templates/footer');
-    }
-
     public function register()
     {
         session_start();
@@ -115,6 +105,7 @@ class Guru extends Controller
         //     header('Location: ' . BASE . '/Guru/detailMapel');
         // }
 
+        session_start();
         $data['detail'] = $this->model('Soal_model')->getMapelForGuru($id);
         // var_dump($data['detail'][0]);
         // die;
