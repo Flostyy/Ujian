@@ -100,4 +100,16 @@ class Siswa extends Controller
             exit;
         }
     }
+
+    public function cari()
+    {
+        session_start();
+
+        $data['id'] = $this->model('Siswa_model')->getCariMapel();
+        $data['judul'] = 'Mapel Siswa';
+
+        $this->view('templates/headersiswa', $data);
+        $this->view('siswa/mapel', $data);
+        $this->view('templates/footer');
+    }
 }

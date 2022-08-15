@@ -110,10 +110,10 @@ class Siswa_model extends Controller
         return $this->db->rowCount();
     }
 
-    public function cariDataMahasiswa()
+    public function getCariMapel()
     {
         $keyword = $_POST['keyword'];
-        $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+        $query = "SELECT * FROM users WHERE mapel  LIKE :keyword && `level` = 'guru' ";
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();

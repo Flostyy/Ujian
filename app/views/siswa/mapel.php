@@ -9,9 +9,9 @@
           Mata Pelajaran <br class="d-none d-md-block">
           <!-- dan Selamat Mengerjakan -->
         </div>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form action="<?= BASE; ?>/Siswa/cari" method="POST" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword" id="keyword" autocomplete="off">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="tombolCari">Search</button>
         </form>
 
         <!-- <div class="tagline">
@@ -23,7 +23,7 @@
            </div> -->
            <div class="row benefits" id="see">
             <?php foreach ($data['id'] as $guru) : ?>
-            <div class="col-md-4 mt-md-0">
+            <div class="col-md-4 mb-5 mt-md-0">
               <a href="<?= BASE ?>/Siswa/praSoal/<?= $guru['id'] ?>">
                 <div class="rectangle mx-auto px-1">
                   <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png" alt="benefits-1" class="img-fluid">
@@ -177,17 +177,11 @@
                 </div>
               </div>
           </div>
-<<<<<<< HEAD
-          </a> -->
-        </div>
-=======
-          </a>
-        </div> -->
->>>>>>> 61874209391bf063734278c0e6b8199d6e939639
+
 
 
         <div class="button-header">
-          <!-- <button class="btn btn-started">See More</button> -->
+          <button class="btn btn-started">See More</button> -->
           <!-- <button class="btn btn-story ml-3">Read Story</button> -->
         </div>
       </div>
