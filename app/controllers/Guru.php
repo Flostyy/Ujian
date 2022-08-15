@@ -36,20 +36,21 @@ class Guru extends Controller
         $this->view('templates/footer');
     }
 
-
-
-    public function test()
-    {
-        $data['judul'] = 'Daftar Siswa';
-
-        $this->view('templates/header', $data);
-        $this->view('guru/test', $data);
-        $this->view('templates/footer');
-    }
-
     public function register()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data['judul'] = 'Daftar Siswa';
         $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
 
@@ -60,7 +61,19 @@ class Guru extends Controller
 
     public function mapelGuru()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $id_guru = $_SESSION['id'];
         $data['judul'] = 'Mapel Guru';
         $data['mapel'] = $this->model('Soal_model')->getAllMapel($id_guru);
@@ -78,7 +91,19 @@ class Guru extends Controller
 
     public function tambahSoal()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data['judul'] = 'Tambah Soal';
 
         $this->view('templates/header', $data);
@@ -93,7 +118,19 @@ class Guru extends Controller
 
     public function tambahSoalNew()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         // $id = $_SESSION['id'];
         $data = $_POST;
 
@@ -106,6 +143,19 @@ class Guru extends Controller
 
     public function detailMapel($id)
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         // try {
         //     if ($this->model('Soal_model')->getMapelForGuru($id) > 0) {
         //         header('Location: ' . BASE . '/Guru/detailMapel/' . $id);
@@ -133,6 +183,19 @@ class Guru extends Controller
 
     public function tambahTambah($id)
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data = $_POST;
         $data['id'] = $id;
         $this->model('Soal_model')->tambahBaris($data);
@@ -142,7 +205,19 @@ class Guru extends Controller
 
     public function pengaturan()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         // var_dump($_SESSION['id']);
         $id = $_SESSION['id'];
         $data['judul'] = 'pengaturan';
@@ -158,6 +233,19 @@ class Guru extends Controller
 
     public function tambahSiswa()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         try {
             if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
                 header('Location: ' . BASE . '/Guru/register');
@@ -167,15 +255,41 @@ class Guru extends Controller
             header('Location: ' . BASE . '/Guru/register?pesan=email sudah terpakai');
         }
     }
-    
+
 
     public function ubahData()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         echo json_encode($this->model('Siswa_model')->getSiswaById($_POST['id']));
     }
 
     public function ubahSoal()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         // var_dump($id);
         // var_dump($_POST['id']);
         // die;
@@ -184,6 +298,18 @@ class Guru extends Controller
 
     public function ubah()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
         // var_dump($_POST);
         // die;
         // $this->model('Siswa_model')->ubahDataGuru($_POST);
@@ -200,6 +326,19 @@ class Guru extends Controller
 
     public function soalUbah($id)
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data = $_POST;
         // var_dump($data);
         // die;
@@ -209,6 +348,19 @@ class Guru extends Controller
 
     public function ubahUjian()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data = $_POST;
         // var_dump($data);
         // die;
@@ -226,6 +378,19 @@ class Guru extends Controller
 
     public function hapusSiswa($id)
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data['judul'] = 'Hapus Guru';
 
         if ($this->model('Siswa_model')->hapusDataSiswa($id) > 0) {
@@ -236,6 +401,19 @@ class Guru extends Controller
 
     public function hapusSoal($id)
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
         $data['judul'] = 'Hapus Soal';
 
         if ($this->model('Soal_model')->hapusDataSoal($id) > 0) {

@@ -33,8 +33,20 @@ class Siswa extends Controller
 
     public function mapelSiswa()
 
-    {   
-        session_start();
+    {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
 
         $data['judul'] = 'Mapel Siswa';
 
@@ -45,7 +57,19 @@ class Siswa extends Controller
 
     public function kontak()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
         $data['judul'] = 'Kontak kami';
 
         $this->view('templates/headersiswa', $data);
@@ -55,7 +79,19 @@ class Siswa extends Controller
 
     public function soal($id)
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
         $data['judul'] = 'Soal';
         $data['id'] = $this->model('Soal_model')->getMapelForGuru($id);
         // $data['id']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['id'])[0]['jumlahSoal'];
@@ -69,14 +105,43 @@ class Siswa extends Controller
         $this->view('templates/footer');
     }
 
+    public function nilai($id)
+    {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
+        $data['judul'] = 'Nilai';
+        $data['id'] = $this->model('Soal_model')->nilai($id);
+    }
+
     public function praSoal($id)
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
         $data['judul'] = 'Pra Ujian';
         $data['ujian'] = $this->model('Siswa_model')->getMapelById($id);
-        $soal = $this->model('Soal_model')->getMapelById($data['ujian']['id']);
         $data['ujian']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['ujian']['id'])[0]['jumlahSoal'];
-        $data['ujian']['id_soal'] = $soal['id_soal'];
         // var_dump($data['ujian']);
         // die;
 
@@ -94,6 +159,19 @@ class Siswa extends Controller
 
     public function tambah()
     {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "murid") {
+            header('Location: ' . 'http://localhost/Ujian/public/Guru');
+            die();
+        }
+
         if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
             header('Location: ' . BASE . '/Siswa');
             exit;

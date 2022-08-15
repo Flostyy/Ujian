@@ -56,6 +56,13 @@ class Soal_model extends Controller
         return $this->db->single();
     }
 
+    public function getNilai($id)
+    {
+        $this->db->query('SELECT nilai.id, ujian.id as id_ujian, users.id as id_user, nilai.nilai FROM nilai JOIN ujian ON nilai.id_ujian = ujian.id JOIN users ON nilai.id_user = users.id WHERE ujian.id = :id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
     public function getMapelForGuru($id)
     {
         $this->db->query('SELECT ujian.id, ujian.judul, ujian.deskripsi, soal.id as id_soal, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');
