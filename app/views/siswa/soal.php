@@ -11,39 +11,49 @@
             <h6><?= $data['id'][0]['deskripsi']; ?></h6>
           </div>
           <div class="card-body">
-            <div class="section active">
-              <?php foreach ($data['id'] as $tada) : ?>
+            <?php foreach ($data['id'] as $key => $tada) : ?>
+              <div class="section <?= $key == 0 ? 'active' : '' ?>">
                 <div class="card-title">
-                  <h5> <span class="badge badge-success mb-1" id="r1" style="font-size: 20px">1</span><?= $tada['soal']; ?></h5>
+                  <h5> <span class="badge badge-success mb-1" id="r1" style="font-size: 20px"><?= $key + 1 ?></span><?= $tada['soal']; ?></h5>
                 </div>
                 <div class="card-text">
                   <!-- Opsi Jawaban a -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"><?= $tada['option_a']; ?></label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault<?= $key + 1 ?>" id="flexRadioDefaultA<?= $key + 1 ?>" />
+                    <label class="form-check-label" for="flexRadioDefaultA<?= $key + 1 ?>"><?= $tada['option_a']; ?></label>
                   </div>
                   <!-- Opsi Jawaban b -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1"><?= $tada['option_b']; ?></label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault<?= $key + 1 ?>" id="flexRadioDefaultB<?= $key + 1 ?>" />
+                    <label class="form-check-label" for="flexRadioDefaultB<?= $key + 1 ?>"><?= $tada['option_b']; ?></label>
                   </div>
                   <!-- Opsi Jawaban c -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_c']; ?></label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault<?= $key + 1 ?>" id="flexRadioDefaultC<?= $key + 1 ?>" />
+                    <label class="form-check-label" for="flexRadioDefaultC<?= $key + 1 ?>"><?= $tada['option_c']; ?></label>
                   </div>
                   <!-- Opsi Jawaban d -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_d']; ?></label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault<?= $key + 1 ?>" id="flexRadioDefaultD<?= $key + 1 ?>" />
+                    <label class="form-check-label" for="flexRadioDefaultD<?= $key + 1 ?>"><?= $tada['option_d']; ?></label>
                   </div>
                   <!-- Opsi Jawaban e -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2"><?= $tada['option_e']; ?></label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault<?= $key + 1 ?>" id="flexRadioDefaultE<?= $key + 1 ?>" />
+                    <label class="form-check-label" for="flexRadioDefaultE<?= $key + 1 ?>"><?= $tada['option_e']; ?></label>
                   </div>
                 </div>
-
+              </div>
+            <?php endforeach; ?>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row d-flex justify-content-between">
+              <div class="">
+                <button class="btn btn-outline-success previous disable" id="previous">Previous</button>
+              </div>
+              <div class="">
+                <button class="btn btn-outline-success next" id="next">Next</button>
+              </div>
             </div>
           </div>
         </div>
@@ -55,151 +65,67 @@
           </div>
           <div class="card-body">
             <h5 class="card-title"></h5>
-              <div class="nomor" style="margin-left: -10px;">
-                <ul style="list-style-type: none;">
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" class="active" data-cont="r1">1</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">2</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">3</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">4</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">5</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">6</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">7</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">8</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">9</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">10</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">11</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">12</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">13</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">14</button>
-                  </li>
-                  <li class="d-inline">
-                    <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">15</button>
-                  </li>
-                </ul>
-              </div>
+            <div style="margin-left: -10px;">
+              <ul class="nomor" style="list-style-type: none;">
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1 active" data-cont="r1">1</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">2</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r3">3</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r4">4</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r5">5</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r6">6</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r7">7</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r7">8</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r8">9</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r9">10</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r10">11</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r11">12</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r12">13</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r13">14</button>
+                </li>
+                <li class="d-inline">
+                  <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r14">15</button>
+                </li>
+              </ul>
+            </div>
 
           </div>
           <div class="card-footer d-flex justify-content-end">
             <a href="#" id="finish" class="btn btn-success ">Finish It !</a>
           </div>
-          <div class="card-footer text-muted">
-            <div class="row d-flex justify-content-between">
-              <button class="btn btn-outline-success previous disable" id="previous"> <i class="fa-solid fa-angles-left"></i> </i>Previous</button>
-              <button class="btn btn-outline-success next" id="next">Next <i class="fa-solid fa-angles-right"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </div>
-    <div class="col-lg-4 p-2">
-      <div class="card text">
-        <div class="card-header">
-          Jumlah Soal
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text ">
-          <table class="">
-
-            <ul class="nomor">
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1 active" data-cont="r1">1</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r2">2</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r3">3</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r4">4</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r5">5</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r6">6</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r7">7</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r8">8</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r9">9</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r10">10</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r11">11</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r12">12</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r13">13</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r14">14</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r15">15</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r16">16</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r17">17</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r18">18</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r19">19</button>
-              </li>
-              <li>
-                <button type="button" class="no btn btn-md btn-outline-success ml-1" data-cont="r20">20</button>
-              </li>
-            </ul>
-          </table>
-          </p>
-
-        </div>
-        <div class="card-footer d-flex justify-content-end">
-          <a href="#" id="finish" class="btn btn-success ">Finish It !</a>
         </div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   </div>

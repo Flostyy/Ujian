@@ -127,7 +127,7 @@ body .content .content .benefits .rectangle {
   transform: rotate(45deg);
 }
 
-.dropdown{
+.dropdown {
   position: relative;
   right: 40px;
 }
@@ -346,9 +346,9 @@ body .content .content .button-header .btn-story {
   font-size: 15px;
 }
 
-/* .section {
+.section {
   display: none;
-} */
+}
 
 .section.active {
   display: block;
