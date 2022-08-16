@@ -167,13 +167,18 @@ class Siswa extends Controller
             header('Location: ' . 'http://localhost/Ujian/public/Guru');
             die();
         }
-
         $data['judul'] = 'Pra Ujian';
         $data['ujian'] = $this->model('Siswa_model')->getMapelById($id);
         $data['ujian']['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($data['ujian']['id'])[0]['jumlahSoal'];
-        // var_dump($data['ujian']);
+        // var_dump($data['ujian']['id']);
         // die;
+        
+        $id_ujian = $data['ujian']['id'];
+        $id_user = $_SESSION['id'];
 
+        $data['nilai'] = $this->model('Soal_model')->ambilNilai($id_user, $id_ujian);
+        // var_dump($data['nilai'][0]['nilai']);
+        // die;
         // $data['mapel'] = $this->model('Soal_model')->getAllMapel($id_guru);
         // $data['mapel'] = array_map(function ($mapel) {
         //     $mapel['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($mapel['id'])[0]['jumlahSoal'];
