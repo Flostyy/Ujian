@@ -28,10 +28,10 @@
                 <div class="rectangle mx-auto px-1">
                   <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-Job/benefit-job-2.png" alt="benefits-1" class="img-fluid">
                   <div class="headline-benefit">
-                    <?= $guru['nama'] ?>
+                  <?= $guru['mapel'] ?>
                   </div>
                   <div class="subheadline-benefit mt-2">
-                    <?= $guru['mapel'] ?> <br class="d-none d-md-block">
+                  <?= $guru['nama'] ?> <br class="d-none d-md-block">
                   </div>
                 </div>
               </a>
