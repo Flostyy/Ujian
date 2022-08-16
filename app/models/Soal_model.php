@@ -91,7 +91,7 @@ class Soal_model extends Controller
         $this->db->bind('id_user', $id_user);
         $this->db->bind('id_ujian', $id_ujian);
 
-        return $this->db->resultSet();
+        return $this->db->single();
     }
 
     public function getMapelForGuru($id)

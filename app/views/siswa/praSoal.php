@@ -25,7 +25,14 @@
                                     <?= $data['ujian']['jumlahSoal'] ?> Soal<br class="d-none d-md-block">
                                     <!-- Deskripsi -->
                                     <?= $data['ujian']['deskripsi']; ?><br>
-                                    Nilai : <?= $data['nilai'][0]['nilai']?> <br>
+                                    <?php
+                                    if (!$data['nilai']) :
+                                    ?>
+                                        Nilai : -
+                                    <?php else : ?>
+                                        Nilai : <?= $data['nilai']['nilai'] ?>
+                                    <?php endif; ?>
+                                    <br>
                                 </div>
                             </div>
                         </a>
@@ -57,7 +64,13 @@
 
                             <?= $data['ujian']['deskripsi']; ?><br>
                             <?= $_SESSION['nama']; ?><br>
-                            Nilai : <?= $data['nilai'][0]['nilai']?> <br>
+                            <?php
+                            if (!$data['nilai']) :
+                            ?>
+                                Nilai : -
+                            <?php else : ?>
+                                Nilai : <?= $data['nilai']['nilai'] ?>
+                            <?php endif; ?>
                             Jumlah Soal : <?= $data['ujian']['jumlahSoal']; ?> Soal <br>
                             <!-- Status : Belum mengerjakan <br>
                         Nilai : - -->
