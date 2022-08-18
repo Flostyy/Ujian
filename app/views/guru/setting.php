@@ -53,12 +53,12 @@
                                             <div class="col"><?= $set['email'] ?>
                                             </div>
                                     </li>
-                                    <li class="list-group-item col-sm">
+                                    <!-- <li class="list-group-item col-sm">
                                         <div class="row">
                                             <div class="col-sm-4">Password</div>
                                             <div class="col"><?= $set['password'] ?>
                                             </div>
-                                    </li>
+                                    </li> -->
                                 <?php endforeach; ?>
                             </ul>
 
@@ -90,19 +90,19 @@
                         <!-- <input type="text" name="mapel" id="mapel" value="murid" hidden> -->
                         <div class="form-grup mt-2">
                             <label for="">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control" />
+                            <input type="text" id="nama" name="nama" class="form-control" required />
                         </div>
                         <div class="form-grup mt-2">
                             <label for="">Mata Pelajaran</label>
-                            <input type="text" id="mapel" name="mapel" class="form-control" />
+                            <input type="text" id="mapel" name="mapel" class="form-control" required />
                         </div>
                         <div class="form-grup mt-2">
                             <label for="">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" />
+                            <input type="email" id="email" name="email" class="form-control" required />
                         </div>
                         <div class="form-grup mt-2">
                             <label for="">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" />
+                            <input type="password" id="password" name="password" class="form-control" required />
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="passUbah()">
                                 <label class="form-check-label" for="passEdit">

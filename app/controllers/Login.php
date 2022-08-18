@@ -28,6 +28,7 @@ class Login extends Controller
             $_SESSION['id'] = $row['id'];
             $_SESSION['nama'] = $row['nama'];
             $_SESSION['level'] = $row['level'];
+            $_SESSION['email'] = $row['email'];
             if ($row['level'] == 'guru') {
               header("Location: " . BASE . "/Guru");
             } else {

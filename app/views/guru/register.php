@@ -116,15 +116,15 @@
           <div class="card-body">
             <div class="form-grup ">
               <label for="nama">Nama</label>
-              <input type="text" id="nama" name="nama" class="form-control" />
+              <input type="text" id="nama" name="nama" class="form-control" required/>
             </div>
             <div class="form-grup mt-2">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" />
+              <input type="email" id="email" name="email" class="form-control" required />
             </div>
             <div class="form-grup mt-2">
               <label for="password">Password</label>
-              <input type="password" id="password" name="password" class="form-control" />
+              <input type="password" id="password" name="password" class="form-control" required />
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="passEdit" onclick="showPassEdit()">
                 <label class="form-check-label" for="passEdit">

@@ -71,6 +71,7 @@
                             <?php else : ?>
                                 Nilai : <?= $data['nilai']['nilai'] ?>
                             <?php endif; ?>
+                            <br>
                             Jumlah Soal : <?= $data['ujian']['jumlahSoal']; ?> Soal <br>
                             <!-- Status : Belum mengerjakan <br>
                         Nilai : - -->
