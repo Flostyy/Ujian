@@ -24,7 +24,15 @@
                                     <!-- Jumlah soal -->
                                     <?= $data['ujian']['jumlahSoal'] ?> Soal<br class="d-none d-md-block">
                                     <!-- Deskripsi -->
-                                    <?= $data['ujian']['deskripsi']; ?>
+                                    <?= $data['ujian']['deskripsi']; ?><br>
+                                    <?php
+                                    if (!$data['nilai']) :
+                                    ?>
+                                        Nilai : -
+                                    <?php else : ?>
+                                        Nilai : <?= $data['nilai']['nilai'] ?>
+                                    <?php endif; ?>
+                                    <br>
                                 </div>
                             </div>
                         </a>
@@ -56,7 +64,13 @@
 
                             <?= $data['ujian']['deskripsi']; ?><br>
                             <?= $_SESSION['nama']; ?><br>
-                            <!-- Kelas : XI RPL 2 / 35 <br> -->
+                            <?php
+                            if (!$data['nilai']) :
+                            ?>
+                                Nilai : -
+                            <?php else : ?>
+                                Nilai : <?= $data['nilai']['nilai'] ?>
+                            <?php endif; ?>
                             Jumlah Soal : <?= $data['ujian']['jumlahSoal']; ?> Soal <br>
                             <!-- Status : Belum mengerjakan <br>
                         Nilai : - -->
@@ -66,7 +80,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                <a href="<?= BASE ?>/Siswa/soal/<?= $data['ujian']['id'] ?>" class="btn btn-success">Kerjakan</a>
+                <a href="<?= BASE ?>/Siswa/soal/<?= $data['ujian']['id'] ?>/<?= $data['ujian']['jumlahSoal']; ?>" class="btn btn-success">Kerjakan</a>
 
             </div>
         </div>
