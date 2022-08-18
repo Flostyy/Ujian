@@ -18,6 +18,12 @@ class Siswa_model extends Controller
 
     public function getAllMurid()
     {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "guru" LIMIT 3 ');
+        return $this->db->resultSet();
+    }
+
+    public function getAllMapel()
+    {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE `level` = "guru" ');
         return $this->db->resultSet();
     }
@@ -104,10 +110,10 @@ class Siswa_model extends Controller
         return $this->db->rowCount();
     }
 
-    public function cariDataMahasiswa()
+    public function getCariMapel()
     {
         $keyword = $_POST['keyword'];
-        $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+        $query = "SELECT * FROM users WHERE mapel  LIKE :keyword && `level` = 'guru' ";
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();

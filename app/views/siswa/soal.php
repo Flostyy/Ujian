@@ -73,6 +73,7 @@
             <h5 class="card-title"></h5>
             <div style="margin-left: -10px;">
               <ul class="nomor" style="list-style-type: none;">
+
                 <?php foreach ($data['id'] as $key => $tada) : ?>
                   <li class="d-inline">
                     <button type="button" class="no btn btn-md btn-outline-success ml-1 <?= $key == 0 ? 'active' : '' ?>" data-cont="r1"><?= $key + 1 ?></button>
@@ -128,7 +129,7 @@
       confirmButtonText: "Yes, sure",
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = '<?= BASE; ?>/Siswa/praSoal';
+        window.location.href = '<?= BASE; ?>/Siswa';
       }
     });
   });

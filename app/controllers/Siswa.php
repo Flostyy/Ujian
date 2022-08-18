@@ -48,6 +48,7 @@ class Siswa extends Controller
         }
 
 
+        $data['id'] = $this->model('Siswa_model')->getAllMapel();
         $data['judul'] = 'Mapel Siswa';
 
         $this->view('templates/headersiswa', $data);
@@ -211,5 +212,17 @@ class Siswa extends Controller
             header('Location: ' . BASE . '/Siswa');
             exit;
         }
+    }
+
+    public function cari()
+    {
+        session_start();
+
+        $data['id'] = $this->model('Siswa_model')->getCariMapel();
+        $data['judul'] = 'Mapel Siswa';
+
+        $this->view('templates/headersiswa', $data);
+        $this->view('siswa/mapel', $data);
+        $this->view('templates/footer');
     }
 }

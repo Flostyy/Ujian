@@ -165,6 +165,7 @@ class Guru extends Controller
         //     header('Location: ' . BASE . '/Guru/detailMapel');
         // }
 
+        // session_start();
         $data['detail'] = $this->model('Soal_model')->getMapelForGuru($id);
         // var_dump($data['detail'][0]);
         // die;
