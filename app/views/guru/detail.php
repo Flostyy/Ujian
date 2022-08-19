@@ -48,11 +48,11 @@
             <div class="card-body">
               <div class="form-grup">
                 <label for="">Judul Ujian</label>
-                <input type="text" name="judul" value="<?= $data['detail'][0]['judul'] ?>" class="form-control" />
+                <input type="text" name="judul" value="<?= $data['detail'][0]['judul'] ?>" class="form-control" required />
               </div>
               <div class="form-grup">
                 <label for="">Deskripsi Ujian</label>
-                <input type="text" name="deskripsi" value="<?= $data['detail'][0]['deskripsi'] ?>" class="form-control" />
+                <input type="text" name="deskripsi" value="<?= $data['detail'][0]['deskripsi'] ?>" class="form-control" required />
               </div>
               <div class="form-grup">
                 <label for="">Jumlah Soal</label>

@@ -225,4 +225,16 @@ class Siswa extends Controller
         $this->view('siswa/mapel', $data);
         $this->view('templates/footer');
     }
+
+    public function pesan()
+    {
+        $data = $_POST;
+        // var_dump($data);
+
+        $nama = $data["nama"];
+        $email = $data["email"];
+        $pesan = $data["pesan"];
+        header("location: https://api.whatsapp.com/send?phone=6283122150023&text=Nama%20:%20$nama%0D%0AEmail%20:%20$email%0D%0APesan%20:%20$pesan");
+
+    }
 }
