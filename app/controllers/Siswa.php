@@ -177,6 +177,7 @@ class Siswa extends Controller
         $id_ujian = $data['ujian']['id'];
         $id_user = $_SESSION['id'];
 
+        
         $data['nilai'] = $this->model('Soal_model')->ambilNilai($id_user, $id_ujian);
         
         // var_dump($data['nilai'][0]['nilai']);

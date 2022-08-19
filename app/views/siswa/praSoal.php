@@ -67,9 +67,9 @@
                             <?php
                             if (!$data['nilai']) :
                             ?>
-                                Nilai : -
+                                Nilai : - <br>
                             <?php else : ?>
-                                Nilai : <?= $data['nilai']['nilai'] ?>
+                                Nilai : <?= $data['nilai']['nilai'] ?> <br>
                             <?php endif; ?>
                             <br>
                             Jumlah Soal : <?= $data['ujian']['jumlahSoal']; ?> Soal <br>
@@ -81,10 +81,22 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                <a href="<?= BASE ?>/Siswa/soal/<?= $data['ujian']['id'] ?>/<?= $data['ujian']['jumlahSoal']; ?>" class="btn btn-success">Kerjakan</a>
-
+                <?php
+                if (!$data['nilai']) :
+                ?>
+                    <a href="<?= BASE ?>/Siswa/soal/<?= $data['ujian']['id'] ?>/<?= $data['ujian']['jumlahSoal']; ?>" class="btn btn-success">Kerjakan</a>
+                <?php else : ?>
+                    <form action="<?= BASE ?>/Siswa/soal/<?= $data['ujian']['id'] ?>/<?= $data['ujian']['jumlahSoal']; ?>" method="">
+                        <input type="submit" class="btn btn-success" disabled value="Kerjakan">
+                    </form>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </div>
 <!-- End Modal -->
+
+<script>
+    let previousButton = document.querySelector(".btn_kerjakan");
+    previousButton.classList.remove("disable");
+</script>
