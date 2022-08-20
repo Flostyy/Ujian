@@ -249,7 +249,7 @@ class Guru extends Controller
 
         try {
             if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-                header('Location: ' . BASE . '/Guru/register');
+                header('Location: ' . BASE . '/Guru/register?berhasil=data berhasil');
                 exit;
             }
         } catch (\Throwable $th) {
