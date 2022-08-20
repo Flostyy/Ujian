@@ -15,8 +15,29 @@
               <h5 class="card-title">
 
                 <h5><span class="badge badge-success mb-1 mr-2" style="font-size: 20px"><?= $index + 1 ?></span><?= $set['soal']; ?>
-                  <a href="<?= BASE; ?>/Guru/ubahSoal/<?= $set['id_soal']; ?>" class="tampilModalUbah" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $set['id_soal']; ?>" onclick="ubahSoal('<?= $set['id_soal']; ?>')">ubah</a>
-
+                  <a href="<?= BASE; ?>/Guru/ubahSoal/<?= $set['id_soal']; ?>" class="tampilModalUbah btn btn-warning btn-sm" data-toggle="modal" data-target="#ubahSoal" data-id="<?= $set['id_soal']; ?>" onclick="ubahSoal('<?= $set['id_soal']; ?>')">ubah</a> |
+                  <a class="btn btn-danger text-light btn-sm" id="hapus<?= $set['id_soal'] ?>">hapus</a>
+                    <script>
+                      var id = "<?= $set['id_soal'] ?>";
+                      document.getElementById(`hapus${id}`).addEventListener("click", () => {
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: "You won't be able to revert this!",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Yes, delete it!",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire("Deleted!", "Your file has been deleted.", "success")
+                            setTimeout(() => {
+                              window.location.href = "<?= BASE; ?>/Guru/hapusSoalUjian/<?= $set['id_soal'] ?>/<?= $data['detail'][0]['id'] ?>"
+                            }, 1000)
+                          }
+                        });
+                      });
+                    </script>
                 </h5>
               </h5>
               <div class="card-text">
