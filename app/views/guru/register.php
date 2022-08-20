@@ -231,6 +231,27 @@
 <script>
   $(function() {
 
+    FetchQueryString("berhasil");
+
+    function FetchQueryString(regKey) {
+      regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+      var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+
+      var result = regexValue.exec(window.location.href);
+
+      if (result == null);
+
+      else Swal.fire("Good job!", "You clicked the button!", "success").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "http://localhost/Ujian/public/Guru/register";
+        }
+      });
+    }
+  })
+  
+  $(function() {
+
     FetchQueryString("pesan");
 
     function FetchQueryString(regKey) {
