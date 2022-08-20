@@ -49,6 +49,17 @@ class Soal_model extends Controller
         return $this->db->rowCount();
     }
 
+    public function hapusSoal($id)
+    {
+        $query = "DELETE FROM soal WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
     public function getMapelById($id)
     {
         $this->db->query('SELECT ujian.id, ujian.judul, ujian.deskripsi, soal.id as id_soal, soal.soal, soal.option_a, soal.option_b, soal.option_c, soal.option_d, soal.option_e FROM ujian INNER JOIN soal ON ujian.id = soal.id_ujian WHERE soal.id_ujian = :id');

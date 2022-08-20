@@ -16,7 +16,7 @@
                             <img src="<?= BASE ?>/img/man.png" alt="" width="200px">
                         </div>
                         <div class="card-body">
-                            <button type="button" class="btn btn-block btn-outline-success">Ubah Foto Profil</button>
+                            <button type="button" class="btn btn-block btn-outline-success" disabled>Ubah Foto Profil</button>
                             <p class="mt-3" style="font-size: 14px;">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
                         </div>
                     </div>

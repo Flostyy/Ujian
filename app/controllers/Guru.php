@@ -167,8 +167,6 @@ class Guru extends Controller
 
         // session_start();
         $data['detail'] = $this->model('Soal_model')->getMapelForGuru($id);
-        // var_dump($data['detail'][0]);
-        // die;
         $data['detail'] = array_map(function ($detail) {
             $detail['jumlahSoal'] = $this->model('Soal_model')->jmlSoal($detail['id'])[0]['jumlahSoal'];
             return $detail;
@@ -249,7 +247,7 @@ class Guru extends Controller
 
         try {
             if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
-                header('Location: ' . BASE . '/Guru/register');
+                header('Location: ' . BASE . '/Guru/register?berhasil=data berhasil');
                 exit;
             }
         } catch (\Throwable $th) {
@@ -369,10 +367,10 @@ class Guru extends Controller
         header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id']);
 
         if ($this->model('Soal_model')->ubahUjianGuru($data) > 0) {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan1= Data berhasil diubah');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '');
             exit;
         } else {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan2= Data tidak ada Perubahan');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '');
             exit;
         }
     }
@@ -419,6 +417,31 @@ class Guru extends Controller
 
         if ($this->model('Soal_model')->hapusDataSoal($id) > 0) {
             header('Location: ' . BASE . '/Guru/mapelGuru');
+            exit;
+        }
+    }
+
+    public function hapusSoalUjian($id_soal, $id_ujian)
+    {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['nama'])) {
+            ob_start();
+            header('Location: ' . 'http://localhost/Ujian/public/Login');
+            ob_end_flush();
+            die();
+        }
+
+        if ($_SESSION['level'] != "guru") {
+            header('Location: ' . 'http://localhost/Ujian/public/Siswa');
+            die();
+        }
+
+        // var_dump($id_soal,$id_ujian);
+        // die;
+        
+
+        if ($this->model('Soal_model')->hapusSoal($id_soal) > 0) {
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $id_ujian);
             exit;
         }
     }
