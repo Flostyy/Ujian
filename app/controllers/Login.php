@@ -22,7 +22,9 @@ class Login extends Controller
         
         if($data['login'] == NULL)
         {
+          Flasher::setFlash('Belum' , 'Terdaftar', 'danger');
           header("Location: " . BASE . '/Login');
+          exit;
         } else {
           foreach($data['login'] as $row) :
             $_SESSION['id'] = $row['id'];
