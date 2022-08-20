@@ -367,10 +367,10 @@ class Guru extends Controller
         header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id']);
 
         if ($this->model('Soal_model')->ubahUjianGuru($data) > 0) {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan1= Data berhasil diubah');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '');
             exit;
         } else {
-            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '?pesan2= Data tidak ada Perubahan');
+            header('Location: ' . BASE . '/Guru/detailMapel/' . $data['id'] . '');
             exit;
         }
     }

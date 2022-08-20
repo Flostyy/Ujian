@@ -307,57 +307,57 @@
 
   })
 
-  $(function() {
-    // var id = $_GET['id'];
-    FetchQueryString("pesanUbah");
+//   $(function() {
+//     // var id = $_GET['id'];
+//     FetchQueryString("pesanUbah");
 
-    function FetchQueryString(regKey) {
-      regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+//     function FetchQueryString(regKey) {
+//       regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 
-      var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+//       var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
 
-      var result = regexValue.exec(window.location.href);
+//       var result = regexValue.exec(window.location.href);
 
-      if (result == null);
+//       if (result == null);
 
-      else Swal.fire(
-        'Data berhasil diubah',
-        '',
-        'success'
+//       else Swal.fire(
+//         'Data berhasil diubah',
+//         '',
+//         'success'
 
-      ).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "http://localhost/Ujian/public/Guru/detailMapel";
-        }
-      });
-    }
-  })
+//       ).then((result) => {
+//         if (result.isConfirmed) {
+//           window.location.href = "http://localhost/Ujian/public/Guru/detailMapel";
+//         }
+//       });
+//     }
+//   })
 
-  $(function() {
+//   $(function() {
 
-FetchQueryString("pesan!Ubah");
+// FetchQueryString("pesan!Ubah");
 
-function FetchQueryString(regKey) {
-  regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+// function FetchQueryString(regKey) {
+//   regKey = regKey.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 
-  var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
+//   var regexValue = new RegExp("[\\?&]" + regKey + "=([^$#]*)");
 
-  var result = regexValue.exec(window.location.href);
+//   var result = regexValue.exec(window.location.href);
 
-  if (result == null);
+//   if (result == null);
 
-  else Swal.fire(
-    'Anda tidak merubah apapun',
-    'Data tidak ada perubahan',
-    'info'
+//   else Swal.fire(
+//     'Anda tidak merubah apapun',
+//     'Data tidak ada perubahan',
+//     'info'
     
-  ).then((result) => {
-    if (result.isConfirmed) {
-      window.location.href = "http://localhost/Ujian/public/Guru/detailMapel";
-    }
-  });
-}
-})
+//   ).then((result) => {
+//     if (result.isConfirmed) {
+//       window.location.href = "http://localhost/Ujian/public/Guru/detailMapel";
+//     }
+//   });
+// }
+// })
 </script>
 </body>
 
